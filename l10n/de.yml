@@ -1,0 +1,70 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: German language data (last modified: 2020.07.03).
+##/
+
+bad_command: "Entschuldigung, ich verstehe diesen Befehl nicht."
+cli_algo_not_supported: "Der angegebene Algorithmus wird nicht unterstützt."
+cli_failed_to_complete: "Ein vollständiger Scan konnte nicht durchgeführt werden"
+cli_is_not_a: "%s ist keine Datei oder ein Verzeichnis."
+cli_ln2: |
+ Vielen Dank für die Benutzung von phpMussel, einem auf PHP basiertem
+ Script, um Trojaner, Viren, Malware und andere Bedrohungen in Dateien zu
+ entdecken, die auf Ihr System hochgeladen werden könnten, welches die
+ Signaturen von ClamAV und andere nutzt.
+                                     ~ ~ ~
+ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ phpMussel befindet sich im CLI-Modus (Command Line Interface). Um eine
+ Datei oder ein Verzeichnis mit phpMussel zu überprüfen, geben Sie "scan",
+ gefolgt vom Namen der Datei oder des Verzeichnisses ein und bestätigen mit
+ Enter; Geben Sie "c" und Enter für eine Liste der verfügbaren Befehle im
+ CLI-Modus ein; Geben Sie "q" und Enter zum Beenden ein.
+cli_pe1: "Keine gültige PE-Datei!"
+cli_pe2: "PE-Sektionen:"
+cli_signature_placeholder: "IHR-SIGNATURNAME"
+cli_working: "Im Gange"
+cli_commands: |
+ ..
+ q
+ - Beendet den CLI-Modus.
+ - Alias: quit, exit.
+ hash_file:%
+ - Generiert Hash-Signaturen einer Datei [Syntax: hash_file:Algo Dateiname].
+ hash:%
+ - Generiert Hash-Signaturen eines String-Wertes [Syntax: hash:Algo String].
+ algo
+ - Listet alle unterstützten Algorithmen auf.
+ hex_encode
+ - Konvertiert einen Binär-Wert in einen Hexidezimal-Wert
+   [Syntax: hex_encode String].
+ - Alias: x.
+ hex_decode
+ - Konvertiert einen Hexidezimal-Wert in einen Binär-Wert
+   [Syntax: hex_decode String].
+ base64_encode
+ - Konvertiert einen Binär-Wert in einen Base64-Wert
+   [Syntax: base64_encode String].
+ - Alias: b.
+ base64_decode
+ - Konvertiert einen Base64-Wert in einen Binär-Wert
+   [Syntax: base64_decode String].
+ pe_meta
+ - Extrahieren Sie Metadaten aus einer PE-Datei [Syntax: pe_meta Dateiname].
+ url_sig
+ - Generiere URL-Scanner-Signaturen [Syntax: url_sig String].
+ scan
+ - Überprüft eine Datei oder ein Verzeichnis [Syntax: scan Dateiname].
+ - Alias: s.
+ c
+ - Gibt diese Befehlsliste aus.
+config_cli: "Konfiguration für CLI."
+config_cli_allow_process_forking: "Gibt ob die CLI das Prozessgabeln verwenden darf an."

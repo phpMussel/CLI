@@ -1,0 +1,68 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Indonesian language data (last modified: 2020.07.03).
+##/
+
+bad_command: "Saya tidak mengerti perintah itu, maaf."
+cli_algo_not_supported: "Algoritma yang ditentukan tidak didukung."
+cli_failed_to_complete: "Gagal untuk menyelesaikan memindai proses"
+cli_is_not_a: "%s bukan file atau direktori."
+cli_ln2: |
+ Terima kasih untuk menggunakan phpMussel, sebuah skrip php di-design untuk
+ mendeteksi trojan-trojan, virus-virus dan serangan-serangan lainnya dalam
+ file-file diupload ke system Anda dimana saja skrip di kaitkan,
+ berdasarkan tanda tangan dari ClamAV dan lain-lain.
+                                     ~ ~ ~
+ PHPMUSSEL HAK CIPTA 2013 dan di atas GNU/GPL V.2 oleh Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ Sekarang phpMussel operasi di CLI mode (command line interface). Untuk
+ memindai file atau direktori, menulis "scan", diikuti dengan nama file
+ atau direktori yang ingin Anda phpMussel untuk memindai dan tekan Enter;
+ Menulis "c" dan tekan Enter untuk daftar CLI mode perintah; Menulis "q"
+ dan tekan Enter untuk keluar.
+cli_pe1: "Tidak valid file PE!"
+cli_pe2: "Seksi PE:"
+cli_signature_placeholder: "NAMA-TANDA-TANGAN"
+cli_working: "Dalam proses"
+cli_commands: |
+ ..
+ q
+ - Berhenti CLI.
+ - Alias: quit, exit.
+ hash_file:%
+ - Menghasilkan tanda tangan hash dari file [Sintaksis: hash_file:algo file].
+ hash:%
+ - Menghasilkan tanda tangan hash dari string [Sintaksis: hash:algo string].
+ algo
+ - Daftar semua algoritma yang didukung.
+ hex_encode
+ - Mengkonversi string biner ke heksadesimal [Sintaksis: hex_encode string].
+ - Alias: x.
+ hex_decode
+ - Mengkonversi heksadesimal ke string biner [Sintaksis: hex_decode string].
+ base64_encode
+ - Mengkonversi string biner ke string base64
+ - [Sintaksis: base64_encode string].
+ - Alias: b.
+ base64_decode
+ - Mengkonversi string base64 ke string biner
+ - [Sintaksis: base64_decode string].
+ pe_meta
+ - Ekstrak metadata dari file PE [Sintaksis: pe_meta file].
+ url_sig
+ - Membuat tanda tangan pemindai URL [Sintaksis: url_sig string].
+ scan
+ - Pindai file atau direktori [Sintaksis: scan file].
+ - Alias: s.
+ c
+ - Cetak ini daftar perintah.
+config_cli: "Konfigurasi untuk CLI."
+config_cli_allow_process_forking: "Apakah CLI diizinkan menggunakan forking proses."

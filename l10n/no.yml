@@ -1,0 +1,66 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Norwegian language data (last modified: 2020.07.03).
+##/
+
+bad_command: "Jeg forstår ikke den kommandoen, beklager."
+cli_algo_not_supported: "Spesifisert algoritme støttes ikke."
+cli_failed_to_complete: "Kunne ikke fullføre skanneprosessen"
+cli_is_not_a: "%s er ikke en fil eller katalog."
+cli_ln2: |
+ Takk for at du bruker phpMussel, et PHP-skript designet for å oppdage
+ trojanere, virus, malware og andre trusler i filer lastet opp til systemet
+ ditt uansett hvor skriptet er koblet, basert på signaturene fra ClamAV og
+ andre.
+                                     ~ ~ ~
+ PHPMUSSEL COPYRIGHT 2013 og utover GNU/GPLv2 av Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ For tiden kjører phpMussel i CLI-modus (kommandolinjegrensesnitt). For å
+ skanne en fil eller katalog, skriver du inn "scan", etterfulgt av navnet
+ på filen eller katalogen du vil at phpMussel skal skanne og trykk Enter;
+ Skriv inn "c" og trykk Enter for en liste over CLI-modus kommandoer; Skriv
+ "q" og trykk Enter for å avslutte.
+cli_pe1: "Ikke en gyldig PE-fil!"
+cli_pe2: "PE-seksjoner:"
+cli_signature_placeholder: "DITT-SIGNATURNAVN"
+cli_working: "I prosess"
+cli_commands: |
+ ..
+ q
+ - Avslutt CLI.
+ - Aliaser: quit, exit.
+ hash_file:%
+ - Generer hashsignaturer fra filer [Syntaks: hash_file:algo filnavn].
+ hash:%
+ - Generer hashsignatur fra streng [Syntaks: hash:algo streng].
+ algo
+ - Liste over alle støttede algoritmer.
+ hex_encode
+ - Konverter binær streng til heksadesimal [Syntaks: hex_encode streng].
+ - Alias: x.
+ hex_decode
+ - Konverter heksadesimal til binær streng [Syntaks: hex_decode streng].
+ base64_encode
+ - Konverter binær streng til base64-streng [Syntaks: base64_encode streng].
+ - Alias: b.
+ base64_decode
+ - Konverter base64-streng til binær streng [Syntaks: base64_decode streng].
+ pe_meta
+ - Pakk ut metadata fra en PE-fil [Syntaks: pe_meta filnavn].
+ url_sig
+ - Generer URL-skannersignaturer [Syntaks: url_sig streng].
+ scan
+ - Skann fil eller katalog [Syntaks: scan filnavn].
+ - Alias: s.
+ c
+ - Skriv ut denne kommandolisten.
+config_cli: "Konfigurasjon for CLI."
+config_cli_allow_process_forking: "Hvorvidt CLI har lov til å bruke prosessgafling."

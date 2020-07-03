@@ -1,0 +1,66 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Bangla language data (last modified: 2020.07.03).
+##/
+
+bad_command: "আমি এই কমান্ড বুঝতে পারছিনা, দুঃখিত।"
+cli_algo_not_supported: "নির্দিষ্ট অ্যালগরিদম সমর্থিত নয়।"
+cli_failed_to_complete: "স্ক্যানিং প্রক্রিয়া সম্পন্ন করতে ব্যর্থ হয়েছে"
+cli_is_not_a: "%s কোন ফাইল বা ডিরেক্টরি নয়।"
+cli_ln2: |
+ phpMussel ব্যবহার করার জন্য আপনাকে ধন্যবাদ! ট্রোজান, ভাইরাস, ম্যালওয়্যার,
+ এবং অন্যান্য হুমকি সনাক্ত করার আপনার সিস্টেম আপলোড ফাইল মধ্যে জন্য
+ phpMussel একটি PHP স্ক্রিপ্ট। এটা ClamAV এবং অন্যদের স্বাক্ষর উপর ভিত্তি
+ করে।
+                                     ~ ~ ~
+ PHPMUSSEL COPYRIGHT 2013 এবং তার পরেও GNU/GPLv2 by Caleb M (Maikuolan)।
+                                     ~ ~ ~
+cli_ln3: |
+ বর্তমানে CLI (কমান্ড লাইন ইন্টারফেস) মোডে phpMussel চলছে। একটি ফাইল বা
+ ডাইরেক্টরি স্ক্যান করতে, scan টাইপ করুন, তারপর ফাইল বা ডাইরেক্টরিটি নাম
+ দিন যা আপনি phpMussel স্ক্যান করতে চান এবং Enter টিপুন; c টাইপ করুন এবং
+ Enter চাপুন একটি CLI মোড কমান্ডের তালিকা জন্য; q টাইপ করুন এবং Enter চাপুন
+ প্রস্থান করার জন্য।
+cli_pe1: "একটি বৈধ PE ফাইল নয়!"
+cli_pe2: "PE সেকশন:"
+cli_signature_placeholder: "আপনার-স্বাক্ষর-ফাইল"
+cli_working: "চলমান"
+cli_commands: |
+ ..
+ q
+ - CLI ছাড়ুন।
+ - ওরফে: quit, exit।
+ hash_file:%
+ - ফাইল থেকে হ্যাশ স্বাক্ষর তৈরি করুন [বাক্য গঠন: hash_file:algo filename]।
+ hash:%
+ - স্ট্রিং থেকে হ্যাশ স্বাক্ষর তৈরি করুন [বাক্য গঠন: hash:algo string]।
+ algo
+ - সমস্ত সমর্থিত আলগোরিদিম তালিকা করে।
+ hex_encode
+ - বাইনারি স্ট্রিং থেকে হেক্সাডেসিমাল রূপান্তর করুন [বাক্য গঠন: hex_encode স্ট্রিং]।
+ - ওরফে: x।
+ hex_decode
+ - হেক্সাডেসিমাল থেকে বাইনারি স্ট্রিং রূপান্তর করুন [বাক্য গঠন: hex_decode স্ট্রিং]।
+ base64_encode
+ - বাইনারি স্ট্রিং থেকে Base64 রূপান্তর করুন [বাক্য গঠন: base64_encode স্ট্রিং]।
+ - ওরফে: b।
+ base64_decode
+ - Base64 থেকে বাইনারি স্ট্রিং রূপান্তর করুন [বাক্য গঠন: base64_decode স্ট্রিং]।
+ pe_meta
+ - একটি PE ফাইল থেকে মেটাডাটা নিষ্কাশন [বাক্য গঠন: pe_meta filename]।
+ url_sig
+ - URL স্ক্যানার স্বাক্ষর তৈরি করুন [বাক্য গঠন: url_sig স্ট্রিং]।
+ scan
+ - ফাইল বা ডিরেক্টরি স্ক্যান করুন [বাক্য গঠন: scan filename]।
+ - ওরফে: s।
+ c
+ - এই কমান্ড তালিকা মুদ্রণ করুন।
+config_cli: "CLI জন্য কনফিগারেশন।"
+config_cli_allow_process_forking: "প্রক্রিয়া কাঁটাচামচ ব্যবহারের অনুমতি CLIকে দেওয়া আছে কিনা।"

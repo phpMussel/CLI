@@ -1,0 +1,67 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Latvian language data (last modified: 2020.07.03).
+##/
+
+bad_command: "Es nesaprotu šo komandu, atvainojiet."
+cli_algo_not_supported: "Norādītais algoritms netiek atbalstīts."
+cli_failed_to_complete: "Neizdevās pabeigt skenēšanas procesu"
+cli_is_not_a: "%s nav fails vai direktorijs."
+cli_ln2: |
+ Paldies, ka izmantojāt phpMussel, PHP skripts, pamatojoties uz ClamAV un citu
+ parakstiem, kas paredzēts trojas zirgu, vīrusu, ļaunprātīgas programmatūras un
+ citu draudu noteikšanai failos iekšpusē, kas augšupielādēti jūsu sistēmā, lai
+ kur būtu savienots skripts.
+                                     ~ ~ ~
+ PHPMUSSEL COPYRIGHT 2013 un vēlāk GNU/GPLv2 izveidojis Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ Pašlaik darbojas phpMussel CLI režīmā (komandrindas saskarne). Lai skenētu
+ failu vai direktoriju, ierakstiet "scan", kam seko faila vai direktorija
+ nosaukums, kuru vēlaties skenēt phpMussel, un nospiediet Enter; Ierakstiet
+ "c" un nospiediet taustiņu Enter, lai atvērtu CLI režīma komandu sarakstu;
+ Ierakstiet "q" un nospiediet Enter, lai izietu.
+cli_pe1: "Nav derīgs PE fails."
+cli_pe2: "PE sekcijas:"
+cli_signature_placeholder: "JŪSU-PARAKSTA-VĀRDS"
+cli_working: "Darbs notiek"
+cli_commands: |
+ ..
+ q
+ - Iziet no CLI.
+ - Pseidonīmi: quit, exit.
+ hash_file:%
+ - Ģenerējiet hash parakstus no failiem.
+   [Sintakse: hash_file:algo faila_nosaukums]
+ hash:%
+ - Ģenerējiet hash parakstu no virknes [Sintakse: hash:algo virkne].
+ algo
+ - Uzskaitiet visus atbalstītos algoritmus.
+ hex_encode
+ - Konvertēt bināro virkni uz heksadecimālo [Sintakse: hex_encode virkne].
+ - Pseidonīms: x.
+ hex_decode
+ - Konvertēt heksadecimālo uz binārā virknē [Sintakse: hex_decode virkne].
+ base64_encode
+ - Konvertēt bināro virkni uz base64 virkni [Sintakse: base64_encode virkne].
+ - Pseidonīms: b.
+ base64_decode
+ - Konvertēt base64 virkni uz bināro virkni [Sintakse: base64_decode virkne].
+ pe_meta
+ - Ekstrahējiet metadatus no PE faila [Sintakse: pe_meta faila_nosaukums].
+ url_sig
+ - Ģenerējiet URL skeneru parakstus [Sintakse: url_sig virkne].
+ scan
+ - Skenēt failu vai direktoriju [Sintakse: scan faila_nosaukums].
+ - Pseidonīms: s.
+ c
+ - Izdrukājiet šo komandu sarakstu.
+config_cli: "CLI konfigurācija."
+config_cli_allow_process_forking: "Vai CLI ir atļauts izmantot procesa bifurkāciju."

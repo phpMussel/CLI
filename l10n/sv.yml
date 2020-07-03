@@ -1,0 +1,66 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Swedish language data (last modified: 2020.07.03).
+##/
+
+bad_command: "Jag förstår inte det kommandot, ledsen."
+cli_algo_not_supported: "Specificerad algoritm stöds inte."
+cli_failed_to_complete: "Det gick inte att slutföra skanningsprocessen"
+cli_is_not_a: "%s är inte en fil eller katalog."
+cli_ln2: |
+ Tack för att du använder phpMussel, ett PHP-skript som är utformat för att
+ upptäcka trojaner, virus, skadlig kod och andra hot inom filer som laddas upp
+ till ditt system varhelst skriptet är anslutet, baserat på signaturerna från
+ ClamAV och andra.
+                                     ~ ~ ~
+ PHPMUSSEL COPYRIGHT 2013 och därefter GNU/GPLv2 av Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ Kör för närvarande phpMussel i CLI-läge (kommandoradsgränssnitt). Om du vill
+ skanna en fil eller katalog, skriver du "scan", följt av namnet på filen eller
+ katalogen som du vill att phpMussel ska skanna, och tryck på Enter; Skriv "c"
+ och tryck på Enter för att visa en lista över CLI-läge-kommandon; Skriv "q"
+ och tryck på Enter för att avsluta.
+cli_pe1: "Inte en giltig PE-fil!"
+cli_pe2: "PE-sektion:"
+cli_signature_placeholder: "DITT-SIGNATURNAMN"
+cli_working: "Pågående"
+cli_commands: |
+ ..
+ q
+ - Avsluta CLI.
+ - Alias: quit, exit.
+ hash_file:%
+ - Generera hash-signaturer från filer [Syntax: hash_file:algo filnamn].
+ hash:%
+ - Generera hash-signaturer från strängen [Syntax: hash:algo sträng].
+ algo
+ - Lista alla algoritmer som stöds.
+ hex_encode
+ - Konvertera binär sträng till hexadecimal [Syntax: hex_encode sträng].
+ - Alias: x.
+ hex_decode
+ - Konvertera hexadecimal till binär sträng [Syntax: hex_decode sträng].
+ base64_encode
+ - Konvertera binär sträng till bas64-sträng [Syntax: base64_encode sträng].
+ - Alias: b.
+ base64_decode
+ - Konvertera bas64-sträng till binär sträng [Syntax: base64_decode sträng].
+ pe_meta
+ - Extrahera metadata från en PE-fil [Syntax: pe_meta filnamn].
+ url_sig
+ - Generera URL-skannersignaturer [Syntax: url_sig sträng].
+ scan
+ - Skanna fil eller katalog [Syntax: scan filnamn].
+ - Alias: s.
+ c
+ - Skriv ut den här kommandolistan.
+config_cli: "Konfiguration för CLI."
+config_cli_allow_process_forking: "Huruvida CLI är tillåtet att använda processmallning."

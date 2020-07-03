@@ -1,0 +1,65 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Spanish language data (last modified: 2020.07.03).
+##/
+
+bad_command: "No entiendo ese comando, lo siento."
+cli_algo_not_supported: "El algoritmo especificado no es soportado."
+cli_failed_to_complete: "No se pudo completar el proceso de escaneo"
+cli_is_not_a: "%s no es un archivo o directorio."
+cli_ln2: |
+ Gracias por usar phpMussel, un script PHP diseñado para detectar troyanos,
+ virus, malware y otras amenazas en los archivos subidos al sistema dónde
+ el script está adjunto, basado en las firmas de ClamAV y otros.
+                                     ~ ~ ~
+ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ Ud. está ejecutando phpMussel en modo CLI (interfaz de línea de comandos).
+ Para analizar un archivo o directorio, escribir "scan", seguido por el
+ nombre del archivo o directorio que usted desea que phpMussel escanee y
+ pulse Enter; Escriba "c" y pulse Enter para obtener una lista de comandos;
+ Escriba "q" y pulse Enter para salir.
+cli_pe1: "¡No es un archivo PE válido!"
+cli_pe2: "Secciones PE:"
+cli_signature_placeholder: "NOMBRE-DE-FIRMA"
+cli_working: "En operación"
+cli_commands: |
+ ..
+ q
+ - Dejar CLI.
+ - Alias: quit, exit.
+ hash_file:%
+ - Generar firmas hash de archivos [Sintaxis: hash_file:algo archivo].
+ hash:%
+ - Generar firma hash de string [Sintaxis: hash:algo string].
+ algo
+ - Lista todos los algoritmos soportados.
+ hex_encode
+ - Convertir string binaria a hexadecimal [Sintaxis: hex_encode string].
+ - Alias: x.
+ hex_decode
+ - Convertir hexadecimal a string binaria [Sintaxis: hex_decode string].
+ base64_encode
+ - Convertir string binaria a string base64 [Sintaxis: base64_encode string].
+ - Alias: b.
+ base64_decode
+ - Convertir string base64 a string binaria [Sintaxis: base64_decode string].
+ pe_meta
+ - Extraer metadatos de un archivo PE [Sintaxis: pe_meta archivo].
+ url_sig
+ - Generar firmas de escáner de URL [Sintaxis: url_sig string].
+ scan
+ - Analizar archivo o directorio [Sintaxis: scan archivo].
+ - Alias: s.
+ c
+ - Imprimir esta lista de comandos.
+config_cli: "Configuración para CLI."
+config_cli_allow_process_forking: "Si se le permite a CLI usar la bifurcación de proceso."

@@ -1,0 +1,66 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Turkish language data (last modified: 2020.07.03).
+##/
+
+bad_command: "Bu komutu anlamıyorum, üzgünüm."
+cli_algo_not_supported: "Belirtilen algoritma desteklenmiyor."
+cli_failed_to_complete: "Tarama işlemini tamamlama başarısız"
+cli_is_not_a: "%s bir dosya veya dizin değil."
+cli_ln2: |
+ phpMussel programını kullandığınız için teşekkür ederiz; Sisteminize
+ yüklenen dosyalardaki truva atlarını, virüsleri, zararlı yazılımları ve
+ diğer tehditleri tespit etmek için tasarlanmış bir PHP betiği, ClamAV
+ imzalarına ve diğerlerine dayalı olarak.
+                                     ~ ~ ~
+ PHPMUSSEL TELIF HAKKI 2013 ve sonrası GNU/GPLv2 by Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ Şu anda CLI modunda çalışan phpMussel (komut satırı arabirimi). Bir
+ dosyayı veya dizini taramak için "scan" yazın, taramak istediğiniz
+ dosyanın veya dizinin adını yazın ve Enter tuşuna basın; CLI modu
+ komutlarının bir listesi için "c" yazın ve Enter tuşuna basın; Çıkmak için
+ "q" yazın ve Enter tuşuna basın.
+cli_pe1: "Geçerli bir PE dosyası değil!"
+cli_pe2: "PE Bölümleri:"
+cli_signature_placeholder: "IMZA-ADINIZ"
+cli_working: "Devam etmekte"
+cli_commands: |
+ ..
+ q
+ - CLI'den çıkın.
+ - Takma adları: quit, exit.
+ hash_file:%
+ - Dosyalardan karma imzaları oluştur [Sözdizimi: hash_file:algo dosya-adı].
+ hash:%
+ - Dizeden karma imzası üret [Sözdizimi: hash:algo dizgesi].
+ algo
+ - Tüm desteklenen algoritmaları listele.
+ hex_encode
+ - İkili dizgeyi onaltılık olarak dönüştür [Sözdizimi: hex_encode dizgesi].
+ - Takma ad: x.
+ hex_decode
+ - Onaltılıyı ikili dizeye olarak dönüştür [Sözdizimi: hex_decode dizgesi].
+ base64_encode
+ - İkili'e base64 hale dönüştür [Sözdizimi: base64_encode dizgesi].
+ - Takma ad: b.
+ base64_decode
+ - Base64'ü ikili hale dönüştür [Sözdizimi: base64_decode dizgesi].
+ pe_meta
+ - Meta verileri bir PE dosyasından ayıklayın [Sözdizimi: pe_meta dosya-adı].
+ url_sig
+ - URL tarayıcı imzalarını oluştur [Sözdizimi: url_sig dizgesi].
+ scan
+ - Dosya veya dizini tara [Sözdizimi: scan dosya-adı].
+ - Takma ad: s.
+ c
+ - Bu komut listesini yazdırın.
+config_cli: "CLI için yapılandırma."
+config_cli_allow_process_forking: "CLI'nin işlem çatalını kullanmasına izin verilip verilmediği."

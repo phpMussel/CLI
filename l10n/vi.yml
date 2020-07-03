@@ -1,0 +1,65 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Vietnamese language data (last modified: 2020.07.03).
+##/
+
+bad_command: "Xin lỗi, tôi không hiểu câu lệnh này."
+cli_algo_not_supported: "Thuật toán chỉ định không được hỗ trợ."
+cli_failed_to_complete: "Quá trình quét chưa được hoàn thành"
+cli_is_not_a: "%s không phải là file hoạc thư mục."
+cli_ln2: |
+ Cảm ơn bạn đã chọn phpMussel, một loại bản PHP được thiết kế để phát hiện
+ trojan, vi rút, phần mềm đọc hại và những gì có thể gây nguy hiểm trong
+ những các tập tin tài lên trên máy của bạn. Bất cứ nơi nào mà bản đã được
+ nối, dưa trên chử ký của ClamAV và những người khác.
+                                     ~ ~ ~
+ BẢN QUYỀN PHPMUSSEL 2013 và hơn GNU/GPLv2 by Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ phpMussel đang chạy trong chế độ CLI (command line interface). Đễ quét
+ tập tin hoạc thư mục, hảy đánh vào "scan", sau đó tên của tập tin hoạc thư
+ mực mà bạn muốn phpMussel quét ròi bấm Enter; Đánh vào "c" và bấm Enter đễ
+ xem những loại chế độ CLI; Đánh "q" và bấm Enter đế thoát ra.
+cli_pe1: "Tập tin PE không hợp lệ!"
+cli_pe2: "Các loại PE:"
+cli_signature_placeholder: "TÊN-CHỮ-KÝ"
+cli_working: "Đang trong quá trình"
+cli_commands: |
+ ..
+ q
+ - Thoát ra CLI.
+ - Bí danh: quit, exit.
+ hash_file:%
+ - Phát ra mã chử ký từ tập tin [Cú pháp: hash_file:algo tên-tập-tin].
+ hash:%
+ - Phát ra mã chử ký từ dây [Cú pháp: hash:algo dây].
+ algo
+ - Liệt kê tất cả các thuật toán được hỗ trợ.
+ hex_encode
+ - Chuyển đổi dây nhị phân thành hệ thập lục phân [Cú pháp: hex_encode dây].
+ - Bí danh: x.
+ hex_decode
+ - Chuyển đổi hệ thập lục phân thành dây nhị phân [Cú pháp: hex_decode dây].
+ base64_encode
+ - Chuyển đổi dây nhị phân thành dây base64 [Cú pháp: base64_encode dây].
+ - Bí danh: b.
+ base64_decode
+ - Chuyển đổi dây base64 thành dây nhị phân [Cú pháp: base64_decode dây].
+ pe_meta
+ - Trích xuất siêu dữ liệu từ tập tin PE [Cú pháp: pe_meta tên-tập-tin].
+ url_sig
+ - Tạo chữ ký của trình quét URL [Cú pháp: url_sig dây].
+ scan
+ - Xem tập tin hoạc hồ sơ [Cú pháp: scan tên-tập-tin].
+ - Bí danh: s.
+ c
+ - In danh sách lệnh này.
+config_cli: "Cấu hình cho CLI."
+config_cli_allow_process_forking: "Liệu CLI có được phép sử dụng phân chia quá trình."
