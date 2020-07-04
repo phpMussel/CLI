@@ -26,11 +26,6 @@ class CLI
     private $Scanner;
 
     /**
-     * @var string The path to the core asset files.
-     */
-    private $AssetsPath = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR;
-
-    /**
      * @var string The path to the core L10N files.
      */
     private $L10NPath = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'l10n' . DIRECTORY_SEPARATOR;
@@ -54,19 +49,6 @@ class CLI
         $this->Scanner = &$Scanner;
         $this->Scanner->CalledFrom = 'CLI';
 
-        /** Load phpMussel CLI handler configuration defaults and perform fallbacks. */
-        if (
-            is_readable($this->AssetsPath . 'config.yml') &&
-            $Configuration = $this->Loader->readFile($this->AssetsPath . 'config.yml')
-        ) {
-            $Defaults = [];
-            $this->Loader->YAML->process($Configuration, $Defaults);
-            if (isset($Defaults)) {
-                $this->Loader->fallback($Defaults);
-                $this->Loader->ConfigurationDefaults = array_merge_recursive($this->Loader->ConfigurationDefaults, $Defaults);
-            }
-        }
-
         /** Load phpMussel CLI handler L10N data. */
         $this->Loader->loadL10N($this->L10NPath);
 
@@ -75,49 +57,25 @@ class CLI
             return;
         }
 
-        /** Get CLI arguments (if available). */
-        if (empty($argv)) {
-            $ForkState = '';
-            $ForkCommand = '';
-            $ForkWorkingOn = '';
-        } else {
-            $ForkState = $argv[1] ?? '';
-            $ForkCommand = $argv[2] ?? '';
-            $ForkWorkingOn = $argv[3] ?? '';
-        }
-
-        /** Triggered by the forked child process in CLI-mode. */
-        if ($ForkState === 'cli_scan') {
-            /** Fetch the command. */
-            $Command = strtolower($this->Loader->substrBeforeFirst($ForkCommand, ' ') ?: $ForkCommand);
-
-            /** Scan a file or directory. */
-            if ($Command === 'scan') {
-                echo $this->scan($ForkCommand, $ForkWorkingOn);
+        /**
+         * Display scan progress.
+         *
+         * @param string $Data Not used.
+         * @return true
+         */
+        $this->Loader->Events->addHandler('countersChanged', function (string $Data = ''): bool {
+            if ($this->Loader->InstanceCache['ThisScanDone'] === $this->Loader->InstanceCache['ThisScanTotal']) {
+                echo "\r";
+                return true;
             }
-
-            /** Generate a hash signature using a file or directory. */
-            if (substr($Command, 0, 10) === 'hash_file:') {
-                $this->LastAlgo = substr($Command, 10);
-                echo $this->hashFile($ForkCommand);
-                return;
-            }
-
-            /** Generate a CoEx signature using a file. */
-            if ($Command === 'coex_file') {
-                echo $this->coexFile($ForkCommand);
-                return;
-            }
-
-            /** Fetch PE metadata. */
-            if ($Command === 'pe_meta') {
-                echo $this->peMeta($ForkCommand);
-                return;
-            }
-
-            /** End the child process. */
-            return;
-        }
+            echo sprintf(
+                "\r%d/%d %s ...",
+                $this->Loader->InstanceCache['ThisScanDone'],
+                $this->Loader->InstanceCache['ThisScanTotal'],
+                $this->Loader->L10N->getString('scan_complete')
+            );
+            return true;
+        });
 
         /** Echo the ASCII header art and CLI-mode information. */
         echo $this->Loader->L10N->getString('cli_ln1') . "\n" . $this->Loader->L10N->getString('cli_ln2') . "\n\n" . $this->Loader->L10N->getString('cli_ln3');
@@ -242,7 +200,7 @@ class CLI
             /** Convert a hexadecimal to a binary string. */
             elseif ($Command === 'hex_decode') {
                 $TargetData = substr($Clean, strlen($Command) + 1);
-                echo "\n" . ($this->Scanner->hexSafe($TargetData) ?: $this->Loader->L10N->getString('invalid_data')) . "\n";
+                echo "\n" . ($this->Loader->hexSafe($TargetData) ?: $this->Loader->L10N->getString('invalid_data')) . "\n";
             }
 
             /** Convert a binary string to a base64 string. */
@@ -259,94 +217,29 @@ class CLI
 
             /** Scan a file or directory. */
             elseif ($Command === 'scan' || $Command === 's') {
+                $TargetData = substr($Clean, strlen($Command) + 1);
                 echo "\n";
-                $Clean = substr($Clean, strlen($Command) + 1);
-                $Out = $r = '';
-                $this->Loader->InstanceCache['StartTime'] = time() + ($this->Loader->Configuration['core']['time_offset'] * 60);
-                $this->Loader->InstanceCache['start_time_2822'] = $this->Loader->timeFormat(
-                    $this->Loader->InstanceCache['StartTime'],
-                    $this->Loader->Configuration['core']['time_format']
-                );
-                echo $s = $this->Loader->InstanceCache['start_time_2822'] . ' ' . $this->Loader->L10N->getString('started') . $this->Loader->L10N->getString('_fullstop_final') . "\n";
-                if (is_dir($Clean)) {
-                    if (!is_readable($Clean)) {
-                        $Out = '> ' . sprintf($this->Loader->L10N->getString('failed_to_access'), $Clean) . "\n";
-                    } else {
-                        $Terminal = substr($Params, -1);
-                        $Gap = ($Terminal !== "\\" && $Terminal !== '/') ? DIRECTORY_SEPARATOR : '';
-                        $List = $this->Scanner->directoryRecursiveList($Clean);
-                        $Total = count($List);
-                        $Current = 0;
-                        foreach ($List as $Item) {
-                            $Percent = round(($Current / $Total) * 100, 2) . '%';
-                            echo $Percent . ' ' . $this->Loader->L10N->getString('scan_complete') . $this->Loader->L10N->getString('_fullstop_final');
-                            if ($this->Loader->Configuration['cli']['allow_process_forking']) {
-                                $Out = $this->fork('scan ' . $Clean . $Gap . $Item, $Item);
-                            } else {
-                                $Out = $this->scan($Clean . $Gap . $Item, $Item);
-                            }
-                            if (!$Out) {
-                                $Out = '> ' . sprintf(
-                                    $this->Loader->L10N->getString('_exclamation_final'),
-                                    $this->Loader->L10N->getString('cli_failed_to_complete') . ' (' . $Item . ')'
-                                ) . "\n";
-                            }
-                            $r .= $Out;
-                            echo "\r" . $this->Scanner->prescanDecode($Out);
-                            $Out = '';
-                        }
-                    }
-                } elseif (is_file($Clean)) {
-                    if ($this->Loader->Configuration['cli']['allow_process_forking']) {
-                        $Out = $this->fork('scan ' . $Clean, $Clean);
-                    } else {
-                        $Out = $this->scan($Clean, $Clean);
-                    }
-                    if (!$Out) {
-                        $Out = '> ' . sprintf(
-                            $this->Loader->L10N->getString('_exclamation_final'),
-                            $this->Loader->L10N->getString('cli_failed_to_complete')
-                        ) . "\n";
-                    }
-                } elseif (!$Out) {
-                    $Out = '> ' . sprintf($this->Loader->L10N->getString('cli_is_not_a'), $Clean) . "\n";
-                }
-                $r .= $Out;
-                if ($Out) {
-                    echo $this->Scanner->prescanDecode($Out);
-                    $Out = '';
-                }
-                $this->Loader->InstanceCache['EndTime'] = time() + ($this->Loader->Configuration['core']['time_offset'] * 60);
-                $this->Loader->InstanceCache['end_time_2822'] = $this->Loader->timeFormat(
-                    $this->Loader->InstanceCache['EndTime'],
-                    $this->Loader->Configuration['core']['time_format']
-                );
-                $r = $s . $r;
-                $s = $this->Loader->InstanceCache['end_time_2822'] . ' ' . $this->Loader->L10N->getString('finished') . $this->Loader->L10N->getString('_fullstop_final') . "\n";
-                echo $s;
-                $r .= $s;
-                $this->Loader->Events->fireEvent('writeToScanLog', $r);
-                $this->Loader->Events->fireEvent('writeToSerialLog');
-                unset($r, $s);
+                echo $this->Scanner->scan($TargetData, true, true) . "\n";
             }
 
             /** Print the command list. */
             elseif ($Command === 'c') {
-                echo $this->Loader->L10N->getString('cli_commands');
+                echo "\n" . $this->Loader->L10N->getString('cli_commands');
             }
 
             /** Print a list of supported algorithms. */
             elseif ($Command === 'algo') {
-                $this->LastAlgos = hash_algos();
+                echo "\n";
+                $Algos = hash_algos();
                 $Pos = 1;
-                foreach ($this->LastAlgos as $this->LastAlgo) {
+                foreach ($Algos as $Algo) {
                     if ($Pos === 1) {
                         echo ' ';
                     }
-                    echo $this->LastAlgo;
+                    echo $Algo;
                     $Pos += 16;
                     if ($Pos < 76) {
-                        echo str_repeat(' ', 16 - strlen($this->LastAlgo));
+                        echo str_repeat(' ', 16 - strlen($Algo));
                     } else {
                         $Pos = 1;
                         echo "\n";
@@ -363,54 +256,10 @@ class CLI
     }
 
     /**
-     * Forks the PHP process when scanning in CLI mode. This ensures that if
-     * PHP crashes during scanning, phpMussel can continue to scan any
-     * remaining items queued for scanning (because if the parent process
-     * handles the scan queue and the child process handles the actual scanning
-     * of each item queued for scanning, if the child process crashes, the
-     * parent process can simply create a new child process to continue
-     * iterating through the queue).
-     *
-     * @param string $Item The name of the item to be scanned w/ its path.
-     * @param string $OriginalFilename The name of the item to be scanned w/o its path.
-     * @return string The scan results to pipe back to the parent.
-     */
-    private function fork(string $Item = '', string $OriginalFilename = ''): string
-    {
-        /** Guard. */
-        if (!$this->Loader->Configuration['cli']['allow_process_forking']) {
-            return '';
-        }
-
-        /** Calculate binary path, or fail if not available. */
-        if (!($BinaryPath = defined('PHP_BINARY') ? PHP_BINARY : '')) {
-            return '';
-        }
-
-        /** Calculate which file to target when forking. */
-        $Target = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
-        if (is_array($Target) && isset($Target[0], $Target[0]['file'])) {
-            $Target = $Target[0]['file'];
-        } else {
-            return '';
-        }
-
-        /** Open the pipe. */
-        $Handle = popen($BinaryPath . ' "' . $Target . '" "cli_scan" "' . $Item . '" "' . $OriginalFilename . '"', 'r');
-
-        $Output = '';
-        while ($Data = fgets($Handle)) {
-            $Output .= $Data;
-        }
-        pclose($Handle);
-        return $Output;
-    }
-
-    /**
-     * Duplication avoidance (forking the process via recursive CLI mode commands).
+     * Runs CLI-mode commands recursively.
      *
      * @param string $Command Command with parameters for the action to be taken.
-     * @param callable $Callable Executed normally when not forking the process.
+     * @param callable $Callable The callback to execute.
      * @return string Returnable data to be echoed to the CLI output.
      */
     public function recursiveCommand(string $Command, callable $Callable): string
@@ -422,17 +271,12 @@ class CLI
             }
             $Decal = [':-) - (-:', ':-) \\ (-:', ':-) | (-:', ':-) / (-:'];
             $Frame = 0;
-            $Terminal = substr($Params, -1);
-            $Gap = ($Terminal !== "\\" && $Terminal !== '/') ? DIRECTORY_SEPARATOR : '';
+            $Params = realpath($Params);
             $List = $this->Scanner->directoryRecursiveList($Params);
             $Returnable = '';
             foreach ($List as $Item) {
                 echo "\r" . $Decal[$Frame];
-                if ($this->Loader->Configuration['cli']['allow_process_forking']) {
-                    $Returnable .= $this->fork($Command . ' ' . $Params . $Gap . $Item, $Item) . "\n";
-                } else {
-                    $Returnable .= is_file($Params . $Gap . $Item) ? $Callable($Params . $Gap . $Item) : sprintf($this->Loader->L10N->getString('cli_is_not_a'), $Params . $Gap . $Item) . "\n";
-                }
+                $Returnable .= is_file($Params . $Item) ? $Callable($Params . $Item) : sprintf($this->Loader->L10N->getString('cli_is_not_a'), $Params . $Item) . "\n";
                 $Frame = $Frame < 3 ? $Frame + 1 : 0;
             }
             echo "\r         ";
@@ -534,37 +378,6 @@ class CLI
             }
             return $Returnable;
         });
-    }
-
-    /**
-     * Initiate a scan.
-     *
-     * @param string $Clean The file's given path.
-     * @param string $ForkWorkingOn The file's original given name.
-     * @return string The scan results.
-     */
-    private function scan(string $Clean, string $ForkWorkingOn): string
-    {
-        /** Initialise statistics if they've been enabled. */
-        $this->Scanner->statsInitialise();
-
-        /** Register scan event. */
-        $this->Scanner->statsIncrement('CLI-Events', 1);
-
-        /** Call recursor. */
-        $Out = $this->Scanner->Recursor(substr($Clean, 5), true, true, 0, $ForkWorkingOn);
-
-        /** Update statistics. */
-        if (!empty($this->Loader->InstanceCache['StatisticsModified'])) {
-            $this->Loader->InstanceCache['Statistics'] = $this->Loader->Cache->setEntry(
-                'Statistics',
-                serialize($this->Loader->InstanceCache['Statistics']),
-                0
-            );
-        }
-
-        /** Exit. */
-        return $Out;
     }
 
     /**
