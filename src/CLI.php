@@ -140,41 +140,41 @@ class CLI
             elseif ($Command === 'url_sig') {
                 echo "\n";
                 $Clean = $this->Scanner->normalise(substr($Clean, strlen($Command) + 1));
-                $URL = ['avoidme' => '', 'forthis' => ''];
+                $URL = ['AvoidMe' => '', 'ForThis' => ''];
                 if (
                     !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www\d{0,3}\.)?([\da-z.-]{1,512})/i', $Clean, $URL['domain']) ||
                     !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www\d{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})/i', $Clean, $URL['url'])
                 ) {
                     echo $this->Loader->L10N->getString('invalid_url') . "\n";
-                } else {
-                    echo 'DOMAIN:' . md5($URL['domain'][3][0]) . ':' . strlen($URL['domain'][3][0]) . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
-                    $URL['forthis'] = md5($URL['url'][3][0]) . ':' . strlen($URL['url'][3][0]);
-                    $URL['avoidme'] .= ',' . $URL['forthis'] . ',';
-                    echo 'URL:' . $URL['forthis'] . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
-                    if (preg_match('/[^\da-z.-]$/i', $URL['url'][3][0])) {
-                        $URL['x'] = preg_replace('/[^\da-z.-]+$/i', '', $URL['url'][3][0]);
-                        $URL['forthis'] = md5($URL['x']) . ':' . strlen($URL['x']);
-                        if (strpos($URL['avoidme'], $URL['forthis']) === false) {
-                            $URL['avoidme'] .= ',' . $URL['forthis'] . ',';
-                            echo 'URL:' . $URL['forthis'] . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
-                        }
+                    continue;
+                }
+                echo 'DOMAIN:' . hash('md5', $URL['domain'][3][0]) . ':' . strlen($URL['domain'][3][0]) . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
+                $URL['ForThis'] = hash('md5', $URL['url'][3][0]) . ':' . strlen($URL['url'][3][0]);
+                $URL['AvoidMe'] .= ',' . $URL['ForThis'] . ',';
+                echo 'URL:' . $URL['ForThis'] . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
+                if (preg_match('/[^\da-z.-]$/i', $URL['url'][3][0])) {
+                    $URL['x'] = preg_replace('/[^\da-z.-]+$/i', '', $URL['url'][3][0]);
+                    $URL['ForThis'] = hash('md5', $URL['x']) . ':' . strlen($URL['x']);
+                    if (strpos($URL['AvoidMe'], $URL['ForThis']) === false) {
+                        $URL['AvoidMe'] .= ',' . $URL['ForThis'] . ',';
+                        echo 'URL:' . $URL['ForThis'] . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
                     }
-                    if (strpos($URL['url'][3][0], '?') !== false) {
-                        $URL['x'] = $this->Loader->substrBeforeFirst($URL['url'][3][0], '?');
-                        $URL['forthis'] = md5($URL['x']) . ':' . strlen($URL['x']);
-                        if (strpos($URL['avoidme'], $URL['forthis']) === false) {
-                            $URL['avoidme'] .= ',' . $URL['forthis'] . ',';
-                            echo 'URL:' . $URL['forthis'] . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
-                        }
-                        $URL['x'] = $this->Loader->substrAfterFirst($URL['url'][3][0], '?');
-                        $URL['forthis'] = md5($URL['x']) . ':' . strlen($URL['x']);
-                        if (
-                            strpos($URL['avoidme'], $URL['forthis']) === false &&
-                            $URL['forthis'] != 'd41d8cd98f00b204e9800998ecf8427e:0'
-                        ) {
-                            $URL['avoidme'] .= ',' . $URL['forthis'] . ',';
-                            echo 'QUERY:' . $URL['forthis'] . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
-                        }
+                }
+                if (strpos($URL['url'][3][0], '?') !== false) {
+                    $URL['x'] = $this->Loader->substrBeforeFirst($URL['url'][3][0], '?');
+                    $URL['ForThis'] = hash('md5', $URL['x']) . ':' . strlen($URL['x']);
+                    if (strpos($URL['AvoidMe'], $URL['ForThis']) === false) {
+                        $URL['AvoidMe'] .= ',' . $URL['ForThis'] . ',';
+                        echo 'URL:' . $URL['ForThis'] . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
+                    }
+                    $URL['x'] = $this->Loader->substrAfterFirst($URL['url'][3][0], '?');
+                    $URL['ForThis'] = hash('md5', $URL['x']) . ':' . strlen($URL['x']);
+                    if (
+                        strpos($URL['AvoidMe'], $URL['ForThis']) === false &&
+                        $URL['ForThis'] !== 'd41d8cd98f00b204e9800998ecf8427e:0'
+                    ) {
+                        $URL['AvoidMe'] .= ',' . $URL['ForThis'] . ',';
+                        echo 'QUERY:' . $URL['ForThis'] . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
                     }
                 }
                 unset($URL);
@@ -299,58 +299,57 @@ class CLI
             if (substr($Data, 0, 2) !== 'MZ') {
                 return $this->Loader->L10N->getString('cli_pe1') . "\n";
             }
-            $PEArr = ['Len' => strlen($Data)];
-            $PEArr['Offset'] = $this->Loader->unpackSafe('S', substr($Data, 60, 4));
-            $PEArr['Offset'] = $PEArr['Offset'][1];
+            $PELength = strlen($Data);
+            $Offset = $this->Loader->unpackSafe('S', substr($Data, 60, 4));
+            $Offset = $Offset[1];
             while (true) {
-                $PEArr['DoScan'] = true;
-                if ($PEArr['Offset'] < 1 || $PEArr['Offset'] > 16384 || $PEArr['Offset'] > $PEArr['Len']) {
-                    $PEArr['DoScan'] = false;
+                $Valid = true;
+                if ($Offset < 1 || $Offset > 16384 || $Offset > $PELength) {
+                    $Valid = false;
                     break;
                 }
-                $PEArr['Magic'] = substr($Data, $PEArr['Offset'], 2);
-                if ($PEArr['Magic'] !== 'PE') {
-                    $PEArr['DoScan'] = false;
+                $Magic = substr($Data, $Offset, 2);
+                if ($Magic !== 'PE') {
+                    $Valid = false;
                     break;
                 }
-                $PEArr['Proc'] = $this->Loader->unpackSafe('S', substr($Data, $PEArr['Offset'] + 4, 2));
-                $PEArr['Proc'] = $PEArr['Proc'][1];
-                if ($PEArr['Proc'] != 0x14c && $PEArr['Proc'] != 0x8664) {
-                    $PEArr['DoScan'] = false;
+                $Proc = $this->Loader->unpackSafe('S', substr($Data, $Offset + 4, 2));
+                $Proc = $Proc[1];
+                if ($Proc != 0x14c && $Proc != 0x8664) {
+                    $Valid = false;
                     break;
                 }
-                $PEArr['NumOfSections'] = $this->Loader->unpackSafe('S', substr($Data, $PEArr['Offset'] + 6, 2));
-                $PEArr['NumOfSections'] = $PEArr['NumOfSections'][1];
-                if ($PEArr['NumOfSections'] < 1 || $PEArr['NumOfSections'] > 40) {
-                    $PEArr['DoScan'] = false;
+                $NumberOfSections = $this->Loader->unpackSafe('S', substr($Data, $Offset + 6, 2));
+                $NumberOfSections = $NumberOfSections[1];
+                if ($NumberOfSections < 1 || $NumberOfSections > 40) {
+                    $Valid = false;
                 }
                 break;
             }
-            if (!$PEArr['DoScan']) {
+            if (!$Valid) {
                 return $this->Loader->L10N->getString('cli_pe1') . "\n";
             }
-            $PEArr['OptHdrSize'] = $this->Loader->unpackSafe('S', substr($Data, $PEArr['Offset'] + 20, 2));
-            $PEArr['OptHdrSize'] = $PEArr['OptHdrSize'][1];
+            $OptHdrSize = $this->Loader->unpackSafe('S', substr($Data, $Offset + 20, 2));
+            $OptHdrSize = $OptHdrSize[1];
             $Returnable .= $this->Loader->L10N->getString('cli_pe2') . "\n";
-            for ($PEArr['k'] = 0; $PEArr['k'] < $PEArr['NumOfSections']; $PEArr['k']++) {
-                $PEArr['SectionHead'] = substr($Data, $PEArr['Offset'] + 24 + $PEArr['OptHdrSize'] + ($PEArr['k'] * 40), $PEArr['NumOfSections'] * 40);
-                $PEArr['SectionName'] = str_ireplace("\x00", '', substr($PEArr['SectionHead'], 0, 8));
-                $PEArr['VirtualSize'] = $this->Loader->unpackSafe('S', substr($PEArr['SectionHead'], 8, 4));
-                $PEArr['VirtualSize'] = $PEArr['VirtualSize'][1];
-                $PEArr['VirtualAddress'] = $this->Loader->unpackSafe('S', substr($PEArr['SectionHead'], 12, 4));
-                $PEArr['VirtualAddress'] = $PEArr['VirtualAddress'][1];
-                $PEArr['SizeOfRawData'] = $this->Loader->unpackSafe('S', substr($PEArr['SectionHead'], 16, 4));
-                $PEArr['SizeOfRawData'] = $PEArr['SizeOfRawData'][1];
-                $PEArr['PointerToRawData'] = $this->Loader->unpackSafe('S', substr($PEArr['SectionHead'], 20, 4));
-                $PEArr['PointerToRawData'] = $PEArr['PointerToRawData'][1];
-                $PEArr['SectionData'] = substr($Data, $PEArr['PointerToRawData'], $PEArr['SizeOfRawData']);
-                $PEArr['SHA256'] = hash('sha256', $PEArr['SectionData']);
-                $Returnable .= $PEArr['SizeOfRawData'] . ':' . $PEArr['SHA256'] . ':' . $PEArr['SectionName'] . "\n";
+            for ($PECaret = 0; $PECaret < $NumberOfSections; $PECaret++) {
+                $SectionHead = substr($Data, $Offset + 24 + $OptHdrSize + ($PECaret * 40), $NumberOfSections * 40);
+                $SectionName = str_ireplace("\x00", '', substr($SectionHead, 0, 8));
+                $VirtualSize = $this->Loader->unpackSafe('S', substr($SectionHead, 8, 4));
+                $VirtualSize = $VirtualSize[1];
+                $VirtualAddress = $this->Loader->unpackSafe('S', substr($SectionHead, 12, 4));
+                $VirtualAddress = $VirtualAddress[1];
+                $SizeOfRawData = $this->Loader->unpackSafe('S', substr($SectionHead, 16, 4));
+                $SizeOfRawData = $SizeOfRawData[1];
+                $PointerToRawData = $this->Loader->unpackSafe('S', substr($SectionHead, 20, 4));
+                $PointerToRawData = $PointerToRawData[1];
+                $SectionData = substr($Data, $PointerToRawData, $SizeOfRawData);
+                $SHA256 = hash('sha256', $SectionData);
+                $Returnable .= $SizeOfRawData . ':' . $SHA256 . ':' . $SectionName . "\n";
             }
             $Returnable .= "\n";
             if (strpos($Data, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24") !== false) {
-                $PEArr['Parts'] = $this->Loader->substrAfterLast($Data, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24");
-                $PEArr['FINFO'] = [];
+                $PEParts = $this->Loader->substrAfterLast($Data, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24");
                 foreach ([
                     ["F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00", 'PEFileDescription'],
                     ["F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00", 'PEFileVersion'],
@@ -360,17 +359,17 @@ class CLI
                     ["O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00", 'PEOriginalFilename'],
                     ["C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00", 'PECompanyName'],
                 ] as $PEVars) {
-                    if (strpos($PEArr['Parts'], $PEVars[0]) !== false && (
-                        $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $this->Loader->substrBeforeFirst(
-                            $this->Loader->substrAfterLast($PEArr['Parts'], $PEVars[0]),
+                    if (strpos($PEParts, $PEVars[0]) !== false && (
+                        $ThisPEData = trim(str_ireplace("\x00", '', $this->Loader->substrBeforeFirst(
+                            $this->Loader->substrAfterLast($PEParts, $PEVars[0]),
                             "\x00\x00\x00"
                         )))
                     )) {
                         $Returnable .= sprintf(
                             "\$%s:%s:%d:%s\n",
                             $PEVars[1],
-                            hash('sha256', $PEArr['ThisData']),
-                            strlen($PEArr['ThisData']),
+                            hash('sha256', $ThisPEData),
+                            strlen($ThisPEData),
                             $this->Loader->L10N->getString('cli_signature_placeholder')
                         );
                     }
