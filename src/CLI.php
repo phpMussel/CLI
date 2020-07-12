@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2020.07.04).
+ * This file: CLI handler (last modified: 2020.07.10).
  */
 
 namespace phpMussel\CLI;
@@ -219,7 +219,7 @@ class CLI
             elseif ($Command === 'scan' || $Command === 's') {
                 $TargetData = substr($Clean, strlen($Command) + 1);
                 echo "\n";
-                echo $this->Scanner->scan($TargetData, true, true) . "\n";
+                echo $this->Scanner->scan($TargetData) . "\n";
             }
 
             /** Print the command list. */
