@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2020.07.10).
+ * This file: CLI handler (last modified: 2020.10.30).
  */
 
 namespace phpMussel\CLI;
@@ -39,6 +39,7 @@ class CLI
      * Construct the loader.
      *
      * @param \phpMussel\Core\Loader $Loader The instantiated loader object, passed by reference.
+     * @param \phpMussel\Core\Scanner $Scanner The instantiated scanner object, passed by reference.
      */
     public function __construct(\phpMussel\Core\Loader &$Loader, \phpMussel\Core\Scanner &$Scanner)
     {
@@ -334,7 +335,7 @@ class CLI
             $Returnable .= $this->Loader->L10N->getString('cli_pe2') . "\n";
             for ($PECaret = 0; $PECaret < $NumberOfSections; $PECaret++) {
                 $SectionHead = substr($Data, $Offset + 24 + $OptHdrSize + ($PECaret * 40), $NumberOfSections * 40);
-                $SectionName = str_ireplace("\x00", '', substr($SectionHead, 0, 8));
+                $SectionName = str_ireplace("\0", '', substr($SectionHead, 0, 8));
                 $VirtualSize = $this->Loader->unpackSafe('S', substr($SectionHead, 8, 4));
                 $VirtualSize = $VirtualSize[1];
                 $VirtualAddress = $this->Loader->unpackSafe('S', substr($SectionHead, 12, 4));
@@ -348,21 +349,21 @@ class CLI
                 $Returnable .= $SizeOfRawData . ':' . $SHA256 . ':' . $SectionName . "\n";
             }
             $Returnable .= "\n";
-            if (strpos($Data, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24") !== false) {
-                $PEParts = $this->Loader->substrAfterLast($Data, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24");
+            if (strpos($Data, "V\0a\0r\0F\0i\0l\0e\0I\0n\0f\0o\0\0\0\0\0\x24") !== false) {
+                $PEParts = $this->Loader->substrAfterLast($Data, "V\0a\0r\0F\0i\0l\0e\0I\0n\0f\0o\0\0\0\0\0\x24");
                 foreach ([
-                    ["F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00", 'PEFileDescription'],
-                    ["F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00", 'PEFileVersion'],
-                    ["P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00", 'PEProductName'],
-                    ["P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00", 'PEProductVersion'],
-                    ["L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00", 'PECopyright'],
-                    ["O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00", 'PEOriginalFilename'],
-                    ["C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00", 'PECompanyName'],
+                    ["F\0i\0l\0e\0D\0e\0s\0c\0r\0i\0p\0t\0i\0o\0n\0\0\0", 'PEFileDescription'],
+                    ["F\0i\0l\0e\0V\0e\0r\0s\0i\0o\0n\0\0\0", 'PEFileVersion'],
+                    ["P\0r\0o\0d\0u\0c\0t\0N\0a\0m\0e\0\0\0", 'PEProductName'],
+                    ["P\0r\0o\0d\0u\0c\0t\0V\0e\0r\0s\0i\0o\0n\0\0\0", 'PEProductVersion'],
+                    ["L\0e\0g\0a\0l\0C\0o\0p\0y\0r\0i\0g\0h\0t\0\0\0", 'PECopyright'],
+                    ["O\0r\0i\0g\0i\0n\0a\0l\0F\0i\0l\0e\0n\0a\0m\0e\0\0\0", 'PEOriginalFilename'],
+                    ["C\0o\0m\0p\0a\0n\0y\0N\0a\0m\0e\0\0\0", 'PECompanyName'],
                 ] as $PEVars) {
                     if (strpos($PEParts, $PEVars[0]) !== false && (
-                        $ThisPEData = trim(str_ireplace("\x00", '', $this->Loader->substrBeforeFirst(
+                        $ThisPEData = trim(str_ireplace("\0", '', $this->Loader->substrBeforeFirst(
                             $this->Loader->substrAfterLast($PEParts, $PEVars[0]),
-                            "\x00\x00\x00"
+                            "\0\0\0"
                         )))
                     )) {
                         $Returnable .= sprintf(
