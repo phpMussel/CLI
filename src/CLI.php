@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2020.10.30).
+ * This file: CLI handler (last modified: 2021.01.10).
  */
 
 namespace phpMussel\CLI;
@@ -390,7 +390,7 @@ class CLI
     {
         return $this->recursiveCommand($Clean, function ($Params) {
             if (filter_var($Params, FILTER_VALIDATE_URL)) {
-                $Data = $this->Loader->request($Params);
+                $Data = $this->Loader->Request->request($Params);
             } elseif (is_file($Params) && is_readable($Params)) {
                 $Data = $this->Loader->readFileBlocks($Params, 0, true);
             }
@@ -417,7 +417,7 @@ class CLI
         if (in_array($this->LastAlgo, hash_algos())) {
             return $this->recursiveCommand($Clean, function ($Params) {
                 if (filter_var($Params, FILTER_VALIDATE_URL)) {
-                    $Data = $this->Loader->request($Params);
+                    $Data = $this->Loader->Request->request($Params);
                 } elseif (is_file($Params) && is_readable($Params)) {
                     $Data = $this->Loader->readFileBlocks($Params, 0, true);
                 }
