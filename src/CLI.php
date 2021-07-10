@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2021.01.10).
+ * This file: CLI handler (last modified: 2021.07.10).
  */
 
 namespace phpMussel\CLI;
@@ -40,6 +40,7 @@ class CLI
      *
      * @param \phpMussel\Core\Loader $Loader The instantiated loader object, passed by reference.
      * @param \phpMussel\Core\Scanner $Scanner The instantiated scanner object, passed by reference.
+     * @return void
      */
     public function __construct(\phpMussel\Core\Loader &$Loader, \phpMussel\Core\Scanner &$Scanner)
     {
@@ -82,7 +83,7 @@ class CLI
         echo $this->Loader->L10N->getString('cli_ln1') . "\n" . $this->Loader->L10N->getString('cli_ln2') . "\n\n" . $this->Loader->L10N->getString('cli_ln3');
 
         /** Open STDIN. */
-        $Handle = fopen('php://stdin', 'r');
+        $Handle = fopen('php://stdin', 'rb');
 
         /** This repeats until the client exits ("quit", "q", "exit", etc). */
         while (true) {
