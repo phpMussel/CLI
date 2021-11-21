@@ -36,7 +36,7 @@ unset($CLI, $Scanner, $Loader);
 ```
 
 __*Screenshot:*__
-![Screenshot](https://raw.githubusercontent.com/phpMussel/extras/master/screenshots/cli-v3.0-alpha2.png)
+![Screenshot](https://raw.githubusercontent.com/phpMussel/extras/master/screenshots/cli-v3.0.0-alpha2.png)
 
 ---
 
