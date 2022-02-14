@@ -8,8 +8,7 @@
         "issues": "https://github.com/phpMussel/CLI/issues",
         "source": "https://github.com/phpMussel/CLI",
         "docs": "https://github.com/phpMussel/Docs",
-        "rss": "https://github.com/phpMussel/CLI/releases.atom",
-        "chat": "https://gitter.im/phpMussel2/Lobby"
+        "rss": "https://github.com/phpMussel/CLI/releases.atom"
     },
     "require": {
         "php": ">=7.2.0",
