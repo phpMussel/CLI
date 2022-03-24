@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2021.07.10).
+ * This file: CLI handler (last modified: 2022.03.24).
  */
 
 namespace phpMussel\CLI;
@@ -296,7 +296,7 @@ class CLI
     private function peMeta(string $File): string
     {
         return $this->recursiveCommand($File, function ($Params) {
-            $Data = $this->Loader->readFileBlocks($Params, 0, true);
+            $Data = $this->Loader->readFileContent($Params);
             $Returnable = '';
             if (substr($Data, 0, 2) !== 'MZ') {
                 return $this->Loader->L10N->getString('cli_pe1') . "\n";
@@ -393,7 +393,7 @@ class CLI
             if (filter_var($Params, FILTER_VALIDATE_URL)) {
                 $Data = $this->Loader->Request->request($Params);
             } elseif (is_file($Params) && is_readable($Params)) {
-                $Data = $this->Loader->readFileBlocks($Params, 0, true);
+                $Data = $this->Loader->readFileContent($Params);
             }
             if (empty($Data)) {
                 return $this->Loader->L10N->getString('invalid_data') . "\n";
@@ -420,7 +420,7 @@ class CLI
                 if (filter_var($Params, FILTER_VALIDATE_URL)) {
                     $Data = $this->Loader->Request->request($Params);
                 } elseif (is_file($Params) && is_readable($Params)) {
-                    $Data = $this->Loader->readFileBlocks($Params, 0, true);
+                    $Data = $this->Loader->readFileContent($Params);
                 }
                 if (empty($Data)) {
                     return $this->Loader->L10N->getString('invalid_data') . "\n";

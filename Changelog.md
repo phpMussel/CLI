@@ -11,3 +11,7 @@ __*Why "v3.0.0" instead of "v1.0.0?"*__ Prior to phpMussel v3, the "phpMussel Co
 ### v3.1.1
 
 [2021.01.10; Maikuolan]: Separated the code for performing outbound requests through cURL out to its own independent class.
+
+### v3.1.2
+
+[2022.03.24; Bug-fix; Maikuolan]: Fixed a bottleneck in the scan process caused by the readFileBlocks method (phpMussel/phpMussel#231).
