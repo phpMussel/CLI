@@ -1,0 +1,78 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Farsi language data (last modified: 2022.08.18).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
+##/
+
+bad_command: "من این دستور را نمی فهمم، متاسفم."
+cli_algo_not_supported: "الگوریتم مشخص شده پشتیبانی نمی شود."
+cli_failed_to_complete: "فرآیند اسکن کامل نشد"
+cli_is_not_a: "%s یک فایل یا دایرکتوری نیست."
+cli_ln2: |
+ با تشکر از شما برای استفاده از phpMussel، یک اسکریپت PHP که برای شناسایی
+ تروجان ها، ویروس ها، بدافزارها و سایر تهدیدها طراحی شده است، در فایل‌های
+ آپلود شده در سیستم شما هر جا که اسکریپت قلاب شده باشد، بر اساس امضای
+ ClamAV و دیگران.
+                                     ~ ~ ~
+ PHPMUSSEL حق چاپ 2013 و بعد از آن GNU/GPLv2 توسط Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ در حال حاضر phpMussel در حالت CLI (command line interface) اجرا می شود.
+ برای اسکن یک فایل یا دایرکتوری، "scan" را تایپ کنید، سپس نام فایل یا
+ فهرستی را که می خواهید phpMussel اسکن کند و Enter را فشار دهید؛ "c" را
+ تایپ کنید و Enter را فشار دهید تا لیستی از دستورات حالت CLI را دریافت
+ کنید؛ "q" را تایپ کرده و Enter را برای خروج فشار دهید.
+cli_pe1: "یک فایل PE معتبر نیست!"
+cli_pe2: "بخش های PE:"
+cli_signature_placeholder: "نام امضای شما"
+cli_working: "در حال پیش رفت"
+cli_commands: |
+ q
+ - CLI را ترک کنید.
+ - نام مستعار: quit, exit.
+ hash_file:[algo] [filename]
+ - ایجاد امضای هش از فایل ها.
+ hash:[algo] [string]
+ - امضای هش را از رشته تولید کنید.
+ algo
+ - لیست همه الگوریتم های پشتیبانی شده.
+ hex_encode [string]
+ - رشته باینری را به هگزادسیمال تبدیل کنید.
+ - نام مستعار: x.
+ hex_decode [string]
+ - هگزادسیمال را به رشته باینری تبدیل کنید.
+ base64_encode [string]
+ - رشته باینری را به رشته base64 تبدیل کنید.
+ - نام مستعار: b.
+ base64_decode [string]
+ - رشته base64 را به رشته باینری تبدیل کنید.
+ pe_meta [filename]
+ - فراداده را از یک فایل PE استخراج کنید.
+ url_sig [string]
+ - امضاهای اسکنر URL را ایجاد کنید.
+ scan [نام فایل یا دایرکتوری]
+ - یک فایل یا دایرکتوری را اسکن کنید.
+ - نام مستعار: s.
+ c
+ - این لیست دستورات را چاپ کنید.
+invalid_url: "URL نامعتبر است!"

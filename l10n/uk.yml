@@ -1,0 +1,78 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Ukrainian language data (last modified: 2022.08.18).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
+##/
+
+bad_command: "Я не розумію цю команду, вибачте."
+cli_algo_not_supported: "Зазначений алгоритм не підтримується."
+cli_failed_to_complete: "Не вдалося завершити процес сканування"
+cli_is_not_a: "%s не є файлом або каталогом."
+cli_ln2: |
+ Дякуємо, що використовуєте phpMussel, скрипт PHP, призначений для
+ виявлення троянів, вірусів, зловмисного програмного забезпечення, та інших
+ загроз у файлах, завантажених у вашу систему, де підключено скрипт, на
+ основі сигнатурів ClamAV та інших.
+                                     ~ ~ ~
+ PHPMUSSEL АВТОРСЬКЕ ПРАВО 2013 і далі GNU/GPLv2 від Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ Зараз phpMussel працює в режимі CLI (command line interface). Щоб
+ відсканувати файл або каталог, введіть «scan», а потім ім'я файлу або
+ каталогу, які потрібно сканувати phpMussel, і натисніть Enter; Введіть «c»
+ і натисніть Enter, щоб переглянути список команд режиму CLI; Введіть «q» і
+ натисніть Enter, щоб вийти.
+cli_pe1: "Недійсний файл PE!"
+cli_pe2: "Розділи PE:"
+cli_signature_placeholder: "ВАШЕ-ІМ'Я-ДЛЯ-СИГНАТУРИ"
+cli_working: "В процесі"
+cli_commands: |
+ q
+ - Вийти з CLI.
+ - Псевдоніми: quit, exit.
+ hash_file:[алго] [ім'я файлу]
+ - Генеруйте хеш-сигнатури з файлів.
+ hash:[алго] [рядок]
+ - Генеруйте хеш-сигнатури із рядка.
+ algo
+ - Перелічіть усі підтримувані алгоритми.
+ hex_encode [рядок]
+ - Перетворити двійковий рядок у шістнадцятковий.
+ - Псевдонім: x.
+ hex_decode [рядок]
+ - Перетворити шістнадцятковий рядок у двійковий.
+ base64_encode [рядок]
+ - Перетворити двійкового рядка на рядок base64.
+ - Псевдонім: b.
+ base64_decode [рядок]
+ - Перетворити рядка base64 на двійковий рядок.
+ pe_meta [ім'я файлу]
+ - Витягти метадані з PE-файлу.
+ url_sig [рядок]
+ - Генеруйте сигнатурів сканера URL.
+ scan [ім'я файлу або каталогу]
+ - Проскануйте файл або каталог.
+ - Псевдонім: s.
+ c
+ - Роздрукуйте цей список команд.
+invalid_url: "Недійсний URL!"

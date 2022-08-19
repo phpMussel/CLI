@@ -1,0 +1,78 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Malay language data (last modified: 2022.08.18).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
+##/
+
+bad_command: "Saya tidak faham arahan itu, maaf."
+cli_algo_not_supported: "Algoritma yang ditentukan tidak disokong."
+cli_failed_to_complete: "Gagal untuk menyelesaikan proses pengimbasan"
+cli_is_not_a: "%s bukan fail atau direktori."
+cli_ln2: |
+ Terima kasih untuk menggunakan phpMussel, skrip PHP direka untuk mengesan
+ trojan, virus, perisian hasad, dan ancaman lain dalam fail dimuat naik ke
+ sistem anda dimana sahaja skrip disambungkan, berdasarkan tandatangan dari
+ ClamAV dan lain-lain.
+                                     ~ ~ ~
+ PHPMUSSEL HAK CIPTA 2013 dan seterusnya GNU/GPLv2 oleh Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ Sedang menjalankan phpMussel dalam mod CLI (command line interface). Untuk
+ mengimbas fail atau direktori, taip "scan", diikuti dengan nama fail atau
+ direktori yang anda mahu phpMussel untuk mengimbas dan tekan Enter; Taip
+ "c" dan tekan Enter untuk senarai arahan mod CLI; Taip "q" dan tekan Enter
+ untuk berhenti.
+cli_pe1: "Bukan fail PE yang sah!"
+cli_pe2: "Bahagian PE:"
+cli_signature_placeholder: "NAMA-TANDATANGAN"
+cli_working: "Sedang berlangsung"
+cli_commands: |
+ q
+ - Berhenti CLI.
+ - Alias: quit, exit.
+ hash_file:[algo] [fail]
+ - Hasilkan tandatangan hash daripada fail.
+ hash:[algo] [string]
+ - Hasilkan tandatangan hash daripada rentetan.
+ algo
+ - Senaraikan semua algoritma yang disokong.
+ hex_encode [string]
+ - Tukar rentetan binari kepada perenambelasan.
+ - Alias: x.
+ hex_decode [string]
+ - Tukar perenambelasan kepada rentetan binari.
+ base64_encode [string]
+ - Tukar rentetan binari kepada rentetan base64.
+ - Alias: b.
+ base64_decode [string]
+ - Tukar rentetan base64 kepada rentetan binari.
+ pe_meta [fail]
+ - Ekstrak metadata daripada fail PE.
+ url_sig [string]
+ - Hasilkan tandatangan pengimbas URL.
+ scan [nama fail atau direktori]
+ - Imbas fail atau direktori.
+ - Alias: s.
+ c
+ - Cetak senarai arahan ini.
+invalid_url: "URL tidak sah!"

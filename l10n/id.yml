@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2020.07.04).
+# This file: Indonesian language data (last modified: 2022.08.18).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 bad_command: "Saya tidak mengerti perintah itu, maaf."
@@ -16,20 +30,20 @@ cli_failed_to_complete: "Gagal untuk menyelesaikan memindai proses"
 cli_is_not_a: "%s bukan file atau direktori."
 cli_ln2: |
  Terima kasih untuk menggunakan phpMussel, sebuah skrip php di-design untuk
- mendeteksi trojan-trojan, virus-virus dan serangan-serangan lainnya dalam
- file-file diupload ke system Anda dimana saja skrip di kaitkan,
- berdasarkan tanda tangan dari ClamAV dan lain-lain.
+ mendeteksi trojan, virus, dan serangan lainnya dalam file diupload ke
+ system Anda dimana saja skrip dikaitkan, berdasarkan tanda tangan dari
+ ClamAV dan lain-lain.
                                      ~ ~ ~
  PHPMUSSEL HAK CIPTA 2013 dan di atas GNU/GPL V.2 oleh Caleb M (Maikuolan).
                                      ~ ~ ~
 cli_ln3: |
- Sekarang phpMussel operasi di CLI mode (command line interface). Untuk
- memindai file atau direktori, menulis "scan", diikuti dengan nama file
- atau direktori yang ingin Anda phpMussel untuk memindai dan tekan Enter;
- Menulis "c" dan tekan Enter untuk daftar CLI mode perintah; Menulis "q"
- dan tekan Enter untuk keluar.
-cli_pe1: "Tidak valid file PE!"
-cli_pe2: "Seksi PE:"
+ Sekarang menjalankan phpMussel dalam mode CLI (command line interface).
+ Untuk memindai file atau direktori, menulis "scan", diikuti dengan nama
+ file atau direktori yang ingin Anda phpMussel untuk memindai dan tekan
+ Enter; Menulis "c" dan tekan Enter untuk daftar CLI mode perintah; Menulis
+ "q" dan tekan Enter untuk keluar.
+cli_pe1: "Bukan file PE yang valid!"
+cli_pe2: "Bagian PE:"
 cli_signature_placeholder: "NAMA-TANDA-TANGAN"
 cli_working: "Dalam proses"
 cli_commands: |
@@ -60,4 +74,5 @@ cli_commands: |
  - Pindai file atau direktori.
  - Alias: s.
  c
- - Cetak ini daftar perintah.
+ - Cetak daftar perintah ini.
+invalid_url: "URL tidak valid!"
