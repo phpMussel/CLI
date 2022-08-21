@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data (last modified: 2022.08.18).
+# This file: Malay language data (last modified: 2022.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -47,32 +47,34 @@ cli_pe2: "Bahagian PE:"
 cli_signature_placeholder: "NAMA-TANDATANGAN"
 cli_working: "Sedang berlangsung"
 cli_commands: |
- q
- - Berhenti CLI.
- - Alias: quit, exit.
- hash_file:[algo] [fail]
- - Hasilkan tandatangan hash daripada fail.
- hash:[algo] [string]
- - Hasilkan tandatangan hash daripada rentetan.
- algo
- - Senaraikan semua algoritma yang disokong.
- hex_encode [string]
- - Tukar rentetan binari kepada perenambelasan.
- - Alias: x.
- hex_decode [string]
- - Tukar perenambelasan kepada rentetan binari.
- base64_encode [string]
- - Tukar rentetan binari kepada rentetan base64.
- - Alias: b.
+ q | quit | exit -- Berhenti CLI.
+
+ hash_file:[algo] [fail] -- Hasilkan tandatangan hash daripada fail.
+
+ hash:[algo] [string] -- Hasilkan tandatangan hash daripada rentetan.
+ Contoh: >> hash:crc32b Hello World
+         4a17b156:11:NAMA-TANDATANGAN
+
+ algo -- Senaraikan semua algoritma yang disokong.
+
+ (hex_encode | x) [string] -- Tukar rentetan binari kepada perenambelasan.
+ Contoh: >> hex_encode Hello World
+         48656c6c6f20576f726c64
+
+ hex_decode [string] -- Tukar perenambelasan kepada rentetan binari.
+
+ (base64_encode | b) [string]
+ -- Tukar rentetan binari kepada rentetan base64.
+
  base64_decode [string]
- - Tukar rentetan base64 kepada rentetan binari.
- pe_meta [fail]
- - Ekstrak metadata daripada fail PE.
- url_sig [string]
- - Hasilkan tandatangan pengimbas URL.
- scan [nama fail atau direktori]
- - Imbas fail atau direktori.
- - Alias: s.
- c
- - Cetak senarai arahan ini.
+ -- Tukar rentetan base64 kepada rentetan binari.
+
+ pe_meta [fail] -- Ekstrak metadata daripada fail PE.
+
+ url_sig [string] -- Hasilkan tandatangan pengimbas URL.
+
+ (scan | s) [nama fail atau direktori]
+ -- Imbas fail atau direktori.
+
+ c -- Cetak senarai arahan ini.
 invalid_url: "URL tidak sah!"

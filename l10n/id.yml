@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2022.08.18).
+# This file: Indonesian language data (last modified: 2022.08.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -47,32 +47,33 @@ cli_pe2: "Bagian PE:"
 cli_signature_placeholder: "NAMA-TANDA-TANGAN"
 cli_working: "Dalam proses"
 cli_commands: |
- q
- - Berhenti CLI.
- - Alias: quit, exit.
- hash_file:[algo] [file]
- - Menghasilkan tanda tangan hash dari file.
- hash:[algo] [string]
- - Menghasilkan tanda tangan hash dari string.
- algo
- - Daftar semua algoritma yang didukung.
- hex_encode [string]
- - Mengkonversi string biner ke heksadesimal.
- - Alias: x.
- hex_decode [string]
- - Mengkonversi heksadesimal ke string biner.
- base64_encode [string]
- - Mengkonversi string biner ke string base64.
- - Alias: b.
+ q | quit | exit -- Berhenti CLI.
+
+ hash_file:[algo] [file] -- Menghasilkan tanda tangan hash dari file.
+
+ hash:[algo] [string] -- Menghasilkan tanda tangan hash dari string.
+ Contoh: >> hash:crc32b Hello World
+         4a17b156:11:NAMA-TANDA-TANGAN
+
+ algo -- Daftar semua algoritma yang didukung.
+
+ (hex_encode | x) [string] -- Mengkonversi string biner ke heksadesimal.
+ Contoh: >> hex_encode Hello World
+         48656c6c6f20576f726c64
+
+ hex_decode [string] -- Mengkonversi heksadesimal ke string biner.
+
+ (base64_encode | b) [string]
+ -- Mengkonversi string biner ke string base64.
+
  base64_decode [string]
- - Mengkonversi string base64 ke string biner.
- pe_meta [file]
- - Ekstrak metadata dari file PE.
- url_sig [string]
- - Membuat tanda tangan pemindai URL.
- scan [file]
- - Pindai file atau direktori.
- - Alias: s.
- c
- - Cetak daftar perintah ini.
+ -- Mengkonversi string base64 ke string biner.
+
+ pe_meta [file] -- Ekstrak metadata dari file PE.
+
+ url_sig [string] -- Membuat tanda tangan pemindai URL.
+
+ (scan | s) [file] -- Pindai file atau direktori.
+
+ c -- Cetak daftar perintah ini.
 invalid_url: "URL tidak valid!"
