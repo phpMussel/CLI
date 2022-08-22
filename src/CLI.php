@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2022.03.24).
+ * This file: CLI handler (last modified: 2022.08.23).
  */
 
 namespace phpMussel\CLI;
@@ -104,10 +104,11 @@ class CLI
             }
 
             /** Fetch the command. */
-            $Command = strtolower($this->Loader->substrBeforeFirst($Clean, ' ') ?: $Clean);
+            $CommandNatural = $this->Loader->substrBeforeFirst($Clean, ' ') ?: $Clean;
+            $Command = strtolower($CommandNatural);
 
             /** Exit CLI-mode. */
-            if ($Command === 'quit' || $Command === 'q' || $Command === 'exit') {
+            if (preg_match('~^(?:(?:[Qq]|ԛ)(?:[Uu][Ii][Tt])?|[Ee][Xx][Ii][Tt])$~', $CommandNatural)) {
                 break;
             }
 
@@ -183,7 +184,7 @@ class CLI
             }
 
             /** Generate a CoEx signature using a string. */
-            elseif ($Command === 'coex') {
+            elseif (preg_match('~^(?:(?:[Cc]|ϲ|с)(?:[Oo]|ο|о)(?:[Ee]|е)(?:[Xx]|х))$~', $CommandNatural)) {
                 $TargetData = substr($Clean, strlen($Command) + 1);
                 echo sprintf(
                     "\n\$sha256:%s;\$StringLength:%d;%s\n",
@@ -194,7 +195,7 @@ class CLI
             }
 
             /** Convert a binary string to a hexadecimal. */
-            elseif ($Command === 'hex_encode' || $Command === 'x') {
+            elseif (preg_match('~^(?:[Hh][Ee][Xx]_[Ee][Nn][Cc][Oo][Dd][Ee]|[Xx]|х)$~', $CommandNatural)) {
                 $TargetData = substr($Clean, strlen($Command) + 1);
                 echo "\n" . bin2hex($TargetData) . "\n";
             }
@@ -218,14 +219,14 @@ class CLI
             }
 
             /** Scan a file or directory. */
-            elseif ($Command === 'scan' || $Command === 's') {
+            elseif (preg_match('~^(?:[Ss][Cc][Aa][Nn]|[Ss]|ѕ)$~', $CommandNatural)) {
                 $TargetData = substr($Clean, strlen($Command) + 1);
                 echo "\n";
                 echo $this->Scanner->scan($TargetData) . "\n";
             }
 
             /** Print the command list. */
-            elseif ($Command === 'c') {
+            elseif (preg_match('~^(?:[Cc]|ϲ|с)$~', $CommandNatural)) {
                 echo "\n" . $this->Loader->L10N->getString('cli_commands');
             }
 

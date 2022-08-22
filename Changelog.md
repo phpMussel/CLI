@@ -19,3 +19,5 @@ __*Why "v3.0.0" instead of "v1.0.0?"*__ Prior to phpMussel v3, the "phpMussel Co
 ### v3.1.3
 
 [2022.08.18; Maikuolan]: Added L10N for Persian/Farsi, Hebrew, Malay, and Ukrainian.
+
+[2022.08.23; Maikuolan]: Added some limited homoglyph support for some CLI commands.
