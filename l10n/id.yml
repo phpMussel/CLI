@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2022.08.21).
+# This file: Indonesian language data (last modified: 2022.09.15).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-bad_command: "Saya tidak mengerti perintah itu, maaf."
+bad_command: "Saya tidak mengerti perintah ini, maaf."
 cli_algo_not_supported: "Algoritma yang ditentukan tidak didukung."
 cli_failed_to_complete: "Gagal untuk menyelesaikan memindai proses"
 cli_is_not_a: "%s bukan file atau direktori."
