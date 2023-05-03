@@ -1,0 +1,76 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Czech language data (last modified: 2023.04.30).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
+##/
+
+bad_command: "Nerozumím tomu příkazu, promiňte."
+cli_algo_not_supported: "Zadaný algoritmus není podporován."
+cli_failed_to_complete: "Proces skenování se nepodařilo dokončit"
+cli_is_not_a: "%s není soubor nebo adresář."
+cli_ln2: |
+ Děkujeme, že používáte phpMussel, PHP skript určený k detekci trojských
+ koní, virů, malwaru, a dalších hrozeb v souborech nahraných do vašeho
+ systému, kdekoli je skript připojen, na základě podpisů ClamAV a dalších.
+                                     ~ ~ ~
+ PHPMUSSEL COPYRIGHT 2013 a dále GNU/GPLv2 od Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ Aktuálně běží phpMussel v režimu CLI (rozhraní příkazového řádku).
+ Chcete-li skenovat soubor nebo adresář, napište „scan“ následovaný názvem
+ souboru nebo adresáře, který má phpMussel skenovat, a stiskněte Enter;
+ Napište „c“ a stiskněte Enter pro zobrazení seznamu příkazů režimu CLI;
+ Napište „q“ a stiskněte Enter pro ukončení.
+cli_pe1: "Neplatný soubor PE!"
+cli_pe2: "PE sekce:"
+cli_signature_placeholder: "VAŠE-PODPISOVÉ-JMÉNO"
+cli_working: "Probíhá"
+cli_commands: |
+ q | quit | exit -- Ukončete CLI.
+
+ hash_file:[algo] [název souboru] -- Generujte hash podpis ze souborů.
+
+ hash:[algo] [řetězec] -- Generujte hash podpis z řetězce.
+ Příklad: >> hash:crc32b Hello World
+          4a17b156:11:VAŠE-PODPISOVÉ-JMÉNO
+
+ algo -- Seznam všech podporovaných algoritmů.
+
+ (hex_encode | x) [řetězec] -- Převeďte binární řetězec na hexadecimální.
+ Příklad: >> hex_encode Hello World
+          48656c6c6f20576f726c64
+
+ hex_decode [řetězec] -- Převeďte hexadecimální na binární řetězec.
+
+ (base64_encode | b) [řetězec] -- Převeďte binární řetězec na řetězec base64.
+
+ base64_decode [řetězec] -- Převeďte řetězec base64 na binární řetězec.
+
+ pe_meta [název souboru] -- Extrahujte metadata ze souboru PE.
+
+ url_sig [řetězec] -- Generujte podpisy skeneru URL.
+
+ (scan | s) [název souboru nebo adresáře] -- Naskenujte soubor nebo adresář.
+
+ c -- Vytiskněte tento seznam příkazů.
+invalid_url: "Neplatná URL adresa!"

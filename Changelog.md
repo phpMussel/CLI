@@ -25,3 +25,7 @@ __*Why "v3.0.0" instead of "v1.0.0?"*__ Prior to phpMussel v3, the "phpMussel Co
 ### v3.1.4
 
 [2022.11.20; Maikuolan]: Avoid packaging unnecessary files into dist.
+
+### v3.1.5
+
+[2023.04.30; Maikuolan]: Added L10N for Bulgarian, Czech, and Punjabi.
