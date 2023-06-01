@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data (last modified: 2022.08.21).
+# This file: Norwegian language data (last modified: 2023.05.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -38,10 +38,10 @@ cli_ln2: |
                                      ~ ~ ~
 cli_ln3: |
  For tiden kjører phpMussel i CLI-modus (kommandolinjegrensesnitt). For å
- skanne en fil eller katalog, skriver du inn "scan", etterfulgt av navnet
+ skanne en fil eller katalog, skriver du inn «scan», etterfulgt av navnet
  på filen eller katalogen du vil at phpMussel skal skanne og trykk Enter;
- Skriv inn "c" og trykk Enter for en liste over CLI-modus kommandoer; Skriv
- "q" og trykk Enter for å avslutte.
+ Skriv inn «c» og trykk Enter for en liste over CLI-modus kommandoer; Skriv
+ «q» og trykk Enter for å avslutte.
 cli_pe1: "Ikke en gyldig PE-fil!"
 cli_pe2: "PE-seksjoner:"
 cli_signature_placeholder: "DITT-SIGNATURNAVN"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data (last modified: 2023.04.30).
+# This file: Punjabi language data (last modified: 2023.05.07).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -41,7 +41,7 @@ cli_ln3: |
  ਜਾਂ ਡਾਇਰੈਕਟਰੀ ਦਾ ਨਾਮ ਦਿਓ ਜਿਸਨੂੰ ਤੁਸੀਂ phpMussel ਨੂੰ ਸਕੈਨ ਕਰਨ ਲਈ ਚਾਹੁੰਦੇ ਹੋ ਅਤੇ
  ਐਂਟਰ ਦਬਾਓ; CLI ਮੋਡ ਕਮਾਂਡਾਂ ਦੀ ਸੂਚੀ ਲਈ "c" ਟਾਈਪ ਕਰੋ ਅਤੇ ਐਂਟਰ ਦਬਾਓ; ਛੱਡੋ ਕਰਨ ਲਈ,
  "q" ਟਾਈਪ ਕਰੋ ਅਤੇ ਐਂਟਰ ਦਬਾਓ।
-cli_pe1: "ਵੈਧ PE ਫ਼ਾਈਲ ਨਹੀਂ ਹੈ!"
+cli_pe1: "ਵੈਧ PE ਫਾਈਲ ਨਹੀਂ ਹੈ!"
 cli_pe2: "PE ਸੈਕਸ਼ਨ:"
 cli_signature_placeholder: "ਤੁਹਾਡੇ-ਦਸਤਖਤ-ਦਾ-ਨਾਮ"
 cli_working: "ਤਰੱਕੀ ਹੋ ਰਹੀ ਹੈ"
