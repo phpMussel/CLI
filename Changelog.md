@@ -32,4 +32,4 @@ __*Why "v3.0.0" instead of "v1.0.0?"*__ Prior to phpMussel v3, the "phpMussel Co
 
 ### v3.2.0
 
-[2023.09.04; New Feature; Maikuolan]: Added colouration to phpMussel's CLI mode.
+[2023.09.04; New Feature; Maikuolan]: Added colouration to phpMussel's CLI mode. Added L10N for Afrikaans and Romanian.

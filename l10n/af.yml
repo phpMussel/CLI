@@ -1,0 +1,76 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Afrikaans language data (last modified: 2023.09.04).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
+##/
+
+bad_command: "Ek verstaan nie daardie opdrag nie, jammer."
+cli_algo_not_supported: "Gespesifiseerde algoritme word nie ondersteun nie."
+cli_failed_to_complete: "Skandeerproses kon nie voltooi nie"
+cli_is_not_a: "%s is nie 'n lêer of gids nie."
+cli_ln2: |
+ Dankie dat jy phpMussel gebruik, 'n PHP-skrip wat ontwerp is om trojans,
+ virusse, wanware, en ander bedreigings op te spoor binne lêers wat na jou
+ stelsel opgelaai is waar die script ook al gekoppel is, gebaseer op die
+ handtekeninge van ClamAV en ander.
+                                     ~ ~ ~
+ PHPMUSSEL KOPIEREG 2013 en verder GNU/GPLv2 deur Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ Werk tans phpMussel in CLI-modus (opdragreëlkoppelvlak). Om 'n lêer of
+ gids te skandeer, tik "scan", gevolg deur die naam van die lêer of gids
+ wat jy wil hê phpMussel moet skandeer en druk Enter; Tik "c" en druk Enter
+ vir 'n lys van CLI-modus opdragte; Tik "q" en druk Enter om op te hou.
+cli_pe1: "Nie 'n geldige PE-lêer nie!"
+cli_pe2: "PE-afdelings:"
+cli_signature_placeholder: "JOU-HANDTEKENING-NAAM"
+cli_working: "Aan die gang"
+cli_commands: |
+ q | quit | exit -- Verlaat CLI.
+
+ hash_file:[algo] [lêernaam] -- Genereer hash-handtekeninge vanaf lêers.
+
+ hash:[algo] [string] -- Genereer hash-handtekening vanaf string.
+ Example: >> hash:crc32b Hello World
+          4a17b156:11:JOU-HANDTEKENING-NAAM
+
+ algo -- Lys alle ondersteunde algoritmes.
+
+ (hex_encode | x) [string] -- Omskep binêre string na heksadesimale.
+ Example: >> hex_encode Hello World
+          48656c6c6f20576f726c64
+
+ hex_decode [string] -- Omskep heksadesimale na binêre string.
+
+ (base64_encode | b) [string] -- Omskep binêre string na base64 string.
+
+ base64_decode [string] -- Omskep base64 string na binêre string.
+
+ pe_meta [lêernaam] -- Onttrek metadata uit 'n PE-lêer.
+
+ url_sig [string] -- Genereer URL-skandeerder-handtekeninge.
+
+ (scan | s) [naam van die lêer of gids] -- Skandeer 'n lêer of gids.
+
+ c -- Druk hierdie opdraglys.
+invalid_url: "Ongeldige URL!"
