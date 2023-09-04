@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2022.08.23).
+ * This file: CLI handler (last modified: 2023.09.04).
  */
 
 namespace phpMussel\CLI;
@@ -80,7 +80,7 @@ class CLI
         });
 
         /** Echo the ASCII header art and CLI-mode information. */
-        echo $this->Loader->L10N->getString('cli_ln1') . "\n" . $this->Loader->L10N->getString('cli_ln2') . "\n\n" . $this->Loader->L10N->getString('cli_ln3');
+        echo "\033[0;33m" . $this->Loader->L10N->getString('cli_ln1') . "\n" . $this->Loader->L10N->getString('cli_ln2') . "\n\n" . $this->Loader->L10N->getString('cli_ln3');
 
         /** Open STDIN. */
         $Handle = fopen('php://stdin', 'rb');
@@ -93,7 +93,7 @@ class CLI
             }
 
             /** Echo the CLI-mode prompt. */
-            echo "\n\n>> ";
+            echo "\n\n\033[0;92m>>\033[0m ";
 
             /** Wait for user input. */
             $Clean = trim(fgets($Handle));
@@ -111,6 +111,9 @@ class CLI
             if (preg_match('~^(?:(?:[Qq]|ԛ)(?:[Uu][Ii][Tt])?|[Ee][Xx][Ii][Tt])$~', $CommandNatural)) {
                 break;
             }
+
+            // Yellow.
+            echo "\033[0;33m";
 
             /** Generate a hash signature using a file or directory. */
             if (substr($Command, 0, 10) === 'hash_file:') {
