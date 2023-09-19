@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2023.09.04).
+ * This file: CLI handler (last modified: 2023.09.19).
  */
 
 namespace phpMussel\CLI;
@@ -273,7 +273,7 @@ class CLI
         [$Command, $Params] = explode(' ', $Command);
         if (is_dir($Params)) {
             if (!is_readable($Params)) {
-                return sprintf($this->Loader->L10N->getString('failed_to_access'), $Params) . "\n";
+                return sprintf($this->Loader->L10N->getString('Failed to access %s'), $Params) . "\n";
             }
             $Decal = [':-) - (-:', ':-) \\ (-:', ':-) | (-:', ':-) / (-:'];
             $Frame = 0;
