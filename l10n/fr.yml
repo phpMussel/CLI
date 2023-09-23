@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data (last modified: 2022.08.21).
+# This file: French language data (last modified: 2023.09.23).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -42,8 +42,8 @@ cli_ln3: |
  du fichier ou répertoire que vous voulez que phpMussel analyse et appuyez
  sur Entrée ; Tapez « c » et appuyez sur Entrée pour une liste de commandes
  du mode CLI ; Tapez « q » et appuyez sur Entrée pour quitter.
-cli_pe1: "Pas un valide PE fichier !"
-cli_pe2: "Sections du PE :"
+cli_pe1: "Pas un valide PE fichier\_!"
+cli_pe2: "Sections du PE\_:"
 cli_signature_placeholder: "NOM-DE-SIGNATURE"
 cli_working: "En cours"
 cli_commands: |
@@ -76,4 +76,4 @@ cli_commands: |
  -- Analyser un fichier ou un répertoire.
 
  c -- Imprimer cette liste des commandes.
-invalid_url: "URL non valide !"
+invalid_url: "URL non valide\_!"

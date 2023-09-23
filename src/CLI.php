@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2023.09.19).
+ * This file: CLI handler (last modified: 2023.09.25).
  */
 
 namespace phpMussel\CLI;
@@ -74,7 +74,7 @@ class CLI
                 "\r%d/%d %s ...",
                 $this->Loader->InstanceCache['ThisScanDone'],
                 $this->Loader->InstanceCache['ThisScanTotal'],
-                $this->Loader->L10N->getString('scan_complete')
+                $this->Loader->L10N->getString('response.Complete')
             );
             return true;
         });
@@ -206,7 +206,7 @@ class CLI
             /** Convert a hexadecimal to a binary string. */
             elseif ($Command === 'hex_decode') {
                 $TargetData = substr($Clean, strlen($Command) + 1);
-                echo "\n" . ($this->Loader->hexSafe($TargetData) ?: $this->Loader->L10N->getString('invalid_data')) . "\n";
+                echo "\n" . ($this->Loader->hexSafe($TargetData) ?: $this->Loader->L10N->getString('response.Invalid data')) . "\n";
             }
 
             /** Convert a binary string to a base64 string. */
@@ -218,7 +218,7 @@ class CLI
             /** Convert a base64 string to a binary string. */
             elseif ($Command === 'base64_decode') {
                 $TargetData = substr($Clean, strlen($Command) + 1);
-                echo "\n" . (base64_decode($TargetData) ?: $this->Loader->L10N->getString('invalid_data')) . "\n";
+                echo "\n" . (base64_decode($TargetData) ?: $this->Loader->L10N->getString('response.Invalid data')) . "\n";
             }
 
             /** Scan a file or directory. */
@@ -273,7 +273,7 @@ class CLI
         [$Command, $Params] = explode(' ', $Command);
         if (is_dir($Params)) {
             if (!is_readable($Params)) {
-                return sprintf($this->Loader->L10N->getString('Failed to access %s'), $Params) . "\n";
+                return sprintf($this->Loader->L10N->getString('response.Failed to access %s'), $Params) . "\n";
             }
             $Decal = [':-) - (-:', ':-) \\ (-:', ':-) | (-:', ':-) / (-:'];
             $Frame = 0;
@@ -400,7 +400,7 @@ class CLI
                 $Data = $this->Loader->readFileContent($Params);
             }
             if (empty($Data)) {
-                return $this->Loader->L10N->getString('invalid_data') . "\n";
+                return $this->Loader->L10N->getString('response.Invalid data') . "\n";
             }
             return sprintf(
                 "\$sha256:%s;\$StringLength:%d;%s\n",
@@ -427,7 +427,7 @@ class CLI
                     $Data = $this->Loader->readFileContent($Params);
                 }
                 if (empty($Data)) {
-                    return $this->Loader->L10N->getString('invalid_data') . "\n";
+                    return $this->Loader->L10N->getString('response.Invalid data') . "\n";
                 }
                 return hash($this->LastAlgo, $Data) . ':' . strlen($Data) . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
             });
