@@ -300,7 +300,7 @@ class CLI
     private function peMeta(string $File): string
     {
         return $this->recursiveCommand($File, function ($Params) {
-            $Data = $this->Loader->readFileContent($Params);
+            $Data = $this->Loader->readFile($Params);
             $Returnable = '';
             if (substr($Data, 0, 2) !== 'MZ') {
                 return $this->Loader->L10N->getString('cli_pe1') . "\n";
@@ -397,7 +397,7 @@ class CLI
             if (filter_var($Params, FILTER_VALIDATE_URL)) {
                 $Data = $this->Loader->Request->request($Params);
             } elseif (is_file($Params) && is_readable($Params)) {
-                $Data = $this->Loader->readFileContent($Params);
+                $Data = $this->Loader->readFile($Params);
             }
             if (empty($Data)) {
                 return $this->Loader->L10N->getString('response.Invalid data') . "\n";
@@ -424,7 +424,7 @@ class CLI
                 if (filter_var($Params, FILTER_VALIDATE_URL)) {
                     $Data = $this->Loader->Request->request($Params);
                 } elseif (is_file($Params) && is_readable($Params)) {
-                    $Data = $this->Loader->readFileContent($Params);
+                    $Data = $this->Loader->readFile($Params);
                 }
                 if (empty($Data)) {
                     return $this->Loader->L10N->getString('response.Invalid data') . "\n";
