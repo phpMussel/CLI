@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese (Brazil) language data (last modified: 2023.04.25).
+# This file: Portuguese language data (last modified: 2023.10.12).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,7 +44,7 @@ cli_ln3: |
  Enter; Digitá "c" e pressione Enter por uma lista de CLI modo comandos;
  Digitá "q" e pressione Enter para sair.
 cli_pe1: "Não é um válido PE arquivo!"
-cli_pe2: "PE Seções:"
+cli_pe2: {"pt-BR": "PE Seções:", "pt-PT": "PE Secções:"}
 cli_signature_placeholder: "O-NOME-DA-SUA-ASSINATURA"
 cli_working: "Em processo"
 cli_commands: |
