@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2023.09.25).
+ * This file: CLI handler (last modified: 2023.09.26).
  */
 
 namespace phpMussel\CLI;
@@ -36,7 +36,7 @@ class CLI
     private $LastAlgo = '';
 
     /**
-     * Construct the loader.
+     * Construct the CLI instance.
      *
      * @param \phpMussel\Core\Loader $Loader The instantiated loader object, passed by reference.
      * @param \phpMussel\Core\Scanner $Scanner The instantiated scanner object, passed by reference.
