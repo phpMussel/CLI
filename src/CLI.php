@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2023.09.26).
+ * This file: CLI handler (last modified: 2023.12.01).
  */
 
 namespace phpMussel\CLI;
@@ -148,8 +148,8 @@ class CLI
                 $Clean = $this->Scanner->normalise(substr($Clean, strlen($Command) + 1));
                 $URL = ['AvoidMe' => '', 'ForThis' => ''];
                 if (
-                    !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www\d{0,3}\.)?([\da-z.-]{1,512})/i', $Clean, $URL['domain']) ||
-                    !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www\d{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})/i', $Clean, $URL['url'])
+                    !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl]):\/\/(www\d{0,3}\.)?([\da-z.-]{1,512})/i', $Clean, $URL['domain']) ||
+                    !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl]):\/\/(www\d{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})/i', $Clean, $URL['url'])
                 ) {
                     echo $this->Loader->L10N->getString('invalid_url') . "\n";
                     continue;
