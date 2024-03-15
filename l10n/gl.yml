@@ -1,0 +1,65 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Galician language data (last modified: 2024.03.14).
+##/
+
+bad_command: "Non entendo esa orde, perdón."
+cli_algo_not_supported: "phpMussel non coñece o algoritmo especificado."
+cli_failed_to_complete: "Non se puido completar a exploración"
+cli_is_not_a: "%s non é un ficheiro ou directorio."
+cli_ln2: |
+ Grazas por usar phpMussel, un script PHP deseñado para detectar troianos,
+ virus, malware, e outras ameazas nos ficheiros cargados no teu sistema
+ onde queira que o script estea conectado, baseado nas sinaturas de ClamAV
+ e outros.
+                                     ~ ~ ~
+ PHPMUSSEL COPYRIGHT 2013 e máis aló GNU/GPLv2 de Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ Actualmente executando phpMussel en modo CLI (interface de liña de
+ comandos). Para escanear un ficheiro ou directorio, escriba "escanear",
+ seguido do nome do ficheiro ou directorio que quere que phpMussel escanee
+ e prema Enter; Escriba "c" e prema Enter para ver unha lista de comandos
+ do modo CLI; Escriba "q" e prema Enter para saír.
+cli_pe1: "Non é un ficheiro PE válido!"
+cli_pe2: "Seccións PE:"
+cli_signature_placeholder: "O-TEU-NOME-DE-SINATURA"
+cli_working: "En progreso"
+cli_commands: |
+ q | quit | exit -- Saír da CLI.
+
+ hash_file:[algo] [nome do ficheiro]
+ -- Xera sinaturas hash a partir de ficheiros.
+
+ hash:[algo] [cadea] -- Xerar sinatura hash a partir da cadea.
+ Example: >> hash:crc32b Hello World
+          4a17b156:11:O-TEU-NOME-DE-SINATURA
+
+ algo -- Lista todos os algoritmos coñecidos por phpMussel.
+
+ (hex_encode | x) [cadea] -- Converter cadea binaria a hexadecimal.
+ Example: >> hex_encode Hello World
+          48656c6c6f20576f726c64
+
+ hex_decode [cadea] -- Converter hexadecimal en cadea binaria.
+
+ (base64_encode | b) [cadea] -- Converter cadea binaria en cadea base64.
+
+ base64_decode [cadea] -- Converter cadea base64 en cadea binaria.
+
+ pe_meta [nome do ficheiro] -- Extrae metadatos dun ficheiro PE.
+
+ url_sig [cadea] -- Xera sinaturas de escáner de URL.
+
+ (scan | s) [nome do ficheiro ou directorio]
+ -- Escanear un ficheiro ou directorio.
+
+ c -- Imprime esta lista de comandos.
+invalid_url: "URL non válido!"

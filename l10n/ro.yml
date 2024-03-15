@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data (last modified: 2023.09.04).
+# This file: Romanian language data (last modified: 2024.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -71,8 +71,8 @@ cli_commands: |
 
  url_sig [şir] -- Generați semnături de scanare URL.
 
- (scan | s) [numele fișierului sau directorului] -- Scanați un fișier sau
- un director.
+ (scan | s) [numele fișierului sau directorului]
+ -- Scanați un fișier sau un director.
 
  c -- Tipăriți această listă de comenzi.
 invalid_url: "URL invalid!"

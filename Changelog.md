@@ -41,3 +41,5 @@ __*Why "v3.0.0" instead of "v1.0.0?"*__ Prior to phpMussel v3, the "phpMussel Co
 ### v3.3.0
 
 [2023.12.01; Maikuolan]: Improved escaping.
+
+[2024.03.14~15; Maikuolan]: Added L10N for Bosnian, Catalan, Galician, Gujarati, Croatian, and Serbian.

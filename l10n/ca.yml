@@ -1,0 +1,66 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Catalan language data (last modified: 2024.03.14).
+##/
+
+bad_command: "No entenc aquesta ordre, perdó."
+cli_algo_not_supported: "phpMussel no coneix l'algoritme especificat."
+cli_failed_to_complete: "L'escaneig no s'ha pogut completar"
+cli_is_not_a: "%s no és un fitxer o directori."
+cli_ln2: |
+ Gràcies per utilitzar phpMussel, un script PHP dissenyat per detectar
+ troians, virus, programari maliciós, i altres amenaces dins dels fitxers
+ penjats al vostre sistema allà on estigui connectat l'script, basat en les
+ signatures de ClamAV i altres.
+                                     ~ ~ ~
+ PHPMUSSEL COPYRIGHT 2013 i posteriors GNU/GPLv2 de Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ Actualment s'està executant phpMussel en mode CLI (interfície de línia
+ d'ordres). Per escanejar un fitxer o directori, escriviu "scan", seguit
+ del nom del fitxer o directori que voleu que phpMussel escanegi i premeu
+ Enter; Escriviu "c" i premeu Enter per obtenir una llista d'ordres en mode
+ CLI; Escriviu "q" i premeu Enter per sortir.
+cli_pe1: "No és un fitxer PE vàlid!"
+cli_pe2: "Seccions de PE:"
+cli_signature_placeholder: "EL-TEU-NOM-DE-SIGNATURA"
+cli_working: "En progrés"
+cli_commands: |
+ q | quit | exit -- Surt de la CLI.
+
+ hash_file:[algo] [nom del fitxer]
+ -- Genereu signatures hash a partir dels fitxers.
+
+ hash:[algo] [cadena] -- Genereu la signatura hash a partir de la cadena.
+ Example: >> hash:crc32b Hello World
+          4a17b156:11:EL-TEU-NOM-DE-SIGNATURA
+
+ algo -- Llista tots els algorismes coneguts per phpMussel.
+
+ (hex_encode | x) [cadena] -- Converteix una cadena binària a hexadecimal.
+ Example: >> hex_encode Hello World
+          48656c6c6f20576f726c64
+
+ hex_decode [cadena] -- Converteix hexadecimal a cadena binària.
+
+ (base64_encode | b) [cadena]
+ -- Converteix una cadena binària a una cadena base64.
+
+ base64_decode [cadena]
+ -- Converteix una cadena base64 a una cadena binària.
+
+ pe_meta [nom del fitxer] -- Extreu metadades d'un fitxer PE.
+
+ url_sig [cadena] -- Genereu signatures d'escàner d'URL.
+
+ (scan | s) [nom del fitxer o directori] -- Escaneja un fitxer o directori.
+
+ c -- Imprimeix aquesta llista d'ordres.
+invalid_url: "URL no vàlid!"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data (last modified: 2022.08.21).
+# This file: Polish language data (last modified: 2024.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -29,19 +29,19 @@ cli_algo_not_supported: "Określony algorytm nie jest obsługiwany."
 cli_failed_to_complete: "Nie udało się ukończyć procesu skanowania"
 cli_is_not_a: "%s nie jest plikiem ani katalogiem."
 cli_ln2: |
- Dziękujemy za korzystanie z phpMussel, skrypt PHP przeznaczony do wykrywania
- trojanów, wirusów, złośliwego oprogramowania i innych zagrożeń w plikach
- przesyłanych do systemu, gdziekolwiek skrypt jest zaczepiony, na podstawie
- podpisów ClamAV i innych.
+ Dziękujemy za korzystanie z phpMussel, skrypt PHP przeznaczony do
+ wykrywania trojanów, wirusów, złośliwego oprogramowania i innych zagrożeń
+ w plikach przesyłanych do systemu, gdziekolwiek skrypt jest zaczepiony, na
+ podstawie podpisów ClamAV i innych.
                                      ~ ~ ~
  PHPMUSSEL COPYRIGHT 2013 i późniejsze GNU/GPLv2 przez Caleb M (Maikuolan).
                                      ~ ~ ~
 cli_ln3: |
- Obecnie uruchomiony phpMussel w trybie CLI (interfejs wiersza poleceń). Aby
- przeskanować plik lub katalog, wpisz „scan”, następnie nazwa pliku lub
+ Obecnie uruchomiony phpMussel w trybie CLI (interfejs wiersza poleceń).
+ Aby przeskanować plik lub katalog, wpisz „scan”, następnie nazwa pliku lub
  katalogu, który ma zostać przeskanowany przez phpMussel, i naciśnij Enter;
- Wpisz „c” i naciśnij klawisz Enter, aby wyświetlić listę poleceń trybu CLI;
- Wpisz „q” i naciśnij Enter, aby wyjść.
+ Wpisz „c” i naciśnij klawisz Enter, aby wyświetlić listę poleceń trybu
+ CLI; Wpisz „q” i naciśnij Enter, aby wyjść.
 cli_pe1: "Nieprawidłowy plik PE!"
 cli_pe2: "Sekcje PE:"
 cli_signature_placeholder: "TWOJE-NAZWA-PODPISY"

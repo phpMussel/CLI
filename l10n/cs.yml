@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data (last modified: 2023.04.30).
+# This file: Czech language data (last modified: 2024.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -62,7 +62,8 @@ cli_commands: |
 
  hex_decode [řetězec] -- Převeďte hexadecimální na binární řetězec.
 
- (base64_encode | b) [řetězec] -- Převeďte binární řetězec na řetězec base64.
+ (base64_encode | b) [řetězec]
+ -- Převeďte binární řetězec na řetězec base64.
 
  base64_decode [řetězec] -- Převeďte řetězec base64 na binární řetězec.
 
@@ -70,7 +71,8 @@ cli_commands: |
 
  url_sig [řetězec] -- Generujte podpisy skeneru URL.
 
- (scan | s) [název souboru nebo adresáře] -- Naskenujte soubor nebo adresář.
+ (scan | s) [název souboru nebo adresáře]
+ -- Naskenujte soubor nebo adresář.
 
  c -- Vytiskněte tento seznam příkazů.
 invalid_url: "Neplatná URL adresa!"

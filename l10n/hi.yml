@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data (last modified: 2022.09.15).
+# This file: Hindi language data (last modified: 2024.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -61,11 +61,14 @@ cli_commands: |
  उदाहरण: >> hex_encode Hello World
          48656c6c6f20576f726c64
 
- hex_decode [स्ट्रिंग] -- हेक्साडेसिमल को द्विआधारी स्ट्रिंग में कनवर्ट करें।
+ hex_decode [स्ट्रिंग]
+ -- हेक्साडेसिमल को द्विआधारी स्ट्रिंग में कनवर्ट करें।
 
- (base64_encode | b) [स्ट्रिंग] -- बाइनरी स्ट्रिंग को बेस 64 स्ट्रिंग में कनवर्ट करें।
+ (base64_encode | b) [स्ट्रिंग]
+ -- बाइनरी स्ट्रिंग को बेस 64 स्ट्रिंग में कनवर्ट करें।
 
- base64_decode [स्ट्रिंग] -- बेस 64 स्ट्रिंग को द्विआधारी स्ट्रिंग में कनवर्ट करें।
+ base64_decode [स्ट्रिंग]
+ -- बेस 64 स्ट्रिंग को द्विआधारी स्ट्रिंग में कनवर्ट करें।
 
  pe_meta [फाइल का नाम] -- PE फाइल से मेटाडेटा लाएं।
 

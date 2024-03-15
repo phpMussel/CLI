@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data (last modified: 2023.09.23).
+# This file: French language data (last modified: 2024.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -52,7 +52,8 @@ cli_commands: |
  hash_file:[algo] [nom du fichier]
  -- Générer les signatures hachage des fichiers.
 
- hash:[algo] [chaîne] -- Générer une signature hachage à partir d'une chaîne.
+ hash:[algo] [chaîne]
+ -- Générer une signature hachage à partir d'une chaîne.
  Exemple : >> hash:crc32b Hello World
            4a17b156:11:NOM-DE-SIGNATURE
 

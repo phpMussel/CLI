@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data (last modified: 2023.10.12).
+# This file: Portuguese language data (last modified: 2024.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -64,7 +64,8 @@ cli_commands: |
 
  hex_decode [string] -- Converter hexadecimal para binária string.
 
- (base64_encode | b) [string] -- Converter binária string para base64 string.
+ (base64_encode | b) [string]
+ -- Converter binária string para base64 string.
 
  base64_decode [string] -- Converter base64 string para binária string.
 

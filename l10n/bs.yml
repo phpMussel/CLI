@@ -1,0 +1,64 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Bosnian language data (last modified: 2024.03.14).
+##/
+
+bad_command: "Ne razumem tu komandu, izvini."
+cli_algo_not_supported: "Navedeni algoritam nije podržan."
+cli_failed_to_complete: "Dovršavanje procesa skeniranja nije uspjelo"
+cli_is_not_a: "%s nije datoteka ili direktorij."
+cli_ln2: |
+ Hvala vam što koristite phpMussel, PHP skriptu dizajniranu za otkrivanje
+ trojanaca, virusa, zlonamjernog softvera, i drugih prijetnji unutar
+ datoteka učitanih na vaš sistem gdje god je skripta zakačena, na osnovu
+ potpisa ClamAV-a i drugih.
+                                     ~ ~ ~
+ PHPMUSSEL AUTORSKA PRAVA 2013. i dalje GNU/GPLv2 od Caleb M (Maikuolan).
+                                     ~ ~ ~
+cli_ln3: |
+ Trenutno radi phpMussel u CLI modu (sučelje komandne linije). Da biste
+ skenirali datoteku ili direktorij, upišite "scan", nakon čega slijedi
+ naziv datoteke ili direktorija koji želite da phpMussel skenira i
+ pritisnite Enter; Upišite "c" i pritisnite Enter za listu komandi CLI
+ režima; Upišite "q" i pritisnite Enter da biste izašli.
+cli_pe1: "Nije važeći PE datoteka!"
+cli_pe2: "PE sekcije:"
+cli_signature_placeholder: "IME-VAŠEG-POTPISA"
+cli_working: "U toku"
+cli_commands: |
+ q | quit | exit -- Prekinite CLI.
+
+ hash_file:[algo] [ime datoteka] -- Generirajte hash potpise iz datoteke.
+
+ hash:[algo] [niz] -- Generirajte hash potpis iz niza.
+ Example: >> hash:crc32b Hello World
+          4a17b156:11:IME-VAŠEG-POTPISA
+
+ algo -- Navedite sve podržane algoritme.
+
+ (hex_encode | x) [niz] -- Pretvorite binarni niz u heksadecimalni.
+ Example: >> hex_encode Hello World
+          48656c6c6f20576f726c64
+
+ hex_decode [niz] -- Pretvorite heksadecimalni u binarni niz.
+
+ (base64_encode | b) [niz] -- Pretvorite binarni niz u base64 niz.
+
+ base64_decode [niz] -- Pretvorite base64 niz u binarni niz.
+
+ pe_meta [ime datoteka] -- Ekstrakt metapodataka iz PE datoteke.
+
+ url_sig [niz] -- Generirajte potpise URL skenera.
+
+ (scan | s) [naziv datoteke ili direktorija]
+ -- Skenirajte datoteku ili direktorij.
+
+ c -- Odštampajte ovu listu komandi.
+invalid_url: "Nevažeći URL!"

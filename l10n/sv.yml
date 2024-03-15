@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data (last modified: 2022.09.15).
+# This file: Swedish language data (last modified: 2024.03.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -30,18 +30,18 @@ cli_failed_to_complete: "Det gick inte att slutföra skanningsprocessen"
 cli_is_not_a: "%s är inte en fil eller katalog."
 cli_ln2: |
  Tack för att du använder phpMussel, ett PHP-skript som är utformat för att
- upptäcka trojaner, virus, skadlig kod och andra hot inom filer som laddas upp
- till ditt system varhelst skriptet är anslutet, baserat på signaturerna från
- ClamAV och andra.
+ upptäcka trojaner, virus, skadlig kod och andra hot inom filer som laddas
+ upp till ditt system varhelst skriptet är anslutet, baserat på
+ signaturerna från ClamAV och andra.
                                      ~ ~ ~
  PHPMUSSEL COPYRIGHT 2013 och därefter GNU/GPLv2 av Caleb M (Maikuolan).
                                      ~ ~ ~
 cli_ln3: |
- Kör för närvarande phpMussel i CLI-läge (kommandoradsgränssnitt). Om du vill
- skanna en fil eller katalog, skriver du "scan", följt av namnet på filen eller
- katalogen som du vill att phpMussel ska skanna, och tryck på Enter; Skriv "c"
- och tryck på Enter för att visa en lista över CLI-läge-kommandon; Skriv "q"
- och tryck på Enter för att avsluta.
+ Kör för närvarande phpMussel i CLI-läge (kommandoradsgränssnitt). Om du
+ vill skanna en fil eller katalog, skriver du "scan", följt av namnet på
+ filen eller katalogen som du vill att phpMussel ska skanna, och tryck på
+ Enter; Skriv "c" och tryck på Enter för att visa en lista över
+ CLI-läge-kommandon; Skriv "q" och tryck på Enter för att avsluta.
 cli_pe1: "Inte en giltig PE-fil!"
 cli_pe2: "PE-sektion:"
 cli_signature_placeholder: "DITT-SIGNATURNAMN"
