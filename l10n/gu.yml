@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Gujarati language data (last modified: 2024.04.19).
+# This file: Gujarati language data (last modified: 2024.04.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -48,7 +48,7 @@ cli_working: "ચાલુ છે"
 cli_commands: |
  q | quit | exit -- CLI છોડો.
 
- hash_file:[અલ્ગોરિધમ] [ફાઈલનું નામ] -- ફાઇલોમાંથી હેશ સિગ્નેચર જનરેટ કરો.
+ hash_file:[અલ્ગોરિધમ] [ફાઇલનું નામ] -- ફાઇલોમાંથી હેશ સિગ્નેચર જનરેટ કરો.
 
  hash:[અલ્ગોરિધમ] [સ્ટ્રિંગ] -- સ્ટ્રિંગમાંથી હેશ સિગ્નેચર જનરેટ કરો.
  Example: >> hash:crc32b Hello World
@@ -68,7 +68,7 @@ cli_commands: |
  base64_decode [સ્ટ્રિંગ]
  -- base64 સ્ટ્રિંગને બાઈનરી સ્ટ્રિંગમાં કન્વર્ટ કરો.
 
- pe_meta [ફાઈલનું નામ] -- PE ફાઇલમાંથી મેટાડેટા કાઢો.
+ pe_meta [ફાઇલનું નામ] -- PE ફાઇલમાંથી મેટાડેટા કાઢો.
 
  url_sig [સ્ટ્રિંગ] -- URL સ્કેનર સિગ્નેચર બનાવો.
 
