@@ -43,3 +43,7 @@ __*Why "v3.0.0" instead of "v1.0.0?"*__ Prior to phpMussel v3, the "phpMussel Co
 [2023.12.01; Maikuolan]: Improved escaping.
 
 [2024.03.14~15; Maikuolan]: Added L10N for Bosnian, Catalan, Galician, Gujarati, Croatian, and Serbian.
+
+### v3.3.1
+
+[2024.07.02; Maikuolan]: Merged zh and zh-TW L10N, and dropped region designations (e.g., CN, TW) in favour of script designations (e.g., Hans, Hant).
