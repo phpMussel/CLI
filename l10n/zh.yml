@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data (last modified: 2024.07.02).
+# This file: Chinese language data (last modified: 2024.08.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -37,7 +37,7 @@ cli_ln2:
   PHPMUSSEL版权2013和此后GNU/GPLv.2通过Caleb M （Maikuolan）。
                                       ~ ~ ~
  zh-Hant: |
-  謝謝對於使用phpMussel，一個PHP腳本旨在檢測木馬，病毒，惡意軟件，
+  謝謝對於使用phpMussel，一個PHP腳本旨在檢測木馬，病毒，惡意軟體，
   和其他威脅在文件上傳到您的系統隨地這個腳本是叫，
   根據ClamAV的簽名和其他簽名。
                                       ~ ~ ~

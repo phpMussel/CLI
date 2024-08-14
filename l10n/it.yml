@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data (last modified: 2022.08.21).
+# This file: Italian language data (last modified: 2024.08.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -30,7 +30,7 @@ cli_failed_to_complete: "Completamento del processo di controllo fallito"
 cli_is_not_a: "%s non è né un file né una cartella."
 cli_ln2: |
  Grazie per aver scelto phpMussel, un programma in PHP progettato per
- rilevare trojan, virus, malware ed altre minacce nei file caricati sul tuo
+ rilevare trojan, virus, malware ed altre minacce nei file caricati sul suo
  sistama dovunque il programma stesso è collegato, basato sulle firme di
  ClamAV ed altri.
                                      ~ ~ ~
