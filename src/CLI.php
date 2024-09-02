@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2023.12.01).
+ * This file: CLI handler (last modified: 2024.09.02).
  */
 
 namespace phpMussel\CLI;
@@ -119,20 +119,23 @@ class CLI
             if (substr($Command, 0, 10) === 'hash_file:') {
                 $this->LastAlgo = substr($Command, 10);
                 echo "\n" . $this->hashFile($Clean);
+                continue;
             }
 
             /** Generate a CoEx signature using a file. */
-            elseif ($Command === 'coex_file') {
+            if ($Command === 'coex_file') {
                 echo "\n" . $this->coexFile($Clean);
+                continue;
             }
 
             /** Fetch PE metadata. */
-            elseif ($Command === 'pe_meta') {
+            if ($Command === 'pe_meta') {
                 echo "\n" . $this->peMeta($Clean);
+                continue;
             }
 
             /** Generate a hash signature using a string. */
-            elseif (substr($Command, 0, 5) === 'hash:') {
+            if (substr($Command, 0, 5) === 'hash:') {
                 $this->LastAlgo = substr($Command, 5);
                 if (in_array($this->LastAlgo, hash_algos())) {
                     $TargetData = substr($Clean, strlen($Command) + 1);
@@ -140,10 +143,11 @@ class CLI
                 } else {
                     echo "\n" . $this->Loader->L10N->getString('cli_algo_not_supported') . "\n";
                 }
+                continue;
             }
 
             /** Generate a URL scanner signature from a URL. */
-            elseif ($Command === 'url_sig') {
+            if ($Command === 'url_sig') {
                 echo "\n";
                 $Clean = $this->Scanner->normalise(substr($Clean, strlen($Command) + 1));
                 $URL = ['AvoidMe' => '', 'ForThis' => ''];
@@ -184,10 +188,11 @@ class CLI
                     }
                 }
                 unset($URL);
+                continue;
             }
 
             /** Generate a CoEx signature using a string. */
-            elseif (preg_match('~^(?:(?:[Cc]|ϲ|с)(?:[Oo]|ο|о)(?:[Ee]|е)(?:[Xx]|х))$~', $CommandNatural)) {
+            if (preg_match('~^(?:(?:[Cc]|ϲ|с)(?:[Oo]|ο|о)(?:[Ee]|е)(?:[Xx]|х))$~', $CommandNatural)) {
                 $TargetData = substr($Clean, strlen($Command) + 1);
                 echo sprintf(
                     "\n\$sha256:%s;\$StringLength:%d;%s\n",
@@ -195,46 +200,52 @@ class CLI
                     strlen($TargetData),
                     $this->Loader->L10N->getString('cli_signature_placeholder')
                 );
+                continue;
             }
 
             /** Convert a binary string to a hexadecimal. */
-            elseif (preg_match('~^(?:[Hh][Ee][Xx]_[Ee][Nn][Cc][Oo][Dd][Ee]|[Xx]|х)$~', $CommandNatural)) {
+            if (preg_match('~^(?:[Hh][Ee][Xx]_[Ee][Nn][Cc][Oo][Dd][Ee]|[Xx]|х)$~', $CommandNatural)) {
                 $TargetData = substr($Clean, strlen($Command) + 1);
                 echo "\n" . bin2hex($TargetData) . "\n";
+                continue;
             }
 
             /** Convert a hexadecimal to a binary string. */
-            elseif ($Command === 'hex_decode') {
+            if ($Command === 'hex_decode') {
                 $TargetData = substr($Clean, strlen($Command) + 1);
                 echo "\n" . ($this->Loader->hexSafe($TargetData) ?: $this->Loader->L10N->getString('response.Invalid data')) . "\n";
+                continue;
             }
 
             /** Convert a binary string to a base64 string. */
-            elseif ($Command === 'base64_encode' || $Command === 'b') {
+            if ($Command === 'base64_encode' || $Command === 'b') {
                 $TargetData = substr($Clean, strlen($Command) + 1);
                 echo "\n" . base64_encode($TargetData) . "\n";
+                continue;
             }
 
             /** Convert a base64 string to a binary string. */
-            elseif ($Command === 'base64_decode') {
+            if ($Command === 'base64_decode') {
                 $TargetData = substr($Clean, strlen($Command) + 1);
                 echo "\n" . (base64_decode($TargetData) ?: $this->Loader->L10N->getString('response.Invalid data')) . "\n";
+                continue;
             }
 
             /** Scan a file or directory. */
-            elseif (preg_match('~^(?:[Ss][Cc][Aa][Nn]|[Ss]|ѕ)$~', $CommandNatural)) {
+            if (preg_match('~^(?:[Ss][Cc][Aa][Nn]|[Ss]|ѕ)$~', $CommandNatural)) {
                 $TargetData = substr($Clean, strlen($Command) + 1);
-                echo "\n";
-                echo $this->Scanner->scan($TargetData) . "\n";
+                echo "\n" . $this->Scanner->scan($TargetData) . "\n";
+                continue;
             }
 
             /** Print the command list. */
-            elseif (preg_match('~^(?:[Cc]|ϲ|с)$~', $CommandNatural)) {
+            if (preg_match('~^(?:[Cc]|ϲ|с)$~', $CommandNatural)) {
                 echo "\n" . $this->Loader->L10N->getString('cli_commands');
+                continue;
             }
 
             /** Print a list of supported algorithms. */
-            elseif ($Command === 'algo') {
+            if ($Command === 'algo') {
                 echo "\n";
                 $Algos = hash_algos();
                 $Pos = 1;
@@ -252,12 +263,11 @@ class CLI
                     }
                 }
                 echo "\n";
+                continue;
             }
 
             /** Bad command notice. */
-            else {
-                echo "\n" . $this->Loader->L10N->getString('bad_command') . "\n";
-            }
+            echo "\n" . $this->Loader->L10N->getString('bad_command') . "\n";
         }
     }
 
