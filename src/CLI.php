@@ -239,6 +239,10 @@ class CLI
                     $this->Loader->InstanceCache[$Matches[1]] = true;
                 }
                 echo "\n" . $this->Scanner->scan($TargetData) . "\n";
+                if (isset($this->Loader->InstanceCache['Print after CLI scan']) && $this->Loader->InstanceCache['Print after CLI scan'] !== '') {
+                    echo "\n" . $this->Loader->InstanceCache['Print after CLI scan'] . "\n";
+                    $this->Loader->InstanceCache['Print after CLI scan'] = '';
+                }
                 continue;
             }
 
