@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2024.09.02).
+ * This file: CLI handler (last modified: 2024.10.15).
  */
 
 namespace phpMussel\CLI;
@@ -280,7 +280,12 @@ class CLI
      */
     public function recursiveCommand(string $Command, callable $Callable): string
     {
-        [$Command, $Params] = explode(' ', $Command);
+        if (preg_match('~^([^ "]+) "([^"]+)"$~', $Command, $Matches)) {
+            $Command = $Matches[1];
+            $Params = $Matches[2];
+        } else {
+            [$Command, $Params] = strpos($Command, ' ') === false ? [$Command, ''] : explode(' ', $Command, 2);
+        }
         if (is_dir($Params)) {
             if (!is_readable($Params)) {
                 return sprintf($this->Loader->L10N->getString('response.Failed to access %s'), $Params) . "\n";
