@@ -234,6 +234,10 @@ class CLI
             /** Scan a file or directory. */
             if (preg_match('~^(?:[Ss][Cc][Aa][Nn]|[Ss]|ѕ)$~', $CommandNatural)) {
                 $TargetData = substr($Clean, strlen($Command) + 1);
+                if (preg_match('~ --([A-Za-z]{2})$~', $TargetData, $Matches)) {
+                    $TargetData = substr($TargetData, 0, -5);
+                    $this->Loader->InstanceCache[$Matches[1]] = true;
+                }
                 echo "\n" . $this->Scanner->scan($TargetData) . "\n";
                 continue;
             }

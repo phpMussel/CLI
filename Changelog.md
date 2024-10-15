@@ -52,3 +52,6 @@ __*Why "v3.0.0" instead of "v1.0.0?"*__ Prior to phpMussel v3, the "phpMussel Co
 
 #### Bugs fixed.
 - [2024.10.15]: Parameters containing spaces weren't being parsed correctly by the recursiveCommand method; Fixed.
+
+#### Other changes.
+- [2024.10.15]: Added the ability to add special, optional flags after the parameter when using the scan command, with the intent to modify scan behaviour.
