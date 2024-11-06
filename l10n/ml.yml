@@ -1,0 +1,38 @@
+##\
+# This file is a part of the phpMussel\CLI package.
+# Homepage: https://phpmussel.github.io/
+#
+# PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Malayalam language data (last modified: 2024.09.14).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
+##/
+
+bad_command: "ആ കമാൻഡ് എനിക്ക് മനസ്സിലാകുന്നില്ല, ക്ഷമിക്കണം."
+cli_algo_not_supported: "നിർദ്ദിഷ്ട അൽഗോരിതം പിന്തുണയ്ക്കുന്നില്ല."
+cli_failed_to_complete: "സ്കാനിംഗ് പ്രക്രിയ പൂർത്തിയാക്കുന്നതിൽ പരാജയപ്പെട്ടു"
+cli_is_not_a: "%s ഒരു ഫയലോ ഡയറക്ടറിയോ അല്ല."
+cli_ln2: |
+ ClamAV യുടെയും മറ്റുള്ളവരുടെയും ഒപ്പുകൾ അടിസ്ഥാനമാക്കി നിങ്ങളുടെ
+ സിസ്റ്റത്തിലേക്ക് അപ്‌ലോഡ് ചെയ്‌തിരിക്കുന്ന ഫയലുകൾക്കുള്ളിലെ ട്രോജനുകൾ,
+ വൈറസുകൾ, ക്ഷുദ്രവെയർ, മറ്റ് ഭീഷണികൾ എന്നിവ കണ്ടെത്തുന്നതിന് രൂപകൽപ്പന
+ ചെയ്‌തിരിക്കുന്ന PHP സ്‌ക്രിപ്‌റ്റായ phpMussel ഉപയോഗിച്ചതിന് നന്ദി.
+                                     ~ ~ ~
+ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
+                                     ~ ~ ~
