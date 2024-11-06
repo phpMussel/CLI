@@ -55,3 +55,7 @@ __*Why "v3.0.0" instead of "v1.0.0?"*__ Prior to phpMussel v3, the "phpMussel Co
 
 #### Other changes.
 - [2024.10.15]: Added the ability to add special, optional flags after the parameter when using the scan command, with the intent to modify scan behaviour. The scanner can now also return data specific to those flags back to CLI.
+
+### v3.4.1
+
+- [2024.11.06]: Added PHP 8.4 to workflows.
