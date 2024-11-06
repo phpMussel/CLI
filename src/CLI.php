@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2024.10.15).
+ * This file: CLI handler (last modified: 2024.11.06).
  */
 
 namespace phpMussel\CLI;
@@ -238,6 +238,9 @@ class CLI
                     $TargetData = substr($TargetData, 0, -5);
                     $this->Loader->InstanceCache[$Matches[1]] = true;
                 }
+                if (preg_match('~^(["\'])(.+)\1$~', $TargetData, $Matches)) {
+                    $TargetData = $Matches[2];
+                }
                 echo "\n" . $this->Scanner->scan($TargetData) . "\n";
                 if (isset($this->Loader->InstanceCache['Print after CLI scan']) && $this->Loader->InstanceCache['Print after CLI scan'] !== '') {
                     echo "\n" . $this->Loader->InstanceCache['Print after CLI scan'] . "\n";
@@ -288,9 +291,9 @@ class CLI
      */
     public function recursiveCommand(string $Command, callable $Callable): string
     {
-        if (preg_match('~^([^ "]+) "([^"]+)"$~', $Command, $Matches)) {
+        if (preg_match('~^([^ "]+) (["\'])(.+)\2$~', $Command, $Matches)) {
             $Command = $Matches[1];
-            $Params = $Matches[2];
+            $Params = $Matches[3];
         } else {
             [$Command, $Params] = strpos($Command, ' ') === false ? [$Command, ''] : explode(' ', $Command, 2);
         }

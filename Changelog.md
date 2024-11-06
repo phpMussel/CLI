@@ -59,3 +59,4 @@ __*Why "v3.0.0" instead of "v1.0.0?"*__ Prior to phpMussel v3, the "phpMussel Co
 ### v3.4.1
 
 - [2024.11.06]: Added PHP 8.4 to workflows.
+- [2024.11.06]: Improved command parameter quoting.
