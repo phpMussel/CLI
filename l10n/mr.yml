@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Marathi language data (last modified: 2024.09.14).
+# This file: Marathi language data (last modified: 2025.01.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -28,3 +28,50 @@ bad_command: "मला ती आज्ञा समजली नाही, म
 cli_algo_not_supported: "निर्दिष्ट अल्गोरिदम समर्थित नाही."
 cli_failed_to_complete: "स्कॅनिंग प्रक्रिया पूर्ण करण्यात अयशस्वी"
 cli_is_not_a: "%s ही फाइल किंवा निर्देशिका नाही."
+cli_ln2: |
+ phpMussel वापरल्याबद्दल धन्यवाद. phpMussel ही एक PHP स्क्रिप्ट आहे जी
+ तुमच्या सिस्टमवर अपलोड केलेल्या फाइल्समधील ट्रोजन, व्हायरस, मालवेअर, आणि
+ इतर धोके शोधण्यासाठी डिझाइन केलेली आहे. हे ClamAV आणि इतरांच्या
+ स्वाक्षऱ्यांवर आधारित आहे.
+                                     ~ ~ ~
+ PHPMUSSEL कॉपीराइट 2013 आणि त्यानंतर GNU/GPLv2 by Caleb M (Maikuolan) द्वारे.
+                                     ~ ~ ~
+cli_ln3: |
+ सध्या phpMussel CLI मोडमध्ये (कमांड लाइन इंटरफेस) चालवत आहे. फाइल किंवा
+ निर्देशिका स्कॅन करण्यासाठी, "scan" टाइप करा, नंतर phpMussel ला ज्या फाइल
+ किंवा निर्देशिकाला स्कॅन करायचे आहे त्याचे नाव टाइप करा आणि एंटर दाबा.
+ CLI मोड कमांडची यादी पाहण्यासाठी "c" टाइप करा आणि एंटर दाबा; बाहेर
+ पडण्यासाठी "q" टाइप करा आणि एंटर दाबा.
+cli_pe1: "वैध PE फाइल नाही!"
+cli_pe2: "PE विभाग:"
+cli_signature_placeholder: "तुमच्या-स्वाक्षरीचे-नाव"
+cli_working: "प्रगतीपथावर आहे"
+cli_commands: |
+ q | quit | exit -- CLI सोडा.
+
+ hash_file:[अल्गोरिदम] [फाइलनाव] -- फायलींमधून हॅश स्वाक्षरी तयार करा.
+
+ hash:[अल्गोरिदम] [स्ट्रिंग] -- स्ट्रिंगमधून हॅश सिग्नेचर जनरेट करा.
+ Example: >> hash:crc32b Hello World
+          4a17b156:11:तुमच्या-स्वाक्षरीचे-नाव
+
+ algo -- सर्व समर्थित अल्गोरिदमची यादी करा.
+
+ (hex_encode | x) [स्ट्रिंग] -- बायनरी स्ट्रिंग हेक्साडेसिमलमध्ये रूपांतरित करा.
+ Example: >> hex_encode Hello World
+          48656c6c6f20576f726c64
+
+ hex_decode [स्ट्रिंग] -- हेक्साडेसिमलला बायनरी स्ट्रिंगमध्ये रूपांतरित करा.
+
+ (base64_encode | b) [स्ट्रिंग] -- बायनरी स्ट्रिंगला बेस६४ स्ट्रिंगमध्ये रूपांतरित करा.
+
+ base64_decode [स्ट्रिंग] -- बेस६४ स्ट्रिंग बायनरी स्ट्रिंगमध्ये रूपांतरित करा.
+
+ pe_meta [फाइलनाव] -- PE फाईलमधून मेटाडेटा काढा.
+
+ url_sig [स्ट्रिंग] -- URL स्कॅनर स्वाक्षऱ्या तयार करा.
+
+ (scan | s) [फाइल किंवा निर्देशिकेचे नाव] -- फाइल किंवा निर्देशिका स्कॅन करा.
+
+ c -- ही कमांड लिस्ट प्रिंट करा.
+invalid_url: "वैध URL नाही!"
