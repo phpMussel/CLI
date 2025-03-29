@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data (last modified: 2024.03.14).
+# This file: Portuguese language data (last modified: 2025.03.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,10 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-bad_command: "Eu não entendo esse comando, desculpe."
-cli_algo_not_supported: "Algoritmo especificado não é suportado."
-cli_failed_to_complete: "Falha ao completar processo de verificação"
-cli_is_not_a: "%s não é um arquivo ou diretório."
 cli_ln2: |
  Obrigado por usando phpMussel, um PHP script projetado para detectar
  trojans, vírus, malware e outras ameaças dentro dos arquivos enviados para
@@ -43,38 +39,50 @@ cli_ln3: |
  arquivo ou diretório que você deseja phpMussel para analisar e pressione
  Enter; Digitá "c" e pressione Enter por uma lista de CLI modo comandos;
  Digitá "q" e pressione Enter para sair.
-cli_pe1: "Não é um válido PE arquivo!"
-cli_pe2: {"pt-BR": "PE Seções:", "pt-PT": "PE Secções:"}
-cli_signature_placeholder: "O-NOME-DA-SUA-ASSINATURA"
-cli_working: "Em processo"
+%s is not a file or directory: "%s não é um arquivo ou diretório."
+Entropy: "Entropia:"
+Filename: "Nome do arquivo:"
+I don_t understand that command, sorry: "Eu não entendo esse comando, desculpe."
+In progress: "Em processo"
+Invalid URL: "URL inválido!"
+Not a valid PE file: "Não é um válido PE arquivo!"
+PE Sections: {"pt-BR": "PE Seções:", "pt-PT": "PE Secções:"}
+Specified algorithm isn_t supported: "Algoritmo especificado não é suportado."
+YOUR SIGNATURE NAME: "O-NOME-DA-SUA-ASSINATURA"
 cli_commands: |
- q | quit | exit -- Deixar CLI.
+ q | quit | exit — Deixar CLI.
 
- hash_file:[algo] [nome do arquivo] -- Gerar hash assinaturas de arquivos.
+ hash_file:[algo] [nome do arquivo] — Gerar hash assinaturas de arquivos.
 
- hash:[algo] [string] -- Gerar hash assinatura de string.
+ hash:[algo] [string] — Gerar hash assinatura de string.
  Exemplo: >> hash:crc32b Hello World
           4a17b156:11:O-NOME-DA-SUA-ASSINATURA
 
- algo -- Listar todos os algoritmos suportados.
+ a | algo — Listar todos os algoritmos suportados.
 
- (hex_encode | x) [string] -- Converter binária string para hexadecimal.
+ (x | hex_encode) [string] — Converter binária string para hexadecimal.
  Exemplo: >> hex_encode Hello World
           48656c6c6f20576f726c64
 
- hex_decode [string] -- Converter hexadecimal para binária string.
+ hex_decode [string] — Converter hexadecimal para binária string.
 
- (base64_encode | b) [string]
- -- Converter binária string para base64 string.
+ (b | base64_encode) [string]
+ — Converter binária string para base64 string.
 
- base64_decode [string] -- Converter base64 string para binária string.
+ base64_decode [string] — Converter base64 string para binária string.
 
- pe_meta [nome do arquivo] -- Extrair metadados de um arquivo PE.
+ pe_meta [nome do arquivo] — Extrair metadados de um arquivo PE.
 
- url_sig [string] -- Gerar assinaturas do scanner de URL.
+ (u | url_sig) [string] — Gerar assinaturas do scanner de URL.
 
- (scan | s) [nome do arquivo ou diretório]
- -- Verificar um arquivo ou diretório.
+ (s | scan) [nome do arquivo ou diretório]
+ — Verificar um arquivo ou diretório.
 
- c -- Imprimir esta lista de comandos.
-invalid_url: "URL inválido!"
+ (s | scan) [nome do arquivo ou diretório] --xx
+ — Verificar um arquivo ou diretório com uma opção adicional.
+   --wc — Verificar sem armazenar os resultados em cache.
+   --sf — Imprima as variáveis ​​definidas pelo arquivo switch.
+
+ i [nome do arquivo ou diretório] — Obtenha informações sobre arquivos.
+
+ c — Imprimir esta lista de comandos.

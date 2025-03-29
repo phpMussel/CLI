@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data (last modified: 2024.04.19).
+# This file: Catalan language data (last modified: 2025.03.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,10 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-bad_command: "No entenc aquesta ordre, perdó."
-cli_algo_not_supported: "phpMussel no coneix l'algoritme especificat."
-cli_failed_to_complete: "L'escaneig no s'ha pogut completar"
-cli_is_not_a: "%s no és un fitxer o directori."
 cli_ln2: |
  Gràcies per utilitzar phpMussel, un script PHP dissenyat per detectar
  troians, virus, programari maliciós, i altres amenaces dins dels fitxers
@@ -42,39 +38,51 @@ cli_ln3: |
  del nom del fitxer o directori que voleu que phpMussel escanegi i premeu
  Enter; Escriviu "c" i premeu Enter per obtenir una llista d'ordres en mode
  CLI; Escriviu "q" i premeu Enter per sortir.
-cli_pe1: "No és un fitxer PE vàlid!"
-cli_pe2: "Seccions de PE:"
-cli_signature_placeholder: "EL-TEU-NOM-DE-SIGNATURA"
-cli_working: "En progrés"
+%s is not a file or directory: "%s no és un fitxer o directori."
+Entropy: "Entropia:"
+Filename: "Nom del fitxer:"
+I don_t understand that command, sorry: "No entenc aquesta ordre, perdó."
+In progress: "En progrés"
+Invalid URL: "URL no vàlid!"
+Not a valid PE file: "No és un fitxer PE vàlid!"
+PE Sections: "Seccions de PE:"
+Specified algorithm isn_t supported: "phpMussel no coneix l'algoritme especificat."
+YOUR SIGNATURE NAME: "EL-TEU-NOM-DE-SIGNATURA"
 cli_commands: |
- q | quit | exit -- Surt de la CLI.
+ q | quit | exit — Surt de la CLI.
 
  hash_file:[algo] [nom del fitxer]
- -- Genereu signatures hash a partir dels fitxers.
+ — Genereu signatures hash a partir dels fitxers.
 
- hash:[algo] [cadena] -- Genereu la signatura hash a partir de la cadena.
+ hash:[algo] [cadena] — Genereu la signatura hash a partir de la cadena.
  Example: >> hash:crc32b Hello World
           4a17b156:11:EL-TEU-NOM-DE-SIGNATURA
 
- algo -- Llista tots els algorismes coneguts per phpMussel.
+ a | algo — Llista tots els algorismes coneguts per phpMussel.
 
- (hex_encode | x) [cadena] -- Converteix una cadena binària a hexadecimal.
+ (x | hex_encode) [cadena] — Converteix una cadena binària a hexadecimal.
  Example: >> hex_encode Hello World
           48656c6c6f20576f726c64
 
- hex_decode [cadena] -- Converteix hexadecimal a cadena binària.
+ hex_decode [cadena] — Converteix hexadecimal a cadena binària.
 
- (base64_encode | b) [cadena]
- -- Converteix una cadena binària a una cadena base64.
+ (b | base64_encode) [cadena]
+ — Converteix una cadena binària a una cadena base64.
 
  base64_decode [cadena]
- -- Converteix una cadena base64 a una cadena binària.
+ — Converteix una cadena base64 a una cadena binària.
 
- pe_meta [nom del fitxer] -- Extreu metadades d'un fitxer PE.
+ pe_meta [nom del fitxer] — Extreu metadades d'un fitxer PE.
 
- url_sig [cadena] -- Genereu signatures d'escàner d'URL.
+ (u | url_sig) [cadena] — Genereu signatures d'escàner d'URL.
 
- (scan | s) [nom del fitxer o directori] -- Escaneja un fitxer o directori.
+ (s | scan) [nom del fitxer o directori] — Escaneja un fitxer o directori.
 
- c -- Imprimeix aquesta llista d'ordres.
-invalid_url: "URL no vàlid!"
+ (s | scan) [nom del fitxer o directori] --xx
+ — Escaneja un fitxer o directori amb una opció addicional.
+   --wc — Escaneja sense guardar els resultats a la memòria cau.
+   --sf — Imprimeix les variables establertes pel fitxer switch.
+
+ i [nom del fitxer o directori] — Obteniu informació sobre fitxers.
+
+ c — Imprimeix aquesta llista d'ordres.

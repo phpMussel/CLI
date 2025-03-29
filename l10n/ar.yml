@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data (last modified: 2022.08.18).
+# This file: Arabic language data (last modified: 2025.03.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,32 +24,34 @@
 # requests, ask. I can help.
 ##/
 
-bad_command: "أنا لا أفهم هذا الأمر، آسف."
-cli_algo_not_supported: "الخوارزمية المحددة غير مدعومة."
-cli_failed_to_complete: "فشل في إكمال عملية المسح."
-cli_is_not_a: "%s ليس ملف أو مجلد."
 cli_ln2: |
  شكراً لك على إستخدام phpMussel، المبرمج بلغة PHP للكشف عن ملفات الإختراق
  والفيروسات والبرمجيات الخبيثة الموجودة حيث يعتمد السكربت على توقيعات
  ClamAV وغيرها.
                                      ~ ~ ~
  حقوق النشر محفوظة ل PHPMUSSEL لعام 2013 وما بعده تحت رخصة GNU/GPLv2
- للمبرمج (Caleb M (Maikuolan).
+ للمبرمج Caleb M (Maikuolan).
                                      ~ ~ ~
 cli_ln3: |
  حاليا على تنفيذ phpMussel في وضع CLI (واجهة سطر الأوامر). لمسح ملف أو
  دليل، اكتب "scan"، ثم اسم ملف أو دليل الذي تريد phpMussel إلى لمسح واضغط
  Enter؛ اكتب "c" واضغط Enter للحصول على قائمة أوامر وضع CLI؛ اكتب "q" واضغط
  Enter للخروج.
-cli_pe1: "ليس ملف PE صالح!"
-cli_pe2: "أقسام PE:"
-cli_signature_placeholder: "اسم"
-cli_working: "في تَقَدم"
+%s is not a file or directory: "%s ليس ملف أو مجلد."
+Entropy: "إنتروبيا:"
+Filename: "اسم الملف:"
+I don_t understand that command, sorry: "أنا لا أفهم هذا الأمر، آسف."
+In progress: "في تَقَدم"
+Invalid URL: "URL غير صالح!"
+Not a valid PE file: "ليس ملف PE صالح!"
+PE Sections: "أقسام PE:"
+Specified algorithm isn_t supported: "الخوارزمية المحددة غير مدعومة."
+YOUR SIGNATURE NAME: "اسم"
 cli_commands: |
  q
  - CLI للخروج.
  - البديل: quit, exit.
- hash_file:[algo] [filename]
+ hash_file:[algo] [اسم الملف]
  - خلق التوقيعات التجزئة من ملفات.
  hash:[algo] [string]
  - خلق التوقيعات التجزئة من النص.
@@ -65,13 +67,21 @@ cli_commands: |
  - البديل: b.
  base64_decode [string]
  - تحول نص base64 إلى النص ثنائي.
- pe_meta [filename]
+ pe_meta [اسم الملف]
  - استخراج البيانات الوصفية من ملف PE.
- url_sig [string]
+ u [string]
  - توليد URL التوقيعات الماسح الضوئي.
- scan [filename]
+ - البديل: url_sig.
+ s [اسم الملف]
  - تفحص ملف أو دليل.
- - البديل: s.
+ - البديل: scan.
+ s [اسم الملف] --xx
+ — مسح ملف أو دليل باستخدام خيار إضافي.
+   --wc
+   — مسح ضوئي دون تخزين النتائج مؤقتًا.
+   --sf
+   — طباعة المتغيرات التي تم تعيينها بواسطة ملف التبديل.
+ i [اسم الملف]
+ - احصل على معلومات حول الملفات.
  c
  - طباعة هذه القائمة الأوامر.
-invalid_url: "URL غير صالح!"

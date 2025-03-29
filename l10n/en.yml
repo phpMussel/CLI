@@ -7,19 +7,13 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data (last modified: 2023.04.03).
+# This file: English language data (last modified: 2025.03.29).
 ##/
 
-# CLI-mode ASCII art.
-cli_ln1: |
- ..   _____  _     _  _____  _______ _     _ _______ _______ _______
- .   |_____] |_____| |_____] |  |  | |  .  | |______ |______ |______ |  .
-     |       |     | |       |  |  | |_____| ______| ______| |______ |_____
-
-bad_command: "I don't understand that command, sorry."
-cli_algo_not_supported: "Specified algorithm isn't supported."
-cli_failed_to_complete: "Failed to complete scanning process"
-cli_is_not_a: "%s is not a file or directory."
+cli_ln1: |+
+ ╔═══╗ ╥   ╥ ╔═══╗ ╔═╦═╗ ╥   ╥ ╔═══╕ ╔═══╕ ╔═══╕ ╥     PHP v%s
+ ╠═══╝ ╠═══╣ ╠═══╝ ║ ║ ║ ║   ║ ╚═══╗ ╚═══╗ ╠═══  ║     Core v%s
+ ╨     ╨   ╨ ╨     ╨ ╨ ╨ ╚═══╝ ╘═══╝ ╘═══╝ ╚═══╛ ╚═══╛ CLI v%s
 cli_ln2: |
  Thank you for using phpMussel, a PHP script designed to detect trojans,
  viruses, malware, and other threats within files uploaded to your system
@@ -34,36 +28,48 @@ cli_ln3: |
  directory that you want phpMussel to scan and press Enter; Type "c" and
  press Enter for a list of CLI mode commands; Type "q" and press Enter to
  quit.
-cli_pe1: "Not a valid PE file!"
-cli_pe2: "PE Sections:"
-cli_signature_placeholder: "YOUR-SIGNATURE-NAME"
-cli_working: "In progress"
+%s is not a file or directory: "%s is not a file or directory."
+Entropy: "Entropy:"
+Filename: "Filename:"
+I don_t understand that command, sorry: "I don't understand that command, sorry."
+In progress: "In progress"
+Invalid URL: "Invalid URL!"
+Not a valid PE file: "Not a valid PE file!"
+PE Sections: "PE Sections:"
+Specified algorithm isn_t supported: "Specified algorithm isn't supported."
+YOUR SIGNATURE NAME: "YOUR-SIGNATURE-NAME"
 cli_commands: |
- q | quit | exit -- Quit CLI.
+ q | quit | exit — Quit CLI.
 
- hash_file:[algo] [filename] -- Generate hash signatures from files.
+ hash_file:[algo] [filename] — Generate hash signatures from files.
 
- hash:[algo] [string] -- Generate hash signature from string.
+ hash:[algo] [string] — Generate hash signature from string.
  Example: >> hash:crc32b Hello World
           4a17b156:11:YOUR-SIGNATURE-NAME
 
- algo -- List all supported algorithms.
+ a | algo — List all supported algorithms.
 
- (hex_encode | x) [string] -- Convert binary string to hexadecimal.
+ (x | hex_encode) [string] — Convert binary string to hexadecimal.
  Example: >> hex_encode Hello World
           48656c6c6f20576f726c64
 
- hex_decode [string] -- Convert hexadecimal to binary string.
+ hex_decode [string] — Convert hexadecimal to binary string.
 
- (base64_encode | b) [string] -- Convert binary string to base64 string.
+ (b | base64_encode) [string] — Convert binary string to base64 string.
 
- base64_decode [string] -- Convert base64 string to binary string.
+ base64_decode [string] — Convert base64 string to binary string.
 
- pe_meta [filename] -- Extract metadata from a PE file.
+ pe_meta [filename] — Extract metadata from a PE file.
 
- url_sig [string] -- Generate URL scanner signatures.
+ (u | url_sig) [string] — Generate URL scanner signatures.
 
- (scan | s) [name of the file or directory] -- Scan a file or directory.
+ (s | scan) [name of the file or directory] — Scan a file or directory.
 
- c -- Print this command list.
-invalid_url: "Invalid URL!"
+ (s | scan) [name of the file or directory] --xx
+ — Scan a file or directory with an additional option.
+   --wc — Scan without caching the results.
+   --sf — Print the variables set by the switch file.
+
+ i [name of the file or directory] — Get information about files.
+
+ c — Print this command list.

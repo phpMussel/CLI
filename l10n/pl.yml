@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data (last modified: 2024.03.14).
+# This file: Polish language data (last modified: 2025.03.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,10 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-bad_command: "Przepraszam, nie rozumiem tego polecenia."
-cli_algo_not_supported: "Określony algorytm nie jest obsługiwany."
-cli_failed_to_complete: "Nie udało się ukończyć procesu skanowania"
-cli_is_not_a: "%s nie jest plikiem ani katalogiem."
 cli_ln2: |
  Dziękujemy za korzystanie z phpMussel, skrypt PHP przeznaczony do
  wykrywania trojanów, wirusów, złośliwego oprogramowania i innych zagrożeń
@@ -42,36 +38,48 @@ cli_ln3: |
  katalogu, który ma zostać przeskanowany przez phpMussel, i naciśnij Enter;
  Wpisz „c” i naciśnij klawisz Enter, aby wyświetlić listę poleceń trybu
  CLI; Wpisz „q” i naciśnij Enter, aby wyjść.
-cli_pe1: "Nieprawidłowy plik PE!"
-cli_pe2: "Sekcje PE:"
-cli_signature_placeholder: "TWOJE-NAZWA-PODPISY"
-cli_working: "Praca w toku"
+%s is not a file or directory: "%s nie jest plikiem ani katalogiem."
+Entropy: "Entropia:"
+Filename: "Nazwa pliku:"
+I don_t understand that command, sorry: "Przepraszam, nie rozumiem tego polecenia."
+In progress: "Praca w toku"
+Invalid URL: "Niepoprawny URL!"
+Not a valid PE file: "Nieprawidłowy plik PE!"
+PE Sections: "Sekcje PE:"
+Specified algorithm isn_t supported: "Określony algorytm nie jest obsługiwany."
+YOUR SIGNATURE NAME: "TWOJE-NAZWA-PODPISY"
 cli_commands: |
- q | quit | exit -- Zamknij CLI.
+ q | quit | exit — Zamknij CLI.
 
- hash_file:[algo] [nazwa pliku] -- Wygeneruj podpisy skrótów z plików.
+ hash_file:[algo] [nazwa pliku] — Wygeneruj podpisy skrótów z plików.
 
- hash:[algo] [dane] -- Wygeneruj signature hash z ciągu.
+ hash:[algo] [dane] — Wygeneruj signature hash z ciągu.
  Przykład: >> hash:crc32b Hello World
            4a17b156:11:TWOJE-NAZWA-PODPISY
 
- algo -- Wyświetl wszystkie obsługiwane algorytmy.
+ a | algo — Wyświetl wszystkie obsługiwane algorytmy.
 
- hex_encode [dane] -- Konwertuj dane binarne na szesnastkowe.
+ hex_encode [dane] — Konwertuj dane binarne na szesnastkowe.
  Przykład: >> hex_encode Hello World
            48656c6c6f20576f726c64
 
- hex_decode [dane] -- Konwertuj dane szesnastkowe na binarne.
+ hex_decode [dane] — Konwertuj dane szesnastkowe na binarne.
 
- (base64_encode | b) [dane] -- Konwertuj dane binarne na dane base64.
+ (b | base64_encode) [dane] — Konwertuj dane binarne na dane base64.
 
- base64_decode [dane] -- Konwertuj dane base64 na dane binarne.
+ base64_decode [dane] — Konwertuj dane base64 na dane binarne.
 
- pe_meta [nazwa pliku] -- Wyodrębnij metadane z pliku PE.
+ pe_meta [nazwa pliku] — Wyodrębnij metadane z pliku PE.
 
- url_sig [dane] -- Wygeneruj podpisy skanera adresów URL.
+ (u | url_sig) [dane] — Wygeneruj podpisy skanera adresów URL.
 
- (scan | s) [nazwa pliku lub katalogu] -- Zeskanuj plik lub katalog.
+ (s | scan) [nazwa pliku lub katalogu] — Zeskanuj plik lub katalog.
 
- c -- Wydrukuj tę listę poleceń.
-invalid_url: "Niepoprawny URL!"
+ (s | scan) [nazwa pliku lub katalogu] --xx
+ — Zeskanuj plik lub katalog za pomocą dodatkowej opcji.
+   --wc — Zeskanuj bez buforowania wyników.
+   --sf — Wydrukuj zmienne ustawione przez plik przełącznika.
+
+ i [nazwa pliku lub katalogu] — Uzyskaj informacje o plikach.
+
+ c — Wydrukuj tę listę poleceń.

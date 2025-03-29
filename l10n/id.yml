@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2022.09.15).
+# This file: Indonesian language data (last modified: 2025.03.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,10 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-bad_command: "Saya tidak mengerti perintah ini, maaf."
-cli_algo_not_supported: "Algoritma yang ditentukan tidak didukung."
-cli_failed_to_complete: "Gagal untuk menyelesaikan memindai proses"
-cli_is_not_a: "%s bukan file atau direktori."
 cli_ln2: |
  Terima kasih untuk menggunakan phpMussel, sebuah skrip php di-design untuk
  mendeteksi trojan, virus, dan serangan lainnya dalam file diupload ke
@@ -42,38 +38,50 @@ cli_ln3: |
  file atau direktori yang ingin Anda phpMussel untuk memindai dan tekan
  Enter; Menulis "c" dan tekan Enter untuk daftar CLI mode perintah; Menulis
  "q" dan tekan Enter untuk keluar.
-cli_pe1: "Bukan file PE yang valid!"
-cli_pe2: "Bagian PE:"
-cli_signature_placeholder: "NAMA-TANDA-TANGAN"
-cli_working: "Dalam proses"
+%s is not a file or directory: "%s bukan file atau direktori."
+Entropy: "Entropi:"
+Filename: "Nama file:"
+I don_t understand that command, sorry: "Saya tidak mengerti perintah ini, maaf."
+In progress: "Dalam proses"
+Invalid URL: "URL tidak valid!"
+Not a valid PE file: "Bukan file PE yang valid!"
+PE Sections: "Bagian PE:"
+Specified algorithm isn_t supported: "Algoritma yang ditentukan tidak didukung."
+YOUR SIGNATURE NAME: "NAMA-TANDA-TANGAN"
 cli_commands: |
- q | quit | exit -- Berhenti CLI.
+ q | quit | exit — Berhenti CLI.
 
- hash_file:[algo] [file] -- Menghasilkan tanda tangan hash dari file.
+ hash_file:[algo] [nama file] — Menghasilkan tanda tangan hash dari file.
 
- hash:[algo] [string] -- Menghasilkan tanda tangan hash dari string.
+ hash:[algo] [string] — Menghasilkan tanda tangan hash dari string.
  Contoh: >> hash:crc32b Hello World
          4a17b156:11:NAMA-TANDA-TANGAN
 
- algo -- Daftar semua algoritma yang didukung.
+ a | algo — Daftar semua algoritma yang didukung.
 
- (hex_encode | x) [string] -- Mengkonversi string biner ke heksadesimal.
+ (x | hex_encode) [string] — Mengkonversi string biner ke heksadesimal.
  Contoh: >> hex_encode Hello World
          48656c6c6f20576f726c64
 
- hex_decode [string] -- Mengkonversi heksadesimal ke string biner.
+ hex_decode [string] — Mengkonversi heksadesimal ke string biner.
 
- (base64_encode | b) [string]
- -- Mengkonversi string biner ke string base64.
+ (b | base64_encode) [string]
+ — Mengkonversi string biner ke string base64.
 
  base64_decode [string]
- -- Mengkonversi string base64 ke string biner.
+ — Mengkonversi string base64 ke string biner.
 
- pe_meta [file] -- Ekstrak metadata dari file PE.
+ pe_meta [nama file] — Ekstrak metadata dari file PE.
 
- url_sig [string] -- Membuat tanda tangan pemindai URL.
+ (u | url_sig) [string] — Membuat tanda tangan pemindai URL.
 
- (scan | s) [file] -- Pindai file atau direktori.
+ (s | scan) [nama file atau direktori] — Memindai file atau direktori.
 
- c -- Cetak daftar perintah ini.
-invalid_url: "URL tidak valid!"
+ (s | scan) [nama file atau direktori] --xx
+ — Memindai file atau direktori dengan opsi tambahan.
+   --wc — Memindai tanpa menyimpan hasilnya.
+   --sf — Cetak variabel yang ditetapkan oleh file switch.
+
+ i [nama file atau direktori] — Dapatkan informasi tentang file.
+
+ c — Cetak daftar perintah ini.

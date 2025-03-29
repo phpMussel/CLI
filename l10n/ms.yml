@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data (last modified: 2022.09.15).
+# This file: Malay language data (last modified: 2025.03.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,10 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-bad_command: "Saya tidak faham arahan ini, maaf."
-cli_algo_not_supported: "Algoritma yang ditentukan tidak disokong."
-cli_failed_to_complete: "Gagal untuk menyelesaikan proses pengimbasan"
-cli_is_not_a: "%s bukan fail atau direktori."
 cli_ln2: |
  Terima kasih untuk menggunakan phpMussel, skrip PHP direka untuk mengesan
  trojan, virus, perisian hasad, dan ancaman lain dalam fail dimuat naik ke
@@ -42,39 +38,51 @@ cli_ln3: |
  direktori yang anda mahu phpMussel untuk mengimbas dan tekan Enter; Taip
  "c" dan tekan Enter untuk senarai arahan mod CLI; Taip "q" dan tekan Enter
  untuk berhenti.
-cli_pe1: "Bukan fail PE yang sah!"
-cli_pe2: "Bahagian PE:"
-cli_signature_placeholder: "NAMA-TANDATANGAN"
-cli_working: "Sedang berlangsung"
+%s is not a file or directory: "%s bukan fail atau direktori."
+Entropy: "Entropi:"
+Filename: "Nama fail:"
+I don_t understand that command, sorry: "Saya tidak faham arahan ini, maaf."
+In progress: "Sedang berlangsung"
+Invalid URL: "URL tidak sah!"
+Not a valid PE file: "Bukan fail PE yang sah!"
+PE Sections: "Bahagian PE:"
+Specified algorithm isn_t supported: "Algoritma yang ditentukan tidak disokong."
+YOUR SIGNATURE NAME: "NAMA-TANDATANGAN"
 cli_commands: |
- q | quit | exit -- Berhenti CLI.
+ q | quit | exit — Berhenti CLI.
 
- hash_file:[algo] [fail] -- Hasilkan tandatangan hash daripada fail.
+ hash_file:[algo] [nama fail] — Hasilkan tandatangan hash daripada fail.
 
- hash:[algo] [string] -- Hasilkan tandatangan hash daripada rentetan.
+ hash:[algo] [string] — Hasilkan tandatangan hash daripada rentetan.
  Contoh: >> hash:crc32b Hello World
          4a17b156:11:NAMA-TANDATANGAN
 
- algo -- Senaraikan semua algoritma yang disokong.
+ a | algo — Senaraikan semua algoritma yang disokong.
 
- (hex_encode | x) [string] -- Tukar rentetan binari kepada perenambelasan.
+ (x | hex_encode) [string] — Tukar rentetan binari kepada perenambelasan.
  Contoh: >> hex_encode Hello World
          48656c6c6f20576f726c64
 
- hex_decode [string] -- Tukar perenambelasan kepada rentetan binari.
+ hex_decode [string] — Tukar perenambelasan kepada rentetan binari.
 
- (base64_encode | b) [string]
- -- Tukar rentetan binari kepada rentetan base64.
+ (b | base64_encode) [string]
+ — Tukar rentetan binari kepada rentetan base64.
 
  base64_decode [string]
- -- Tukar rentetan base64 kepada rentetan binari.
+ — Tukar rentetan base64 kepada rentetan binari.
 
- pe_meta [fail] -- Ekstrak metadata daripada fail PE.
+ pe_meta [nama fail] — Ekstrak metadata daripada fail PE.
 
- url_sig [string] -- Hasilkan tandatangan pengimbas URL.
+ (u | url_sig) [string] — Hasilkan tandatangan pengimbas URL.
 
- (scan | s) [nama fail atau direktori]
- -- Imbas fail atau direktori.
+ (s | scan) [nama fail atau direktori]
+ — Imbas fail atau direktori.
 
- c -- Cetak senarai arahan ini.
-invalid_url: "URL tidak sah!"
+ (s | scan) [nama fail atau direktori] --xx
+ — Imbas fail atau direktori dengan pilihan tambahan.
+   --wc — Imbas tanpa menyimpan hasil imbasan.
+   --sf — Cetak pembolehubah yang ditetapkan oleh fail suis.
+
+ i [nama fail atau direktori] — Dapatkan maklumat tentang fail.
+
+ c — Cetak senarai arahan ini.

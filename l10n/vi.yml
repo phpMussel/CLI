@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data (last modified: 2022.08.21).
+# This file: Vietnamese language data (last modified: 2025.03.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,10 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-bad_command: "Xin lỗi, tôi không hiểu câu lệnh này."
-cli_algo_not_supported: "Thuật toán chỉ định không được hỗ trợ."
-cli_failed_to_complete: "Quá trình quét chưa được hoàn thành"
-cli_is_not_a: "%s không phải là file hoạc thư mục."
 cli_ln2: |
  Cảm ơn bạn đã chọn phpMussel, một loại bản PHP được thiết kế để phát hiện
  trojan, vi rút, phần mềm đọc hại và những gì có thể gây nguy hiểm trong
@@ -41,36 +37,48 @@ cli_ln3: |
  tập tin hoạc thư mục, hảy đánh vào "scan", sau đó tên của tập tin hoạc thư
  mực mà bạn muốn phpMussel quét ròi bấm Enter; Đánh vào "c" và bấm Enter đễ
  xem những loại chế độ CLI; Đánh "q" và bấm Enter đế thoát ra.
-cli_pe1: "Tập tin PE không hợp lệ!"
-cli_pe2: "Các loại PE:"
-cli_signature_placeholder: "TÊN-CHỮ-KÝ"
-cli_working: "Đang trong quá trình"
+%s is not a file or directory: "%s không phải là file hoạc thư mục."
+Entropy: "Entropy:"
+Filename: "Tên của tập tin:"
+I don_t understand that command, sorry: "Xin lỗi, tôi không hiểu câu lệnh này."
+In progress: "Đang trong quá trình"
+Invalid URL: "URL không hợp lệ!"
+Not a valid PE file: "Tập tin PE không hợp lệ!"
+PE Sections: "Các loại PE:"
+Specified algorithm isn_t supported: "Thuật toán chỉ định không được hỗ trợ."
+YOUR SIGNATURE NAME: "TÊN-CHỮ-KÝ"
 cli_commands: |
- q | quit | exit -- Thoát ra CLI.
+ q | quit | exit — Thoát ra CLI.
 
- hash_file:[algo] [tên tập tin] -- Phát ra mã chử ký từ tập tin.
+ hash_file:[algo] [tên của tập tin] — Phát ra mã chử ký từ tập tin.
 
- hash:[algo] [dây] -- Phát ra mã chử ký từ dây.
+ hash:[algo] [dây] — Phát ra mã chử ký từ dây.
  Thí dụ: >> hash:crc32b Hello World
          4a17b156:11:TÊN-CHỮ-KÝ
 
- algo -- Liệt kê tất cả các thuật toán được hỗ trợ.
+ a | algo — Liệt kê tất cả các thuật toán được hỗ trợ.
 
- hex_encode [dây] -- Chuyển đổi dây nhị phân thành hệ thập lục phân.
+ hex_encode [dây] — Chuyển đổi dây nhị phân thành hệ thập lục phân.
  Thí dụ: >> hex_encode Hello World
          48656c6c6f20576f726c64
 
- hex_decode [dây] -- Chuyển đổi hệ thập lục phân thành dây nhị phân.
+ hex_decode [dây] — Chuyển đổi hệ thập lục phân thành dây nhị phân.
 
- (base64_encode | b) [dây] -- Chuyển đổi dây nhị phân thành dây base64.
+ (b | base64_encode) [dây] — Chuyển đổi dây nhị phân thành dây base64.
 
- base64_decode [dây] -- Chuyển đổi dây base64 thành dây nhị phân.
+ base64_decode [dây] — Chuyển đổi dây base64 thành dây nhị phân.
 
- pe_meta [tên tập tin] -- Trích xuất siêu dữ liệu từ tập tin PE.
+ pe_meta [tên của tập tin] — Trích xuất siêu dữ liệu từ tập tin PE.
 
- url_sig [dây] -- Tạo chữ ký của trình quét URL.
+ (u | url_sig) [dây] — Tạo chữ ký của trình quét URL.
 
- (scan | s) [tên tập tin] -- Xem tập tin hoạc hồ sơ.
+ (s | scan) [tên của tập tin hoặc thư mục] — Quét một tập tin hoặc thư mục.
 
- c -- In danh sách lệnh này.
-invalid_url: "URL không hợp lệ!"
+ (s | scan) [tên của tập tin hoặc thư mục] --xx
+ — Quét một tập tin hoặc thư mục bằng tùy chọn bổ sung.
+   --wc — Quét mà không lưu trữ kết quả.
+   --sf — In các biến được thiết lập bởi tập tin công tắc.
+
+ i [tên của tập tin hoặc thư mục] — Nhận thông tin về các tập tin.
+
+ c — In danh sách lệnh này.

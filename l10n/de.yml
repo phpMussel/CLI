@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data (last modified: 2022.09.22).
+# This file: German language data (last modified: 2025.03.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,10 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-bad_command: "Entschuldigung, ich verstehe diesen Befehl nicht."
-cli_algo_not_supported: "Der angegebene Algorithmus wird nicht unterstützt."
-cli_failed_to_complete: "Ein vollständiger Scan konnte nicht durchgeführt werden"
-cli_is_not_a: "%s ist keine Datei oder ein Verzeichnis."
 cli_ln2: |
  Vielen Dank für die Benutzung von phpMussel, einem auf PHP basiertem
  Script, um Trojaner, Viren, Malware und andere Bedrohungen in Dateien zu
@@ -42,42 +38,54 @@ cli_ln3: |
  gefolgt vom Namen der Datei oder des Verzeichnisses ein und bestätigen mit
  Enter; Geben Sie „c“ und Enter für eine Liste der verfügbaren Befehle im
  CLI-Modus ein; Geben Sie „q“ und Enter zum Beenden ein.
-cli_pe1: "Keine gültige PE-Datei!"
-cli_pe2: "PE-Sektionen:"
-cli_signature_placeholder: "IHR-SIGNATURNAME"
-cli_working: "Im Gange"
+%s is not a file or directory: "%s ist keine Datei oder ein Verzeichnis."
+Entropy: "Entropie:"
+Filename: "Dateiname:"
+I don_t understand that command, sorry: "Entschuldigung, ich verstehe diesen Befehl nicht."
+In progress: "Im Gange"
+Invalid URL: "Ungültige URL!"
+Not a valid PE file: "Keine gültige PE-Datei!"
+PE Sections: "PE-Sektionen:"
+Specified algorithm isn_t supported: "Der angegebene Algorithmus wird nicht unterstützt."
+YOUR SIGNATURE NAME: "IHR-SIGNATURNAME"
 cli_commands: |
- q | quit | exit -- Beendet den CLI-Modus.
+ q | quit | exit — Beendet den CLI-Modus.
 
- hash_file:[Algo] [Dateiname] -- Generiert Hash-Signaturen einer Datei.
+ hash_file:[Algo] [Dateiname] — Generiert Hash-Signaturen einer Datei.
 
- hash:[Algo] [String] -- Generiert Hash-Signaturen eines String-Wertes.
+ hash:[Algo] [String] — Generiert Hash-Signaturen eines String-Wertes.
  Beispiel: >> hash:crc32b Hello World
            4a17b156:11:IHR-SIGNATURNAME
 
- algo -- Listet alle unterstützten Algorithmen auf.
+ a | algo — Listet alle unterstützten Algorithmen auf.
 
- (hex_encode | x) [string]
- -- Konvertiert einen Binär-Wert in einen Hexidezimal-Wert.
+ (x | hex_encode) [string]
+ — Konvertiert einen Binär-Wert in einen Hexidezimal-Wert.
  Beispiel: >> hex_encode Hello World
            48656c6c6f20576f726c64
 
  hex_decode [String]
- -- Konvertiert einen Hexidezimal-Wert in einen Binär-Wert.
+ — Konvertiert einen Hexidezimal-Wert in einen Binär-Wert.
 
- (base64_encode | b) [String]
- -- Konvertiert einen Binär-Wert in einen Base64-Wert.
+ (b | base64_encode) [String]
+ — Konvertiert einen Binär-Wert in einen Base64-Wert.
 
  base64_decode [String]
- -- Konvertiert einen Base64-Wert in einen Binär-Wert.
+ — Konvertiert einen Base64-Wert in einen Binär-Wert.
 
  pe_meta [Dateiname]
- -- Extrahieren Sie Metadaten aus einer PE-Datei.
+ — Extrahieren Sie Metadaten aus einer PE-Datei.
 
- url_sig [String] -- Generiere URL-Scanner-Signaturen.
+ (u | url_sig) [String] — Generiere URL-Scanner-Signaturen.
 
- (scan | s) [Dateiname oder Verzeichnisname]
- -- Überprüft eine Datei oder ein Verzeichnis.
+ (s | scan) [Dateiname oder Verzeichnisname]
+ — Scannen eine Datei oder ein Verzeichnis.
 
- c -- Gibt diese Befehlsliste aus.
-invalid_url: "Ungültige URL!"
+ (s | scan) [Dateiname oder Verzeichnisname] --xx
+ — Scannen eine Datei oder ein Verzeichnis mit einer zusätzlichen Option.
+   --wc — Scannen, ohne die Ergebnisse zwischenzuspeichern.
+   --sf — Drucken die von der Switch-Datei festgelegten Variablen.
+
+ i [Dateiname oder Verzeichnisname] — Informationen zu Dateien abrufen.
+
+ c — Gibt diese Befehlsliste aus.

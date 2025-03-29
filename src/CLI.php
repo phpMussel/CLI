@@ -8,13 +8,18 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2024.11.06).
+ * This file: CLI handler (last modified: 2025.03.29).
  */
 
 namespace phpMussel\CLI;
 
 class CLI
 {
+    /**
+     * @var string phpMussel CLI version number (SemVer).
+     */
+    public $CLIVersion = '3.5.0';
+
     /**
      * @var \phpMussel\Core\Loader The instantiated loader object.
      */
@@ -80,7 +85,7 @@ class CLI
         });
 
         /** Echo the ASCII header art and CLI-mode information. */
-        echo "\033[0;33m" . $this->Loader->L10N->getString('cli_ln1') . "\n" . $this->Loader->L10N->getString('cli_ln2') . "\n\n" . $this->Loader->L10N->getString('cli_ln3');
+        echo "\033[0;33m" . sprintf($this->Loader->L10N->getString('cli_ln1'), PHP_VERSION, $this->Loader->ScriptVersion, $this->CLIVersion) . "\n\n" . $this->Loader->L10N->getString('cli_ln2') . "\n\n" . $this->Loader->L10N->getString('cli_ln3');
 
         /** Open STDIN. */
         $Handle = fopen('php://stdin', 'rb');
@@ -100,7 +105,7 @@ class CLI
 
             /** Set CLI process title with "working" notice. */
             if (function_exists('cli_set_process_title')) {
-                cli_set_process_title($this->Loader->ScriptIdent . ' - ' . $this->Loader->L10N->getString('cli_working') . '...');
+                cli_set_process_title($this->Loader->ScriptIdent . ' - ' . $this->Loader->L10N->getString('In progress') . '...');
             }
 
             /** Fetch the command. */
@@ -139,15 +144,15 @@ class CLI
                 $this->LastAlgo = substr($Command, 5);
                 if (in_array($this->LastAlgo, hash_algos())) {
                     $TargetData = substr($Clean, strlen($Command) + 1);
-                    echo "\n" . hash($this->LastAlgo, $TargetData) . ':' . strlen($TargetData) . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
+                    echo "\n" . hash($this->LastAlgo, $TargetData) . ':' . strlen($TargetData) . ':' . $this->Loader->L10N->getString('YOUR SIGNATURE NAME') . "\n";
                 } else {
-                    echo "\n" . $this->Loader->L10N->getString('cli_algo_not_supported') . "\n";
+                    echo "\n" . $this->Loader->L10N->getString('Specified algorithm isn_t supported') . "\n";
                 }
                 continue;
             }
 
             /** Generate a URL scanner signature from a URL. */
-            if ($Command === 'url_sig') {
+            if (preg_match('~^(?:[Uu]|υ)$~', $CommandNatural) || $Command === 'url_sig') {
                 echo "\n";
                 $Clean = $this->Scanner->normalise(substr($Clean, strlen($Command) + 1));
                 $URL = ['AvoidMe' => '', 'ForThis' => ''];
@@ -155,19 +160,19 @@ class CLI
                     !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl]):\/\/(www\d{0,3}\.)?([\da-z.-]{1,512})/i', $Clean, $URL['domain']) ||
                     !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl]):\/\/(www\d{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})/i', $Clean, $URL['url'])
                 ) {
-                    echo $this->Loader->L10N->getString('invalid_url') . "\n";
+                    echo $this->Loader->L10N->getString('Invalid URL') . "\n";
                     continue;
                 }
-                echo 'DOMAIN:' . hash('md5', $URL['domain'][3][0]) . ':' . strlen($URL['domain'][3][0]) . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
+                echo 'DOMAIN:' . hash('md5', $URL['domain'][3][0]) . ':' . strlen($URL['domain'][3][0]) . ':' . $this->Loader->L10N->getString('YOUR SIGNATURE NAME') . "\n";
                 $URL['ForThis'] = hash('md5', $URL['url'][3][0]) . ':' . strlen($URL['url'][3][0]);
                 $URL['AvoidMe'] .= ',' . $URL['ForThis'] . ',';
-                echo 'URL:' . $URL['ForThis'] . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
+                echo 'URL:' . $URL['ForThis'] . ':' . $this->Loader->L10N->getString('YOUR SIGNATURE NAME') . "\n";
                 if (preg_match('/[^\da-z.-]$/i', $URL['url'][3][0])) {
                     $URL['x'] = preg_replace('/[^\da-z.-]+$/i', '', $URL['url'][3][0]);
                     $URL['ForThis'] = hash('md5', $URL['x']) . ':' . strlen($URL['x']);
                     if (strpos($URL['AvoidMe'], $URL['ForThis']) === false) {
                         $URL['AvoidMe'] .= ',' . $URL['ForThis'] . ',';
-                        echo 'URL:' . $URL['ForThis'] . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
+                        echo 'URL:' . $URL['ForThis'] . ':' . $this->Loader->L10N->getString('YOUR SIGNATURE NAME') . "\n";
                     }
                 }
                 if (strpos($URL['url'][3][0], '?') !== false) {
@@ -175,7 +180,7 @@ class CLI
                     $URL['ForThis'] = hash('md5', $URL['x']) . ':' . strlen($URL['x']);
                     if (strpos($URL['AvoidMe'], $URL['ForThis']) === false) {
                         $URL['AvoidMe'] .= ',' . $URL['ForThis'] . ',';
-                        echo 'URL:' . $URL['ForThis'] . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
+                        echo 'URL:' . $URL['ForThis'] . ':' . $this->Loader->L10N->getString('YOUR SIGNATURE NAME') . "\n";
                     }
                     $URL['x'] = $this->Loader->substrAfterFirst($URL['url'][3][0], '?');
                     $URL['ForThis'] = hash('md5', $URL['x']) . ':' . strlen($URL['x']);
@@ -184,7 +189,7 @@ class CLI
                         $URL['ForThis'] !== 'd41d8cd98f00b204e9800998ecf8427e:0'
                     ) {
                         $URL['AvoidMe'] .= ',' . $URL['ForThis'] . ',';
-                        echo 'QUERY:' . $URL['ForThis'] . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
+                        echo 'QUERY:' . $URL['ForThis'] . ':' . $this->Loader->L10N->getString('YOUR SIGNATURE NAME') . "\n";
                     }
                 }
                 unset($URL);
@@ -192,19 +197,19 @@ class CLI
             }
 
             /** Generate a CoEx signature using a string. */
-            if (preg_match('~^(?:(?:[Cc]|ϲ|с)(?:[Oo]|ο|о)(?:[Ee]|е)(?:[Xx]|х))$~', $CommandNatural)) {
+            if (preg_match('~^(?:[Cc]|Ϲ|ϲ|С|с)(?:[Oo]|Ο|ο|О|о)(?:[Ee]|Е|е)(?:[Xx]|Х|х)$~', $CommandNatural)) {
                 $TargetData = substr($Clean, strlen($Command) + 1);
                 echo sprintf(
                     "\n\$sha256:%s;\$StringLength:%d;%s\n",
                     hash('sha256', $TargetData),
                     strlen($TargetData),
-                    $this->Loader->L10N->getString('cli_signature_placeholder')
+                    $this->Loader->L10N->getString('YOUR SIGNATURE NAME')
                 );
                 continue;
             }
 
             /** Convert a binary string to a hexadecimal. */
-            if (preg_match('~^(?:[Hh][Ee][Xx]_[Ee][Nn][Cc][Oo][Dd][Ee]|[Xx]|х)$~', $CommandNatural)) {
+            if (preg_match('~^(?:[Hh][Ee][Xx]_[Ee][Nn][Cc][Oo][Dd][Ee]|[Xx]|Х|х)$~', $CommandNatural)) {
                 $TargetData = substr($Clean, strlen($Command) + 1);
                 echo "\n" . bin2hex($TargetData) . "\n";
                 continue;
@@ -232,7 +237,7 @@ class CLI
             }
 
             /** Scan a file or directory. */
-            if (preg_match('~^(?:[Ss][Cc][Aa][Nn]|[Ss]|ѕ)$~', $CommandNatural)) {
+            if (preg_match('~^(?:[Ss][Cc][Aa][Nn]|[Ss]|Ѕ|ѕ)$~', $CommandNatural)) {
                 $TargetData = substr($Clean, strlen($Command) + 1);
                 if (preg_match('~ --([A-Za-z]{2})$~', $TargetData, $Matches)) {
                     $TargetData = substr($TargetData, 0, -5);
@@ -250,13 +255,13 @@ class CLI
             }
 
             /** Print the command list. */
-            if (preg_match('~^(?:[Cc]|ϲ|с)$~', $CommandNatural)) {
+            if (preg_match('~^(?:[Cc]|Ϲ|ϲ|С|с)$~', $CommandNatural)) {
                 echo "\n" . $this->Loader->L10N->getString('cli_commands');
                 continue;
             }
 
             /** Print a list of supported algorithms. */
-            if ($Command === 'algo') {
+            if (preg_match('~^(?:[Aa]|Α|α|А|а)$~', $CommandNatural) || $Command === 'algo') {
                 echo "\n";
                 $Algos = hash_algos();
                 $Pos = 1;
@@ -277,8 +282,40 @@ class CLI
                 continue;
             }
 
+            /** Get information about files. */
+            if (preg_match('~^(?:[Ii]|İ|Ι|ι|І|і)$~', $CommandNatural)) {
+                $TargetData = substr($Clean, strlen($Command) + 1);
+                if (preg_match('~^(["\'])(.+)\1$~', $TargetData, $Matches)) {
+                    $TargetData = $Matches[2];
+                }
+                if (is_file($TargetData) && is_readable($TargetData)) {
+                    $Files = [$TargetData];
+                } elseif (is_dir($TargetData)) {
+                    $Files = $this->Scanner->directoryRecursiveList($TargetData, true);
+                    foreach ($Files as &$File) {
+                        $File = $TargetData . $File;
+                    }
+                } else {
+                    echo "\n" . $this->Loader->L10N->getString('response.Invalid file') . "\n";
+                    continue;
+                }
+                foreach ($Files as $File) {
+                    if (is_file($File) && is_readable($File)) {
+                        $Data = $this->Loader->readFile($File);
+                        echo "\n" . $this->Loader->L10N->getString('Filename') . ' ' . $File . "\n";
+                        $Size = strlen($Data);
+                        echo $this->Loader->L10N->getString('field.size.Total size') . ' ' . $Size . ' ' . $this->Loader->L10N->getPlural($Size, 'field.size.bytes') . "\n";
+                        $Entropy = $this->Loader->Demojibakefier->shannonEntropy($Data);
+                        echo $this->Loader->L10N->getString('Entropy') . ' ' . $Entropy . "\n";
+                    } elseif (is_dir($File)) {
+                        echo "\n" . 'Directory name: ' . $File . "\n";
+                    }
+                }
+                continue;
+            }
+
             /** Bad command notice. */
-            echo "\n" . $this->Loader->L10N->getString('bad_command') . "\n";
+            echo "\n" . $this->Loader->L10N->getString('I don_t understand that command, sorry') . "\n";
         }
     }
 
@@ -308,13 +345,13 @@ class CLI
             $Returnable = '';
             foreach ($List as $Item) {
                 echo "\r" . $Decal[$Frame];
-                $Returnable .= is_file($Params . $Item) ? $Callable($Params . $Item) : sprintf($this->Loader->L10N->getString('cli_is_not_a'), $Params . $Item) . "\n";
+                $Returnable .= is_file($Params . $Item) ? $Callable($Params . $Item) : sprintf($this->Loader->L10N->getString('%s is not a file or directory'), $Params . $Item) . "\n";
                 $Frame = $Frame < 3 ? $Frame + 1 : 0;
             }
             echo "\r         ";
             return $Returnable;
         }
-        return is_file($Params) || filter_var($Params, FILTER_VALIDATE_URL) ? $Callable($Params) : sprintf($this->Loader->L10N->getString('cli_is_not_a'), $Params) . "\n";
+        return is_file($Params) || filter_var($Params, FILTER_VALIDATE_URL) ? $Callable($Params) : sprintf($this->Loader->L10N->getString('%s is not a file or directory'), $Params) . "\n";
     }
 
     /**
@@ -329,7 +366,7 @@ class CLI
             $Data = $this->Loader->readFile($Params);
             $Returnable = '';
             if (substr($Data, 0, 2) !== 'MZ') {
-                return $this->Loader->L10N->getString('cli_pe1') . "\n";
+                return $this->Loader->L10N->getString('Not a valid PE file') . "\n";
             }
             $PELength = strlen($Data);
             $Offset = $this->Loader->unpackSafe('S', substr($Data, 60, 4));
@@ -359,11 +396,11 @@ class CLI
                 break;
             }
             if (!$Valid) {
-                return $this->Loader->L10N->getString('cli_pe1') . "\n";
+                return $this->Loader->L10N->getString('Not a valid PE file') . "\n";
             }
             $OptHdrSize = $this->Loader->unpackSafe('S', substr($Data, $Offset + 20, 2));
             $OptHdrSize = $OptHdrSize[1];
-            $Returnable .= $this->Loader->L10N->getString('cli_pe2') . "\n";
+            $Returnable .= $this->Loader->L10N->getString('PE Sections') . "\n";
             for ($PECaret = 0; $PECaret < $NumberOfSections; $PECaret++) {
                 $SectionHead = substr($Data, $Offset + 24 + $OptHdrSize + ($PECaret * 40), $NumberOfSections * 40);
                 $SectionName = str_ireplace("\0", '', substr($SectionHead, 0, 8));
@@ -402,7 +439,7 @@ class CLI
                             $PEVars[1],
                             hash('sha256', $ThisPEData),
                             strlen($ThisPEData),
-                            $this->Loader->L10N->getString('cli_signature_placeholder')
+                            $this->Loader->L10N->getString('YOUR SIGNATURE NAME')
                         );
                     }
                 }
@@ -432,7 +469,7 @@ class CLI
                 "\$sha256:%s;\$StringLength:%d;%s\n",
                 hash('sha256', $Data),
                 strlen($Data),
-                $this->Loader->L10N->getString('cli_signature_placeholder')
+                $this->Loader->L10N->getString('YOUR SIGNATURE NAME')
             );
         });
     }
@@ -455,9 +492,9 @@ class CLI
                 if (empty($Data)) {
                     return $this->Loader->L10N->getString('response.Invalid data') . "\n";
                 }
-                return hash($this->LastAlgo, $Data) . ':' . strlen($Data) . ':' . $this->Loader->L10N->getString('cli_signature_placeholder') . "\n";
+                return hash($this->LastAlgo, $Data) . ':' . strlen($Data) . ':' . $this->Loader->L10N->getString('YOUR SIGNATURE NAME') . "\n";
             });
         }
-        return $this->Loader->L10N->getString('cli_algo_not_supported') . "\n";
+        return $this->Loader->L10N->getString('Specified algorithm isn_t supported') . "\n";
     }
 }

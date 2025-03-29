@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data (last modified: 2022.08.21).
+# This file: Spanish language data (last modified: 2025.03.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,10 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-bad_command: "No entiendo ese comando, lo siento."
-cli_algo_not_supported: "El algoritmo especificado no es soportado."
-cli_failed_to_complete: "No se pudo completar el proceso de escaneo"
-cli_is_not_a: "%s no es un archivo o directorio."
 cli_ln2: |
  Gracias por usar phpMussel, un script PHP diseñado para detectar troyanos,
  virus, malware y otras amenazas en los archivos subidos al sistema dónde
@@ -41,37 +37,50 @@ cli_ln3: |
  nombre del archivo o directorio que usted desea que phpMussel escanee y
  pulse Enter; Escriba "c" y pulse Enter para obtener una lista de comandos;
  Escriba "q" y pulse Enter para salir.
-cli_pe1: "¡No es un archivo PE válido!"
-cli_pe2: "Secciones PE:"
-cli_signature_placeholder: "NOMBRE-DE-FIRMA"
-cli_working: "En operación"
+%s is not a file or directory: "%s no es un archivo o directorio."
+Entropy: "Entropía:"
+Filename: "Nombre del archivo:"
+I don_t understand that command, sorry: "No entiendo ese comando, lo siento."
+In progress: "En operación"
+Invalid URL: "¡URL no válido!"
+Not a valid PE file: "¡No es un archivo PE válido!"
+PE Sections: "Secciones PE:"
+Specified algorithm isn_t supported: "El algoritmo especificado no es soportado."
+YOUR SIGNATURE NAME: "NOMBRE-DE-FIRMA"
 cli_commands: |
- q | quit | exit -- Dejar CLI.
+ q | quit | exit — Dejar CLI.
 
- hash_file:[algo] [nombre del archivo] -- Generar firmas hash de archivos.
+ hash_file:[algo] [nombre del archivo] — Generar firmas hash de archivos.
 
- hash:[algo] [string] -- Generar firma hash de string.
+ hash:[algo] [string] — Generar firma hash de string.
  Ejemplo: >> hash:crc32b Hello World
           4a17b156:11:NOMBRE-DE-FIRMA
 
- algo -- Lista todos los algoritmos soportados.
+ a | algo — Lista todos los algoritmos soportados.
 
- (hex_encode | x) [string] -- Convertir string binaria a hexadecimal.
+ (x | hex_encode) [string] — Convertir string binaria a hexadecimal.
  Ejemplo: >> hex_encode Hello World
           48656c6c6f20576f726c64
 
- hex_decode [string] -- Convertir hexadecimal a string binaria.
+ hex_decode [string] — Convertir hexadecimal a string binaria.
 
- (base64_encode | b) [string] -- Convertir string binaria a string base64.
+ (b | base64_encode) [string] — Convertir string binaria a string base64.
 
- base64_decode [string] -- Convertir string base64 a string binaria.
+ base64_decode [string] — Convertir string base64 a string binaria.
 
- pe_meta [nombre del archivo] -- Extraer metadatos de un archivo PE.
+ pe_meta [nombre del archivo] — Extraer metadatos de un archivo PE.
 
- url_sig [string] -- Generar firmas de escáner de URL.
+ (u | url_sig) [string] — Generar firmas de escáner de URL.
 
- (scan | s) [nombre del archivo o directorio]
- -- Escanear un archivo o directorio.
+ (s | scan) [nombre del archivo o directorio]
+ — Escanear un archivo o directorio.
 
- c -- Imprimir esta lista de comandos.
-invalid_url: "¡URL no válido!"
+ (s | scan) [nombre del archivo o directorio] --xx
+ — Escanear un archivo o directorio con una opción adicional.
+   --wc — Escanear sin almacenar en caché los resultados.
+   --sf — Imprima las variables establecidas por el archivo de conmutación.
+
+ i [nombre del archivo o directorio]
+ — Obtener información sobre los archivos.
+
+ c — Imprimir esta lista de comandos.

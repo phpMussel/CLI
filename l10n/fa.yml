@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data (last modified: 2022.08.18).
+# This file: Farsi language data (last modified: 2025.03.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,10 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-bad_command: "من این دستور را نمی فهمم، متاسفم."
-cli_algo_not_supported: "الگوریتم مشخص شده پشتیبانی نمی شود."
-cli_failed_to_complete: "فرآیند اسکن کامل نشد"
-cli_is_not_a: "%s یک فایل یا دایرکتوری نیست."
 cli_ln2: |
  با تشکر از شما برای استفاده از phpMussel، یک اسکریپت PHP که برای شناسایی
  تروجان ها، ویروس ها، بدافزارها و سایر تهدیدها طراحی شده است، در فایل‌های
@@ -42,10 +38,16 @@ cli_ln3: |
  فهرستی را که می خواهید phpMussel اسکن کند و Enter را فشار دهید؛ "c" را
  تایپ کنید و Enter را فشار دهید تا لیستی از دستورات حالت CLI را دریافت
  کنید؛ "q" را تایپ کرده و Enter را برای خروج فشار دهید.
-cli_pe1: "یک فایل PE معتبر نیست!"
-cli_pe2: "بخش های PE:"
-cli_signature_placeholder: "نام امضای شما"
-cli_working: "در حال پیش رفت"
+%s is not a file or directory: "%s یک فایل یا دایرکتوری نیست."
+Entropy: "آنتروپی:"
+Filename: "نام فایل:"
+I don_t understand that command, sorry: "من این دستور را نمی فهمم، متاسفم."
+In progress: "در حال پیش رفت"
+Invalid URL: "URL نامعتبر است!"
+Not a valid PE file: "یک فایل PE معتبر نیست!"
+PE Sections: "بخش های PE:"
+Specified algorithm isn_t supported: "الگوریتم مشخص شده پشتیبانی نمی شود."
+YOUR SIGNATURE NAME: "نام امضای شما"
 cli_commands: |
  q
  - CLI را ترک کنید.
@@ -68,11 +70,19 @@ cli_commands: |
  - رشته base64 را به رشته باینری تبدیل کنید.
  pe_meta [filename]
  - فراداده را از یک فایل PE استخراج کنید.
- url_sig [string]
+ u [string]
  - امضاهای اسکنر URL را ایجاد کنید.
- scan [نام فایل یا دایرکتوری]
+ - نام مستعار: url_sig.
+ s [نام فایل یا دایرکتوری]
  - یک فایل یا دایرکتوری را اسکن کنید.
- - نام مستعار: s.
+ - نام مستعار: scan.
+ s [نام فایل یا دایرکتوری] --xx
+ — یک فایل یا دایرکتوری را با یک گزینه اضافی اسکن کنید.
+   --wc
+   — نتایج را بدون ذخیره کش اسکن کنید.
+   --sf
+   — متغیرهای تنظیم شده توسط فایل سوئیچ را چاپ کنید.
+ i [نام فایل یا دایرکتوری]
+ - دریافت اطلاعات در مورد فایل ها.
  c
  - این لیست دستورات را چاپ کنید.
-invalid_url: "URL نامعتبر است!"

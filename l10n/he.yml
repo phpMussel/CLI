@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data (last modified: 2022.08.18).
+# This file: Hebrew language data (last modified: 2025.03.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,10 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-bad_command: "אני לא מבין את הפקודה הזאת, סליחה."
-cli_algo_not_supported: "האלגוריתם שצוין אינו נתמך."
-cli_failed_to_complete: "השלמת תהליך הסריקה נכשלה"
-cli_is_not_a: "%s אינו קובץ או ספרייה."
 cli_ln2: |
  תודה על השימוש ב-phpMussel, סקריפט PHP שנועד לזהות טרויאנים, וירוסים,
  תוכנות זדוניות ואיומים אחרים בתוך קבצים שהועלו למערכת שלך בכל מקום שבו
@@ -40,10 +36,16 @@ cli_ln3: |
  ספריה, הקלד "scan", ואחריו שם הקובץ או הספרייה שברצונך ש-phpMussel יסרוק
  והקש Enter; הקלד "c" והקש Enter לקבלת רשימה של פקודות מצב CLI; הקלד "q"
  והקש Enter כדי לצאת.
-cli_pe1: "לא קובץ PE חוקי!"
-cli_pe2: "קטעי PE:"
-cli_signature_placeholder: "קובץ-החתימה-שלך"
-cli_working: "בתהליך"
+%s is not a file or directory: "%s אינו קובץ או ספרייה."
+Entropy: "אנטרופיה:"
+Filename: "שם הקובץ:"
+I don_t understand that command, sorry: "אני לא מבין את הפקודה הזאת, סליחה."
+In progress: "בתהליך"
+Invalid URL: "לא URL חוקי!"
+Not a valid PE file: "לא קובץ PE חוקי!"
+PE Sections: "קטעי PE:"
+Specified algorithm isn_t supported: "האלגוריתם שצוין אינו נתמך."
+YOUR SIGNATURE NAME: "קובץ-החתימה-שלך"
 cli_commands: |
  q
  - צא מ-CLI.
@@ -66,11 +68,19 @@ cli_commands: |
  - המר מחרוזת base64 למחרוזת בינארית.
  pe_meta [שם קובץ]
  - חלץ מטא נתונים מקובץ PE.
- url_sig [מחרוזת]
+ u [מחרוזת]
  - צור חתימות של סורק URL.
- scan [שם הקובץ או הספרייה]
+ - כינוי: url_sig.
+ s [שם הקובץ או הספרייה]
  - סרוק קובץ או ספריה.
- - כינוי: s.
+ - כינוי: scan.
+ s [שם הקובץ או הספרייה] --xx
+ — סרוק קובץ או ספריה עם אפשרות נוספת.
+   --wc
+   — סרוק מבלי לאחסן את התוצאות במטמון.
+   --sf
+   — הדפס את המשתנים שנקבעו על ידי קובץ הבורר.
+ i [שם הקובץ או הספרייה]
+ - קבל מידע על קבצים.
  c
  - הדפס רשימת פקודות זו.
-invalid_url: "לא URL חוקי!"

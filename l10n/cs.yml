@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data (last modified: 2024.03.14).
+# This file: Czech language data (last modified: 2025.03.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,10 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-bad_command: "Nerozumím tomu příkazu, promiňte."
-cli_algo_not_supported: "Zadaný algoritmus není podporován."
-cli_failed_to_complete: "Proces skenování se nepodařilo dokončit"
-cli_is_not_a: "%s není soubor nebo adresář."
 cli_ln2: |
  Děkujeme, že používáte phpMussel, PHP skript určený k detekci trojských
  koní, virů, malwaru, a dalších hrozeb v souborech nahraných do vašeho
@@ -41,38 +37,50 @@ cli_ln3: |
  souboru nebo adresáře, který má phpMussel skenovat, a stiskněte Enter;
  Napište „c“ a stiskněte Enter pro zobrazení seznamu příkazů režimu CLI;
  Napište „q“ a stiskněte Enter pro ukončení.
-cli_pe1: "Neplatný soubor PE!"
-cli_pe2: "PE sekce:"
-cli_signature_placeholder: "VAŠE-PODPISOVÉ-JMÉNO"
-cli_working: "Probíhá"
+%s is not a file or directory: "%s není soubor nebo adresář."
+Entropy: "Entropie:"
+Filename: "Název souboru:"
+I don_t understand that command, sorry: "Nerozumím tomu příkazu, promiňte."
+In progress: "Probíhá"
+Invalid URL: "Neplatná URL adresa!"
+Not a valid PE file: "Neplatný soubor PE!"
+PE Sections: "PE sekce:"
+Specified algorithm isn_t supported: "Zadaný algoritmus není podporován."
+YOUR SIGNATURE NAME: "VAŠE-PODPISOVÉ-JMÉNO"
 cli_commands: |
- q | quit | exit -- Ukončete CLI.
+ q | quit | exit — Ukončete CLI.
 
- hash_file:[algo] [název souboru] -- Generujte hash podpis ze souborů.
+ hash_file:[algo] [název souboru] — Generujte hash podpis ze souborů.
 
- hash:[algo] [řetězec] -- Generujte hash podpis z řetězce.
+ hash:[algo] [řetězec] — Generujte hash podpis z řetězce.
  Příklad: >> hash:crc32b Hello World
           4a17b156:11:VAŠE-PODPISOVÉ-JMÉNO
 
- algo -- Seznam všech podporovaných algoritmů.
+ a | algo — Seznam všech podporovaných algoritmů.
 
- (hex_encode | x) [řetězec] -- Převeďte binární řetězec na hexadecimální.
+ (x | hex_encode) [řetězec] — Převeďte binární řetězec na hexadecimální.
  Příklad: >> hex_encode Hello World
           48656c6c6f20576f726c64
 
- hex_decode [řetězec] -- Převeďte hexadecimální na binární řetězec.
+ hex_decode [řetězec] — Převeďte hexadecimální na binární řetězec.
 
- (base64_encode | b) [řetězec]
- -- Převeďte binární řetězec na řetězec base64.
+ (b | base64_encode) [řetězec]
+ — Převeďte binární řetězec na řetězec base64.
 
- base64_decode [řetězec] -- Převeďte řetězec base64 na binární řetězec.
+ base64_decode [řetězec] — Převeďte řetězec base64 na binární řetězec.
 
- pe_meta [název souboru] -- Extrahujte metadata ze souboru PE.
+ pe_meta [název souboru] — Extrahujte metadata ze souboru PE.
 
- url_sig [řetězec] -- Generujte podpisy skeneru URL.
+ (u | url_sig) [řetězec] — Generujte podpisy skeneru URL.
 
- (scan | s) [název souboru nebo adresáře]
- -- Naskenujte soubor nebo adresář.
+ (s | scan) [název souboru nebo adresáře]
+ — Naskenovat soubor nebo adresář.
 
- c -- Vytiskněte tento seznam příkazů.
-invalid_url: "Neplatná URL adresa!"
+ (s | scan) [název souboru nebo adresáře] --xx
+ — Naskenovat soubor nebo adresář s další možností.
+   --wc — Skenujte bez ukládání výsledků do mezipaměti.
+   --sf — Vytiskněte proměnné nastavené souborem přepínače.
+
+ i [název souboru nebo adresáře] — Získejte informace o souborech.
+
+ c — Vytiskněte tento seznam příkazů.

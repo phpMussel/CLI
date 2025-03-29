@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data (last modified: 2024.08.13).
+# This file: Italian language data (last modified: 2025.03.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,10 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-bad_command: "Non capisco quel comando, mi dispiace."
-cli_algo_not_supported: "L'algoritmo specificato non è supportato."
-cli_failed_to_complete: "Completamento del processo di controllo fallito"
-cli_is_not_a: "%s non è né un file né una cartella."
 cli_ln2: |
  Grazie per aver scelto phpMussel, un programma in PHP progettato per
  rilevare trojan, virus, malware ed altre minacce nei file caricati sul suo
@@ -41,37 +37,49 @@ cli_ln3: |
  comando). Per scansionare un file o una cartella digita "scan" seguito dal
  nome del file o della cartella e premi Invio; digita "c" e premi Invio per
  l'elenco dei comandi in modalità CLI; digita "q" e premi Invio per uscire.
-cli_pe1: "Non è un PE file valida!"
-cli_pe2: "PE Sezioni:"
-cli_signature_placeholder: "NOME-DELLA-FIRMA"
-cli_working: "In corso"
+%s is not a file or directory: "%s non è né un file né una cartella."
+Entropy: "Entropia:"
+Filename: "Nome del file:"
+I don_t understand that command, sorry: "Non capisco quel comando, mi dispiace."
+In progress: "In corso"
+Invalid URL: "URL non valido!"
+Not a valid PE file: "Non è un PE file valida!"
+PE Sections: "PE Sezioni:"
+Specified algorithm isn_t supported: "L'algoritmo specificato non è supportato."
+YOUR SIGNATURE NAME: "NOME-DELLA-FIRMA"
 cli_commands: |
- q | quit | exit -- Esci dall'interfaccia a riga di comando.
+ q | quit | exit — Esci dall'interfaccia a riga di comando.
 
- hash_file:[algo] [nome del file] -- Genera le firme hash da file.
+ hash_file:[algo] [nome del file] — Genera le firme hash da file.
 
- hash:[algo] [stringa] -- Genera le firme hash da stringa.
+ hash:[algo] [stringa] — Genera le firme hash da stringa.
  Esempio: >> hash:crc32b Hello World
           4a17b156:11:NOME-DELLA-FIRMA
 
- algo -- Elenca tutti gli algoritmi supportati.
+ a | algo — Elenca tutti gli algoritmi supportati.
 
- hex_encode [stringa] -- Converti la stringa binaria in esadecimale.
+ hex_encode [stringa] — Converti la stringa binaria in esadecimale.
  Esempio: >> hex_encode Hello World
           48656c6c6f20576f726c64
 
- hex_decode [stringa] -- Converti la stringa esadecimale in binaria.
+ hex_decode [stringa] — Converti la stringa esadecimale in binaria.
 
- (base64_encode | b) [stringa] -- Converti la stringa binaria in base64.
+ (b | base64_encode) [stringa] — Converti la stringa binaria in base64.
 
- base64_decode [stringa] -- Converti la stringa da base64 a binaria.
+ base64_decode [stringa] — Converti la stringa da base64 a binaria.
 
- pe_meta [nome del file] -- Estrarre i metadati da un file PE.
+ pe_meta [nome del file] — Estrarre i metadati da un file PE.
 
- url_sig [stringa] -- Genera firme di scanner URL.
+ (u | url_sig) [stringa] — Genera firme di scanner URL.
 
- (scan | s) [nome del file o della cartella]
- -- Scansiona un file o una cartella.
+ (s | scan) [nome del file o della cartella]
+ — Scansiona un file o una cartella.
 
- c -- Mostra questa lista di comandi.
-invalid_url: "URL non valido!"
+ (s | scan) [nome del file o della cartella] --xx
+ — Scansiona un file o una cartella con un'opzione aggiuntiva.
+   --wc — Esegui la scansione senza memorizzare i risultati nella cache.
+   --sf — Mostra le variabili impostate dal file switch.
+
+ i [nome del file o della cartella] — Ottieni informazioni sui file.
+
+ c — Mostra questa lista di comandi.

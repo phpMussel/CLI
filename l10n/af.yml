@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data (last modified: 2023.09.04).
+# This file: Afrikaans language data (last modified: 2025.03.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,10 +24,6 @@
 # requests, ask. I can help.
 ##/
 
-bad_command: "Ek verstaan nie daardie opdrag nie, jammer."
-cli_algo_not_supported: "Gespesifiseerde algoritme word nie ondersteun nie."
-cli_failed_to_complete: "Skandeerproses kon nie voltooi nie"
-cli_is_not_a: "%s is nie 'n lêer of gids nie."
 cli_ln2: |
  Dankie dat jy phpMussel gebruik, 'n PHP-skrip wat ontwerp is om trojans,
  virusse, wanware, en ander bedreigings op te spoor binne lêers wat na jou
@@ -41,36 +37,48 @@ cli_ln3: |
  gids te skandeer, tik "scan", gevolg deur die naam van die lêer of gids
  wat jy wil hê phpMussel moet skandeer en druk Enter; Tik "c" en druk Enter
  vir 'n lys van CLI-modus opdragte; Tik "q" en druk Enter om op te hou.
-cli_pe1: "Nie 'n geldige PE-lêer nie!"
-cli_pe2: "PE-afdelings:"
-cli_signature_placeholder: "JOU-HANDTEKENING-NAAM"
-cli_working: "Aan die gang"
+%s is not a file or directory: "%s is nie 'n lêer of gids nie."
+Entropy: "Entropie:"
+Filename: "Lêernaam:"
+I don_t understand that command, sorry: "Ek verstaan nie daardie opdrag nie, jammer."
+In progress: "Aan die gang"
+Invalid URL: "Ongeldige URL!"
+Not a valid PE file: "Nie 'n geldige PE-lêer nie!"
+PE Sections: "PE-afdelings:"
+Specified algorithm isn_t supported: "Gespesifiseerde algoritme word nie ondersteun nie."
+YOUR SIGNATURE NAME: "JOU-HANDTEKENING-NAAM"
 cli_commands: |
- q | quit | exit -- Verlaat CLI.
+ q | quit | exit — Verlaat CLI.
 
- hash_file:[algo] [lêernaam] -- Genereer hash-handtekeninge vanaf lêers.
+ hash_file:[algo] [lêernaam] — Genereer hash-handtekeninge vanaf lêers.
 
- hash:[algo] [string] -- Genereer hash-handtekening vanaf string.
+ hash:[algo] [string] — Genereer hash-handtekening vanaf string.
  Example: >> hash:crc32b Hello World
           4a17b156:11:JOU-HANDTEKENING-NAAM
 
- algo -- Lys alle ondersteunde algoritmes.
+ a | algo — Lys alle ondersteunde algoritmes.
 
- (hex_encode | x) [string] -- Omskep binêre string na heksadesimale.
+ (x | hex_encode) [string] — Omskep binêre string na heksadesimale.
  Example: >> hex_encode Hello World
           48656c6c6f20576f726c64
 
- hex_decode [string] -- Omskep heksadesimale na binêre string.
+ hex_decode [string] — Omskep heksadesimale na binêre string.
 
- (base64_encode | b) [string] -- Omskep binêre string na base64 string.
+ (b | base64_encode) [string] — Omskep binêre string na base64 string.
 
- base64_decode [string] -- Omskep base64 string na binêre string.
+ base64_decode [string] — Omskep base64 string na binêre string.
 
- pe_meta [lêernaam] -- Onttrek metadata uit 'n PE-lêer.
+ pe_meta [lêernaam] — Onttrek metadata uit 'n PE-lêer.
 
- url_sig [string] -- Genereer URL-skandeerder-handtekeninge.
+ (u | url_sig) [string] — Genereer URL-skandeerder-handtekeninge.
 
- (scan | s) [naam van die lêer of gids] -- Skandeer 'n lêer of gids.
+ (s | scan) [naam van die lêer of gids] — Skandeer 'n lêer of gids.
 
- c -- Druk hierdie opdraglys.
-invalid_url: "Ongeldige URL!"
+ (s | scan) [naam van die lêer of gids] --xx
+ — Skandeer 'n lêer of gids met 'n bykomende opsie.
+   --wc — Skandeer sonder om die resultate te kas.
+   --sf — Druk die veranderlikes wat deur die skakelaarlêer gestel is.
+
+ i [naam van die lêer of gids] — Kry inligting oor lêers.
+
+ c — Druk hierdie opdraglys.
