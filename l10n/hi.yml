@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data (last modified: 2025.03.29).
+# This file: Hindi language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "फाइल नाम:"
 I don_t understand that command, sorry: "मुझे यह आज्ञा नहीं समझती, क्षमा करें।"
 In progress: "चालू"
 Invalid URL: "अवैध URL!"
+Last modified: "अंतिम बार संशोधित:"
 Not a valid PE file: "वैध PE फाइल नहीं है!"
 PE Sections: "PE अनुभाग:"
 Specified algorithm isn_t supported: "निर्दिष्ट एल्गोरिथ्म समर्थित नहीं है।"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data (last modified: 2025.03.29).
+# This file: Malay language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "Nama fail:"
 I don_t understand that command, sorry: "Saya tidak faham arahan ini, maaf."
 In progress: "Sedang berlangsung"
 Invalid URL: "URL tidak sah!"
+Last modified: "Terakhir diubah:"
 Not a valid PE file: "Bukan fail PE yang sah!"
 PE Sections: "Bahagian PE:"
 Specified algorithm isn_t supported: "Algoritma yang ditentukan tidak disokong."

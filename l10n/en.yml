@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data (last modified: 2025.03.29).
+# This file: English language data (last modified: 2025.03.30).
 ##/
 
 cli_ln1: |+
@@ -34,6 +34,7 @@ Filename: "Filename:"
 I don_t understand that command, sorry: "I don't understand that command, sorry."
 In progress: "In progress"
 Invalid URL: "Invalid URL!"
+Last modified: "Last modified:"
 Not a valid PE file: "Not a valid PE file!"
 PE Sections: "PE Sections:"
 Specified algorithm isn_t supported: "Specified algorithm isn't supported."

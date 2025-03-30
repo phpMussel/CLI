@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data (last modified: 2025.03.29).
+# This file: Vietnamese language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -43,6 +43,7 @@ Filename: "Tên của tập tin:"
 I don_t understand that command, sorry: "Xin lỗi, tôi không hiểu câu lệnh này."
 In progress: "Đang trong quá trình"
 Invalid URL: "URL không hợp lệ!"
+Last modified: "Khi sửa đổi lần cuối:"
 Not a valid PE file: "Tập tin PE không hợp lệ!"
 PE Sections: "Các loại PE:"
 Specified algorithm isn_t supported: "Thuật toán chỉ định không được hỗ trợ."

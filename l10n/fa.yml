@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data (last modified: 2025.03.29).
+# This file: Farsi language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "نام فایل:"
 I don_t understand that command, sorry: "من این دستور را نمی فهمم، متاسفم."
 In progress: "در حال پیش رفت"
 Invalid URL: "URL نامعتبر است!"
+Last modified: "آخرین اصلاح:"
 Not a valid PE file: "یک فایل PE معتبر نیست!"
 PE Sections: "بخش های PE:"
 Specified algorithm isn_t supported: "الگوریتم مشخص شده پشتیبانی نمی شود."

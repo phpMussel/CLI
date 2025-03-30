@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Serbian language data (last modified: 2025.03.29).
+# This file: Serbian language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "Име датотека:"
 I don_t understand that command, sorry: "Не разумем ту команду, извини."
 In progress: "У току"
 Invalid URL: "Неважећи УРЛ!"
+Last modified: "Последња измена:"
 Not a valid PE file: "Није важећа ПЕ датотека!"
 PE Sections: "ПЕ секције:"
 Specified algorithm isn_t supported: "Наведени алгоритам није подржан."

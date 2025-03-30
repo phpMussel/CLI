@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data (last modified: 2025.03.29).
+# This file: Thai language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -42,6 +42,7 @@ Filename: "ชื่อไฟล์:"
 I don_t understand that command, sorry: "ฉันไม่เข้าใจคำสั่งนั้นขอโทษ."
 In progress: "กำลังดำเนินการ"
 Invalid URL: "URL ไม่ถูกต้อง!"
+Last modified: "ปรับปรุงล่าสุด:"
 Not a valid PE file: "ไม่ใช่ไฟล์ PE ที่ถูกต้อง!"
 PE Sections: "ส่วน PE:"
 Specified algorithm isn_t supported: "ไม่รองรับอัลกอริทึมที่ระบุ."

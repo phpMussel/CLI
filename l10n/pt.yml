@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data (last modified: 2025.03.29).
+# This file: Portuguese language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -45,6 +45,7 @@ Filename: "Nome do arquivo:"
 I don_t understand that command, sorry: "Eu não entendo esse comando, desculpe."
 In progress: "Em processo"
 Invalid URL: "URL inválido!"
+Last modified: "Última modificação:"
 Not a valid PE file: "Não é um válido PE arquivo!"
 PE Sections: {"pt-BR": "PE Seções:", "pt-PT": "PE Secções:"}
 Specified algorithm isn_t supported: "Algoritmo especificado não é suportado."

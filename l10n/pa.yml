@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data (last modified: 2025.03.29).
+# This file: Punjabi language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -43,6 +43,7 @@ Filename: "ਫਾਈਲ ਦਾ ਨਾਮ:"
 I don_t understand that command, sorry: "ਮੈਨੂੰ ਉਹ ਹੁਕਮ ਸਮਝ ਨਹੀਂ ਆਇਆ, ਮਾਫ਼ ਕਰਨਾ।"
 In progress: "ਤਰੱਕੀ ਹੋ ਰਹੀ ਹੈ"
 Invalid URL: "ਅਵੈਧ URL!"
+Last modified: "ਆਖਰੀ ਵਾਰ ਸੋਧਿਆ ਗਿਆ:"
 Not a valid PE file: "ਵੈਧ PE ਫਾਈਲ ਨਹੀਂ ਹੈ!"
 PE Sections: "PE ਸੈਕਸ਼ਨ:"
 Specified algorithm isn_t supported: "ਨਿਰਧਾਰਤ ਐਲਗੋਰਿਦਮ ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ।"

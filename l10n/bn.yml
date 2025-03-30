@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data (last modified: 2025.03.29).
+# This file: Bangla language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "ফাইলের নাম:"
 I don_t understand that command, sorry: "আমি এই কমান্ড বুঝতে পারছিনা, দুঃখিত।"
 In progress: "চলমান"
 Invalid URL: "অবৈধ URL!"
+Last modified: "সর্বশেষ সংশোধিত:"
 Not a valid PE file: "একটি বৈধ PE ফাইল নয়!"
 PE Sections: "PE সেকশন:"
 Specified algorithm isn_t supported: "নির্দিষ্ট অ্যালগরিদম সমর্থিত নয়।"

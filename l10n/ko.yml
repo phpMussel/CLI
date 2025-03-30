@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data (last modified: 2025.03.29).
+# This file: Korean language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -42,6 +42,7 @@ Filename: "파일 이름\_:"
 I don_t understand that command, sorry: "미안 해요, 명령을 이해할 수 없습니다."
 In progress: "처리 중"
 Invalid URL: "유효하지 않은 URL!"
+Last modified: "마지막 수정\_:"
 Not a valid PE file: "올바른 PE 파일이 없습니다!"
 PE Sections: "PE 섹션\_:"
 Specified algorithm isn_t supported: "지정된 알고리즘은 지원되지 않습니다."

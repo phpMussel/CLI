@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data (last modified: 2025.03.29).
+# This file: Czech language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -43,6 +43,7 @@ Filename: "Název souboru:"
 I don_t understand that command, sorry: "Nerozumím tomu příkazu, promiňte."
 In progress: "Probíhá"
 Invalid URL: "Neplatná URL adresa!"
+Last modified: "Naposledy upraveno:"
 Not a valid PE file: "Neplatný soubor PE!"
 PE Sections: "PE sekce:"
 Specified algorithm isn_t supported: "Zadaný algoritmus není podporován."

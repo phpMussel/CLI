@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data (last modified: 2025.03.29).
+# This file: Spanish language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -43,6 +43,7 @@ Filename: "Nombre del archivo:"
 I don_t understand that command, sorry: "No entiendo ese comando, lo siento."
 In progress: "En operación"
 Invalid URL: "¡URL no válido!"
+Last modified: "Última modificación:"
 Not a valid PE file: "¡No es un archivo PE válido!"
 PE Sections: "Secciones PE:"
 Specified algorithm isn_t supported: "El algoritmo especificado no es soportado."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Marathi language data (last modified: 2025.03.29).
+# This file: Marathi language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "फाईलचे नाव:"
 I don_t understand that command, sorry: "मला ती आज्ञा समजली नाही, माफ करा."
 In progress: "प्रगतीपथावर आहे"
 Invalid URL: "वैध URL नाही!"
+Last modified: "शेवटचे सुधारित:"
 Not a valid PE file: "वैध PE फाइल नाही!"
 PE Sections: "PE विभाग:"
 Specified algorithm isn_t supported: "निर्दिष्ट अल्गोरिदम समर्थित नाही."

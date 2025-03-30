@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data (last modified: 2025.03.29).
+# This file: Romanian language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "Nume de fișier:"
 I don_t understand that command, sorry: "Nu înțeleg comanda, scuze."
 In progress: "În curs"
 Invalid URL: "URL invalid!"
+Last modified: "Ultima modificare:"
 Not a valid PE file: "Nu este un fișier PE valid!"
 PE Sections: "Secțiuni PE:"
 Specified algorithm isn_t supported: "Algoritmul specificat nu este acceptat."

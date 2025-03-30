@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Gujarati language data (last modified: 2025.03.29).
+# This file: Gujarati language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -43,6 +43,7 @@ Filename: "ફાઇલનું નામ:"
 I don_t understand that command, sorry: "મને એ આદેશ સમજાતો નથી."
 In progress: "ચાલુ છે"
 Invalid URL: "અમાન્ય URL!"
+Last modified: "છેલ્લે ફેરફાર કરેલ:"
 Not a valid PE file: "માન્ય PE ફાઇલ નથી!"
 PE Sections: "PE વિભાગો:"
 Specified algorithm isn_t supported: "ઉલ્લેખિત અલ્ગોરિધમ સમર્થિત નથી."

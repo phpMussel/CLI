@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data (last modified: 2025.03.29).
+# This file: Tamil language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -45,6 +45,7 @@ Filename: "கோப்பு பெயர்:"
 I don_t understand that command, sorry: "இந்த கட்டளை எனக்கு புரியவில்லை, மன்னிக்கவும்."
 In progress: "நடந்து கொண்டிருக்கிறது"
 Invalid URL: "தவறான URL!"
+Last modified: "கடைசியாக மாற்றப்பட்டது:"
 Not a valid PE file: "செல்லுபடியாகும் PE கோப்பு அல்ல!"
 PE Sections: "PE பிரிவுகள்:"
 Specified algorithm isn_t supported: "குறிப்பிடப்பட்ட வழிமுறை ஆதரிக்கப்படவில்லை."

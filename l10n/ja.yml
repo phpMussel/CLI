@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data (last modified: 2025.03.29).
+# This file: Japanese language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -46,6 +46,7 @@ Filename: "ファイル名："
 I don_t understand that command, sorry: "すみませんが、コマンドが理解できません。"
 In progress: "処理中"
 Invalid URL: "不正ＵＲＬ！"
+Last modified: "最終更新日:"
 Not a valid PE file: "正しいＰＥファイルではありません！"
 PE Sections: "ＰＥセクション："
 Specified algorithm isn_t supported: "指定されたアルゴリズムはサポートされていません。"

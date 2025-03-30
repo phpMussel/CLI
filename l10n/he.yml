@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data (last modified: 2025.03.29).
+# This file: Hebrew language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -42,6 +42,7 @@ Filename: "שם הקובץ:"
 I don_t understand that command, sorry: "אני לא מבין את הפקודה הזאת, סליחה."
 In progress: "בתהליך"
 Invalid URL: "לא URL חוקי!"
+Last modified: "שונה לאחרונה:"
 Not a valid PE file: "לא קובץ PE חוקי!"
 PE Sections: "קטעי PE:"
 Specified algorithm isn_t supported: "האלגוריתם שצוין אינו נתמך."

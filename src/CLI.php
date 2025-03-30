@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2025.03.29).
+ * This file: CLI handler (last modified: 2025.03.30).
  */
 
 namespace phpMussel\CLI;
@@ -279,6 +279,7 @@ class CLI
                     }
                 }
                 echo "\n";
+                unset($Algo, $Pos, $Algos);
                 continue;
             }
 
@@ -291,7 +292,7 @@ class CLI
                 if (is_file($TargetData) && is_readable($TargetData)) {
                     $Files = [$TargetData];
                 } elseif (is_dir($TargetData)) {
-                    $Files = $this->Scanner->directoryRecursiveList($TargetData, true);
+                    $Files = $this->Scanner->directoryRecursiveList($TargetData);
                     foreach ($Files as &$File) {
                         $File = $TargetData . $File;
                     }
@@ -299,18 +300,40 @@ class CLI
                     echo "\n" . $this->Loader->L10N->getString('response.Invalid file') . "\n";
                     continue;
                 }
-                foreach ($Files as $File) {
-                    if (is_file($File) && is_readable($File)) {
-                        $Data = $this->Loader->readFile($File);
-                        echo "\n" . $this->Loader->L10N->getString('Filename') . ' ' . $File . "\n";
-                        $Size = strlen($Data);
-                        echo $this->Loader->L10N->getString('field.size.Total size') . ' ' . $Size . ' ' . $this->Loader->L10N->getPlural($Size, 'field.size.bytes') . "\n";
-                        $Entropy = $this->Loader->Demojibakefier->shannonEntropy($Data);
-                        echo $this->Loader->L10N->getString('Entropy') . ' ' . $Entropy . "\n";
-                    } elseif (is_dir($File)) {
-                        echo "\n" . 'Directory name: ' . $File . "\n";
-                    }
+                $Primary = substr($this->Loader->L10NAccepted, 0, 2);
+                if ($Primary === 'zh') {
+                    $NumberFormatter = new \Maikuolan\Common\NumberFormatter('China-1');
+                } elseif (preg_match('~bn|gu|hi|m[lr]|[pt]a|ur~', $Primary)) {
+                    $NumberFormatter = new \Maikuolan\Common\NumberFormatter('India-1');
+                } else {
+                    $NumberFormatter = new \Maikuolan\Common\NumberFormatter();
                 }
+                $Scale = ['field.size.bytes', 'field.size.KB', 'field.size.MB', 'field.size.GB', 'field.size.TB', 'field.size.PB'];
+                foreach ($Files as $File) {
+                    if (!is_file($File) || !is_readable($File)) {
+                        continue;
+                    }
+                    $Data = $this->Loader->readFile($File);
+                    echo "\n" . $this->Loader->L10N->getString('Filename') . ' ' . $File . "\n";
+                    $Size = strlen($Data);
+                    $Iterate = 0;
+                    while ($Size > 1024) {
+                        $Size /= 1024;
+                        $Iterate++;
+                        if ($Iterate > 4) {
+                            break;
+                        }
+                    }
+                    $Size = $NumberFormatter->format($Size, ($Iterate === 0) ? 0 : 2) . ' ' . $this->Loader->L10N->getPlural($Size, $Scale[$Iterate]);
+                    echo $this->Loader->L10N->getString('field.size.Total size') . ' ' . $Size . "\n";
+                    $Entropy = $NumberFormatter->format($this->Loader->Demojibakefier->shannonEntropy($Data), 4);
+                    $Percent = ($Entropy / 8) * 100;
+                    $Percent = $NumberFormatter->format($Percent > 100 ? 100 : ($Percent < 0 ? 0 : $Percent), 2) . '%';
+                    echo $this->Loader->L10N->getString('Entropy') . ' ' . $Entropy . ' (' . $Percent . ")\n";
+                    $LastModified = date('c', filemtime($File) ?: 0);
+                    echo $this->Loader->L10N->getString('Last modified') . ' ' . $LastModified . "\n";
+                }
+                unset($LastModified, $Percent, $Entropy, $Iterate, $Size, $Data, $File, $Scale, $NumberFormatter, $Primary, $Files);
                 continue;
             }
 

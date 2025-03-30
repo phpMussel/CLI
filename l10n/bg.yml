@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data (last modified: 2025.03.29).
+# This file: Bulgarian language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "Име на файл:"
 I don_t understand that command, sorry: "Не разбирам тази команда, съжалявам."
 In progress: "В ход"
 Invalid URL: "Невалиден URL адрес!"
+Last modified: "Последна промяна:"
 Not a valid PE file: "Невалиден PE файл!"
 PE Sections: "PE секции:"
 Specified algorithm isn_t supported: "Посоченият алгоритъм не се поддържа."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data (last modified: 2025.03.29).
+# This file: Dutch language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "Bestandsnaam:"
 I don_t understand that command, sorry: "Ik begrijp niet dat bevel, sorry."
 In progress: "Aan de gang"
 Invalid URL: "Ongeldige URL!"
+Last modified: "Laatst gewijzigd:"
 Not a valid PE file: "Geen geldig PE-bestand!"
 PE Sections: "PE Secties:"
 Specified algorithm isn_t supported: "Opgegeven algoritme wordt niet ondersteund."

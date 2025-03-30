@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data (last modified: 2025.03.29).
+# This file: Turkish language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "Dosya adı:"
 I don_t understand that command, sorry: "Bu komutu anlamıyorum, üzgünüm."
 In progress: "Devam etmekte"
 Invalid URL: "Geçersiz URL!"
+Last modified: "Son değiştirilme tarihi:"
 Not a valid PE file: "Geçerli bir PE dosyası değil!"
 PE Sections: "PE Bölümleri:"
 Specified algorithm isn_t supported: "Belirtilen algoritma desteklenmiyor."

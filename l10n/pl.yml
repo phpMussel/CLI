@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data (last modified: 2025.03.29).
+# This file: Polish language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "Nazwa pliku:"
 I don_t understand that command, sorry: "Przepraszam, nie rozumiem tego polecenia."
 In progress: "Praca w toku"
 Invalid URL: "Niepoprawny URL!"
+Last modified: "Ostatnia modyfikacja:"
 Not a valid PE file: "Nieprawidłowy plik PE!"
 PE Sections: "Sekcje PE:"
 Specified algorithm isn_t supported: "Określony algorytm nie jest obsługiwany."

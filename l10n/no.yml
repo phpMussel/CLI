@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data (last modified: 2025.03.29).
+# This file: Norwegian language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "Filnavn:"
 I don_t understand that command, sorry: "Jeg forstår ikke den kommandoen, beklager."
 In progress: "I prosess"
 Invalid URL: "Ugyldig URL!"
+Last modified: "Sist endret:"
 Not a valid PE file: "Ikke en gyldig PE-fil!"
 PE Sections: "PE-seksjoner:"
 Specified algorithm isn_t supported: "Spesifisert algoritme støttes ikke."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malayalam language data (last modified: 2025.03.29).
+# This file: Malayalam language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "ഫയലിന്റെ പേര്:"
 I don_t understand that command, sorry: "ആ കമാൻഡ് എനിക്ക് മനസ്സിലാകുന്നില്ല, ക്ഷമിക്കണം."
 In progress: "പുരോഗതിയിൽ"
 Invalid URL: "സാധുവായ ഒരു URL അല്ല!"
+Last modified: "അവസാനം പരിഷ്‌ക്കരിച്ചത്:"
 Not a valid PE file: "സാധുവായ ഒരു PE ഫയൽ അല്ല!"
 PE Sections: "PE വിഭാഗങ്ങൾ:"
 Specified algorithm isn_t supported: "നിർദ്ദിഷ്ട അൽഗോരിതം പിന്തുണയ്ക്കുന്നില്ല."

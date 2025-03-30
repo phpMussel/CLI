@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data (last modified: 2025.03.29).
+# This file: French language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "Nom de fichier\_:"
 I don_t understand that command, sorry: "Je ne comprends pas cette commande, désolé."
 In progress: "En cours"
 Invalid URL: "URL non valide\_!"
+Last modified: "Dernière modification\_:"
 Not a valid PE file: "Pas un valide PE fichier\_!"
 PE Sections: "Sections du PE\_:"
 Specified algorithm isn_t supported: "L'algorithme spécifié n'est pas supporté."

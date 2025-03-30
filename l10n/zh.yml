@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data (last modified: 2025.03.29).
+# This file: Chinese language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -54,6 +54,7 @@ Filename: {"zh-Hans": "文件名：", "zh-Hant": "檔案名稱："}
 I don_t understand that command, sorry: {"zh-Hans": "我不明白的命令，对不起。", "zh-Hant": "我不明白的命令，對不起。"}
 In progress: {"zh-Hans": "进行中", "zh-Hant": "進行中"}
 Invalid URL: {"zh-Hans": "无效的网址！", "zh-Hant": "無效的網址！"}
+Last modified: {"zh-Hans": "最后修改时间：", "zh-Hant": "最後修改時間："}
 Not a valid PE file: {"zh-Hans": "不PE文件！", "zh-Hant": "不PE檔案！"}
 PE Sections: "PE部分:"
 Specified algorithm isn_t supported: "指定的算法不支持。"

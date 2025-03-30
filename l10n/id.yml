@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data (last modified: 2025.03.29).
+# This file: Indonesian language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "Nama file:"
 I don_t understand that command, sorry: "Saya tidak mengerti perintah ini, maaf."
 In progress: "Dalam proses"
 Invalid URL: "URL tidak valid!"
+Last modified: "Terakhir diubah:"
 Not a valid PE file: "Bukan file PE yang valid!"
 PE Sections: "Bagian PE:"
 Specified algorithm isn_t supported: "Algoritma yang ditentukan tidak didukung."

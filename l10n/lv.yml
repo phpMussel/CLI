@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data (last modified: 2025.03.29).
+# This file: Latvian language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "Faila nosaukums:"
 I don_t understand that command, sorry: "Atvainojiet, es nesaprotu šo komandu."
 In progress: "Darbs notiek"
 Invalid URL: "Nederīgs URL!"
+Last modified: "Pēdējās izmaiņas:"
 Not a valid PE file: "Nav derīgs PE fails."
 PE Sections: "PE sekcijas:"
 Specified algorithm isn_t supported: "Norādītais algoritms netiek atbalstīts."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data (last modified: 2025.03.29).
+# This file: Galician language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "Nome do ficheiro:"
 I don_t understand that command, sorry: "Non entendo esa orde, perdón."
 In progress: "En progreso"
 Invalid URL: "URL non válido!"
+Last modified: "Última modificación:"
 Not a valid PE file: "Non é un ficheiro PE válido!"
 PE Sections: "Seccións PE:"
 Specified algorithm isn_t supported: "phpMussel non coñece o algoritmo especificado."

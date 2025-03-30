@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data (last modified: 2025.03.29).
+# This file: Catalan language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "Nom del fitxer:"
 I don_t understand that command, sorry: "No entenc aquesta ordre, perdó."
 In progress: "En progrés"
 Invalid URL: "URL no vàlid!"
+Last modified: "Última modificació:"
 Not a valid PE file: "No és un fitxer PE vàlid!"
 PE Sections: "Seccions de PE:"
 Specified algorithm isn_t supported: "phpMussel no coneix l'algoritme especificat."

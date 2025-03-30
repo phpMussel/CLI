@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data (last modified: 2025.03.29).
+# This file: Urdu language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -45,6 +45,7 @@ Filename: "فائل کا نام:"
 I don_t understand that command, sorry: "میں نے اس حکم کو نہیں سمجھتے افسوس."
 In progress: "کام جاری ہے"
 Invalid URL: "غلط URL!"
+Last modified: "آخری بار ترمیم کی گئی:"
 Not a valid PE file: "ایک درست PE فائل!"
 PE Sections: "PE حصے:"
 Specified algorithm isn_t supported: "مخصوص الگورتھم کی حمایت نہیں کی جاتی ہے."

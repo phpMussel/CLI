@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data (last modified: 2025.03.29).
+# This file: German language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "Dateiname:"
 I don_t understand that command, sorry: "Entschuldigung, ich verstehe diesen Befehl nicht."
 In progress: "Im Gange"
 Invalid URL: "Ungültige URL!"
+Last modified: "Letzte Änderung:"
 Not a valid PE file: "Keine gültige PE-Datei!"
 PE Sections: "PE-Sektionen:"
 Specified algorithm isn_t supported: "Der angegebene Algorithmus wird nicht unterstützt."

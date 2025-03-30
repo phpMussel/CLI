@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data (last modified: 2025.03.29).
+# This file: Italian language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -43,6 +43,7 @@ Filename: "Nome del file:"
 I don_t understand that command, sorry: "Non capisco quel comando, mi dispiace."
 In progress: "In corso"
 Invalid URL: "URL non valido!"
+Last modified: "Ultima modifica:"
 Not a valid PE file: "Non è un PE file valida!"
 PE Sections: "PE Sezioni:"
 Specified algorithm isn_t supported: "L'algoritmo specificato non è supportato."

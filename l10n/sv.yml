@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data (last modified: 2025.03.29).
+# This file: Swedish language data (last modified: 2025.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,6 +44,7 @@ Filename: "Filnamn:"
 I don_t understand that command, sorry: "Jag förstår inte det kommandot, ursäkta."
 In progress: "Pågående"
 Invalid URL: "Felaktig URL!"
+Last modified: "Senast ändrad:"
 Not a valid PE file: "Inte en giltig PE-fil!"
 PE Sections: "PE-sektion:"
 Specified algorithm isn_t supported: "Specificerad algoritm stöds inte."
