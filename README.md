@@ -36,7 +36,7 @@ unset($CLI, $Scanner, $Loader);
 ```
 
 __*Screenshot:*__
-![Screenshot](https://raw.githubusercontent.com/phpMussel/extras/master/screenshots/cli-v3.4.1.png)
+![Screenshot](https://raw.githubusercontent.com/phpMussel/extras/master/screenshots/cli-v3.5.0.png)
 
 ---
 
@@ -73,4 +73,4 @@ __*Screenshot:*__
 ---
 
 
-Last Updated: 1 July 2024 (2024.07.01).
+Last Updated: 30 March 2025 (2025.03.30).
