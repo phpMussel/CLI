@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data (last modified: 2025.03.30).
+# This file: Urdu language data (last modified: 2025.05.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -25,7 +25,7 @@
 ##/
 
 cli_ln2: |
- phpMussel، ایک PHP کی سکرپٹ ٹروجن پتہ لگانے کے لئے ڈیزائن کیا
+ phpMussel، ایک PHP کی سکرپٹ ٹروجن پتہ لگانے کے لیے ڈیزائن کیا
  استعمال کرنے کا شکریہ، وائرس، مالویئر اور فائلوں کے اندر اندر دیگر خطرات
  سے آپ کے سسٹم پر اپ لوڈ کردہ جہاں کہیں سکرپٹ جھکا ہے، ClamAV اور دوسروں
  کے دستخط پر مبنی.
@@ -37,7 +37,7 @@ cli_ln3: |
  فی الحال CLI موڈ (کمانڈ لائن انٹرفیس) میں phpMussel چلانے. فائل کا نام یا
  کے بعد ایک فائل یا ڈائریکٹری، قسم "سکین"، اسکین کرنے آپ phpMussel اسکین
  کرنے اور انٹر دبائیں چاہتے ہیں کہ ڈائریکٹری؛ "سی" اور پریس ٹائپ کریں CLI
- موڈ حکم دیتا ہے کی ایک فہرست کے لئے درج کریں؛ "س" اور پریس چھوڑنے کا درج
+ موڈ حکم دیتا ہے کی ایک فہرست کے لیے درج کریں؛ "س" اور پریس چھوڑنے کا درج
  ٹائپ کریں.
 %s is not a file or directory: "%s یک فائل یا ڈائریکٹری نہیں ہے."
 Entropy: "اینٹروپی:"

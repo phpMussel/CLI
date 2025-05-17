@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malayalam language data (last modified: 2025.03.30).
+# This file: Malayalam language data (last modified: 2025.05.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -83,4 +83,4 @@ cli_commands: |
 
  i [ഫയലിന്റെയോ ഡയറക്ടറിയുടെയോ പേര്] — ഫയലുകളെക്കുറിച്ചുള്ള വിവരങ്ങൾ നേടുക.
 
- c — ഈ കമാൻഡ് ലിസ്റ്റ് പ്രിന്റ് ചെയ്യുക.
+ c — ഈ കമാൻഡുകളുടെ പട്ടിക പ്രിന്റ് ചെയ്യുക.

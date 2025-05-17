@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data (last modified: 2025.03.30).
+# This file: French language data (last modified: 2025.04.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -26,7 +26,7 @@
 
 cli_ln2: |
  Merci d'utiliser phpMussel, un script PHP pour la détection de virus,
- logiciels malveillants et autres menaces dans les fichiers téléchargés sur
+ logiciels malveillants et autres menaces dans les fichiers chargés sur
  votre système partout où le script est accroché, basé sur les signatures
  de ClamAV et autres.
                                      ~ ~ ~
