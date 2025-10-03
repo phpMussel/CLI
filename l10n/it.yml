@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data (last modified: 2025.03.30).
+# This file: Italian language data (last modified: 2025.09.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -34,10 +34,10 @@ cli_ln2: |
                                      ~ ~ ~
 cli_ln3: |
  Attualmente in esecuzione in modalità CLI (interfaccia a riga di
- comando). Per scansionare un file o una cartella digita "scan" seguito dal
- nome del file o della cartella e premi Invio; digita "c" e premi Invio per
+ comando). Per scansionare un file o una directory digita "scan" seguito dal
+ nome del file o della directory e premi Invio; digita "c" e premi Invio per
  l'elenco dei comandi in modalità CLI; digita "q" e premi Invio per uscire.
-%s is not a file or directory: "%s non è né un file né una cartella."
+%s is not a file or directory: "%s non è né un file né una directory."
 Entropy: "Entropia:"
 Filename: "Nome del file:"
 I don_t understand that command, sorry: "Non capisco quel comando, mi dispiace."
@@ -73,14 +73,14 @@ cli_commands: |
 
  (u | url_sig) [stringa] — Genera firme di scanner URL.
 
- (s | scan) [nome del file o della cartella]
- — Scansiona un file o una cartella.
+ (s | scan) [nome del file o della directory]
+ — Scansiona un file o una directory.
 
- (s | scan) [nome del file o della cartella] --xx
- — Scansiona un file o una cartella con un'opzione aggiuntiva.
+ (s | scan) [nome del file o della directory] --xx
+ — Scansiona un file o una directory con un'opzione aggiuntiva.
    --wc — Esegui la scansione senza memorizzare i risultati nella cache.
    --sf — Mostra le variabili impostate dal file switch.
 
- i [nome del file o della cartella] — Ottieni informazioni sui file.
+ i [nome del file o della directory] — Ottieni informazioni sui file.
 
  c — Mostra questa lista di comandi.
