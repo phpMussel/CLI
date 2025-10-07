@@ -65,3 +65,7 @@ __*Why "v3.0.0" instead of "v1.0.0?"*__ Prior to phpMussel v3, the "phpMussel Co
 ### v3.5.0
 
 - [2025.03.29]: Reworked some of the CLI mode L10N and added a command to get information about files.
+
+### v3.6.0
+
+- [2025.10.07]: Added support for NO_COLOR.
