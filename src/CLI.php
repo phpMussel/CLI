@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2025.10.07).
+ * This file: CLI handler (last modified: 2025.11.02).
  */
 
 namespace phpMussel\CLI;
@@ -85,7 +85,7 @@ class CLI
         });
 
         /** Echo the ASCII header art and CLI-mode information. */
-        echo $this->Scanner->cliColour("\033[0;33m") . sprintf($this->Loader->L10N->getString('cli_ln1'), PHP_VERSION, $this->Loader->ScriptVersion, $this->CLIVersion) . "\n\n" . $this->Loader->L10N->getString('cli_ln2') . "\n\n" . $this->Loader->L10N->getString('cli_ln3');
+        echo $this->Scanner->cliColour("\033[0;33m") . sprintf($this->Loader->L10N->getString('cli_ln1'), \PHP_VERSION, $this->Loader->ScriptVersion, $this->CLIVersion) . "\n\n" . $this->Loader->L10N->getString('cli_ln2') . "\n\n" . $this->Loader->L10N->getString('cli_ln3');
 
         /** Open STDIN. */
         $Handle = fopen('php://stdin', 'rb');

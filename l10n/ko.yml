@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data (last modified: 2025.03.30).
+# This file: Korean language data (last modified: 2025.10.11).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -37,14 +37,14 @@ cli_ln3: |
  이름을 입력하고 Enter 키를 누릅니다. CLI 모드 명령 목록을 보려면 "c"를
  입력하고 Enter 키를 누릅니다. "q"를 입력하고 Enter 키를 눌러 종료합니다.
 %s is not a file or directory: "%s는 파일 또는 디렉토리가 아닙니다."
-Entropy: "엔트로피\_:"
-Filename: "파일 이름\_:"
+Entropy: "엔트로피:"
+Filename: "파일 이름:"
 I don_t understand that command, sorry: "미안 해요, 명령을 이해할 수 없습니다."
 In progress: "처리 중"
 Invalid URL: "유효하지 않은 URL!"
-Last modified: "마지막 수정\_:"
+Last modified: "마지막 수정:"
 Not a valid PE file: "올바른 PE 파일이 없습니다!"
-PE Sections: "PE 섹션\_:"
+PE Sections: "PE 섹션:"
 Specified algorithm isn_t supported: "지정된 알고리즘은 지원되지 않습니다."
 YOUR SIGNATURE NAME: "서명-이름"
 cli_commands: |
