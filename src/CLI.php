@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2026.03.17).
+ * This file: CLI handler (last modified: 2026.03.18).
  */
 
 namespace phpMussel\CLI;
@@ -33,7 +33,7 @@ class CLI
     /**
      * @var string The path to the core L10N files.
      */
-    private $L10NPath = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'l10n' . DIRECTORY_SEPARATOR;
+    private $L10NPath = __DIR__ . \DIRECTORY_SEPARATOR . '..' . \DIRECTORY_SEPARATOR . 'l10n' . \DIRECTORY_SEPARATOR;
 
     /**
      * @var string Used by some CLI functionality.
