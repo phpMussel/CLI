@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data (last modified: 2025.03.30).
+# This file: Dutch language data (last modified: 2026.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -83,7 +83,7 @@ cli_commands: |
  (s | scan) [bestandsnaam of mapnaam] --xx
  — Scannen bestand of map met een extra optie.
    --wc — Scannen zonder de resultaten te cachen.
-   --sf — Druk de variabelen ​​die door het switchbestand zijn ingesteld.
+   --sf — Druk de variabelen die door het switchbestand zijn ingesteld.
 
  i [bestandsnaam of mapnaam] — Informatie over bestanden verkrijgen.
 

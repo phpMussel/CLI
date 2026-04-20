@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data (last modified: 2025.03.30).
+# This file: Portuguese language data (last modified: 2026.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -82,7 +82,7 @@ cli_commands: |
  (s | scan) [nome do arquivo ou diretório] --xx
  — Verificar um arquivo ou diretório com uma opção adicional.
    --wc — Verificar sem armazenar os resultados em cache.
-   --sf — Imprima as variáveis ​​definidas pelo arquivo switch.
+   --sf — Imprima as variáveis definidas pelo arquivo switch.
 
  i [nome do arquivo ou diretório] — Obtenha informações sobre arquivos.
 

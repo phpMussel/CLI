@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data (last modified: 2025.05.17).
+# This file: Urdu language data (last modified: 2026.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -79,7 +79,7 @@ cli_commands: |
  - فائل یا ڈائریکٹری اسکین کریں.
  - عرف: scan.
  s [فائل کا نام] --xx
- — ایک اضافی آپشن کے ساتھ فائل یا ڈائرکٹری کو اسکین کریں.
+ — ایک اضافی آپشن کے ساتھ فائل یا ڈائریکٹری کو اسکین کریں.
    --wc
    — نتائج کو کیش کیے بغیر اسکین کریں.
    --sf

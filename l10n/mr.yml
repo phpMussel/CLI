@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Marathi language data (last modified: 2025.03.30).
+# This file: Marathi language data (last modified: 2026.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -40,7 +40,7 @@ cli_ln3: |
  पडण्यासाठी "q" टाइप करा आणि एंटर दाबा.
 %s is not a file or directory: "%s ही फाइल किंवा निर्देशिका नाही."
 Entropy: "एन्ट्रॉपी:"
-Filename: "फाईलचे नाव:"
+Filename: "फाइलचे नाव:"
 I don_t understand that command, sorry: "मला ती आज्ञा समजली नाही, माफ करा."
 In progress: "प्रगतीपथावर आहे"
 Invalid URL: "वैध URL नाही!"
@@ -70,7 +70,7 @@ cli_commands: |
 
  base64_decode [स्ट्रिंग] — बेस६४ स्ट्रिंग बायनरी स्ट्रिंगमध्ये रूपांतरित करा.
 
- pe_meta [फाइलनाव] — PE फाईलमधून मेटाडेटा काढा.
+ pe_meta [फाइलनाव] — PE फाइलमधून मेटाडेटा काढा.
 
  (u | url_sig) [स्ट्रिंग] — URL स्कॅनर स्वाक्षऱ्या तयार करा.
 
@@ -79,7 +79,7 @@ cli_commands: |
  (s | scan) [फाइल किंवा निर्देशिकेचे नाव] --xx
  — अतिरिक्त पर्याय वापरून फाइल किंवा निर्देशिका स्कॅन करा.
    --wc — निकाल कॅश न करता स्कॅन करा.
-   --sf — स्विच फाईलने सेट केलेले व्हेरिएबल्स प्रिंट करा.
+   --sf — स्विच फाइलने सेट केलेले व्हेरिएबल्स प्रिंट करा.
 
  i [फाइल किंवा निर्देशिकेचे नाव] — फायलींबद्दल माहिती मिळवा.
 
