@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2026.03.18).
+ * This file: CLI handler (last modified: 2026.08.18).
  */
 
 namespace phpMussel\CLI;
@@ -374,7 +374,7 @@ class CLI
             echo "\r         ";
             return $Returnable;
         }
-        return \is_file($Params) || filter_var($Params, FILTER_VALIDATE_URL) ? $Callable($Params) : \sprintf($this->Loader->L10N->getString('%s is not a file or directory'), $Params) . "\n";
+        return \is_file($Params) || \filter_var($Params, \FILTER_VALIDATE_URL) ? $Callable($Params) : \sprintf($this->Loader->L10N->getString('%s is not a file or directory'), $Params) . "\n";
     }
 
     /**
@@ -480,7 +480,7 @@ class CLI
     private function coexFile(string $Clean): string
     {
         return $this->recursiveCommand($Clean, function ($Params) {
-            if (filter_var($Params, FILTER_VALIDATE_URL)) {
+            if (\filter_var($Params, \FILTER_VALIDATE_URL)) {
                 $Data = $this->Loader->Request->request($Params);
             } elseif (\is_file($Params) && \is_readable($Params)) {
                 $Data = $this->Loader->readFile($Params);
@@ -507,7 +507,7 @@ class CLI
     {
         if (\in_array($this->LastAlgo, \hash_algos())) {
             return $this->recursiveCommand($Clean, function ($Params) {
-                if (filter_var($Params, FILTER_VALIDATE_URL)) {
+                if (\filter_var($Params, \FILTER_VALIDATE_URL)) {
                     $Data = $this->Loader->Request->request($Params);
                 } elseif (\is_file($Params) && \is_readable($Params)) {
                     $Data = $this->Loader->readFile($Params);
